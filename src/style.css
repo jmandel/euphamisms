@@ -3,19 +3,22 @@ h2 {
   font-family: monospace;
 }
 
-.team-Neutral {
+.word-card.team-Neutral {
     background: tan;
+    color: white;
 }
 
-.team-Red {
+.word-card.team-Red {
     background: red;
+    color: white;
 }
 
-.team-Blue {
+.word-card.team-Blue {
     background: slateblue;
+    color: white;
 }
 
-.team-Evil {
+.word-card.team-Evil {
     background: black;
     color: white;
 }
@@ -23,13 +26,14 @@ h2 {
 
 .word-card {
     display: inline-block;
+    border: 1px solid black;
+    color: black;
     margin: 1em;
     padding: 1em;
-    width: calc(100% * 1/5 - 2em - 2em);
+    width: calc(100% * 1/5 - 2em - 2em - 4px);
     min-width: 5em;
     text-align: center;
     font-family: monospace;
-    color: white;
     font-size: 2em;
     font-weight: bold;
 }

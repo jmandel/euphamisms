@@ -9,8 +9,9 @@ import Random
 import String
 import Array
 import Words
+import Task
 
-s = Random.initialSeed 1
+initialSeed = Random.initialSeed 5
 
 main : Program Never
 main = program
@@ -30,7 +31,8 @@ type alias Card = {
 }
 
 type alias Model =
-  { count : Int
+  {isSpymaster  : Bool
+  , seed: Int
   , elapsed : Int
   , alertText : String
   , otherText : String
@@ -58,7 +60,7 @@ teamList =
             List.repeat (count+1) Blue,
             List.repeat (totalCards-2*count-2) Neutral]
 
-shuffle pile =
+shuffle seed pile =
     let randomValsInRange topEnd (acc, seed) =
             let (nextval, nextseed) = Random.step (Random.int 0 topEnd) seed in
             (nextval :: acc, nextseed)
@@ -69,7 +71,7 @@ shuffle pile =
 
     in [1..(List.length pile)]
     |> List.reverse
-    |> List.foldl randomValsInRange ([], s)
+    |> List.foldl randomValsInRange ([], seed)
     |> fst
     |> List.map2 (\i r -> (i, r)) [0..(List.length pile)]
     |> List.foldl doSwaps (Array.fromList pile)
@@ -81,51 +83,52 @@ randomSelectionGenerator = Random.int 0 n
 
 assignTeam t c = {c | team=t}
 
-init =
-  (Model 9 9 "It works!" "so" [] (shuffle <| List.map2 assignTeam teamList <| fst <| Random.step randomSelectionGenerator s) [], Cmd.batch [
+allCards seed =
+    shuffle seed
+    <| List.map2 assignTeam teamList
+    <| fst
+    <| Random.step randomSelectionGenerator seed
 
+init =
+  (Model False 0 9 "It works!" "so" [] [] [], Cmd.batch [
+    Time.now |> Task.perform (always 0) Time.inHours |> Cmd.map (\x -> NewSeed <| floor x),
     Random.generate Alternate (Random.list 25 (Random.int 0 (List.length Words.all))),
-    Random.generate Alternate (Random.list 25 (Random.int 0 100))
-  ]
-  )
+    Random.generate Alternate (Random.list 25 (Random.int 0 100)) ])
 
 
 -- UPDATE
 
 
-type Msg = Increment | Decrement | Tick | Alert | ChangeAlertText String | Log String | Selection (List Card) | Alternate (List Int)
+type Msg = ShowLabels | HideLabels | Tick | Alert | ChangeAlertText String | Log String | NewSeed Int | Selection (List Card) | Alternate (List Int)
 
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
   case msg of
     Selection l -> ({model | words=l}, Cmd.none)
     Alternate l -> ({model | alts=l}, Cmd.none)
-    Increment ->
-      ({ model | count = model.count + 1,
-                 otherText = "incremented"}, Cmd.none)
+    ShowLabels ->
+      ({ model | isSpymaster=True }, Cmd.none)
 
-    Decrement ->
-      ({ model | count = model.count - 1,
-                 otherText = "dec'd"}, Cmd.none)
+    HideLabels ->
+      ({ model | isSpymaster=False }, Cmd.none)
 
     Tick ->
       ({ model | elapsed = model.elapsed + 1}, Cmd.none)
 
     Alert ->
-      (model, alert model.alertText)
+      (model, Cmd.none)
 
     ChangeAlertText text ->
       ({ model | alertText = text }, Cmd.none)
 
+    NewSeed seed -> ({model | seed=seed, words = allCards <| Random.initialSeed seed}, Cmd.none)
+
     Log text ->
       ({ model | logs = text :: model.logs }, Cmd.none)
 
-port alert : String -> Cmd msg
-port log : (String -> msg) -> Sub msg
 
 
 -- SUBSCRIPTIONS
-
 
 subscriptions : Model -> Sub Msg
 subscriptions model = Sub.batch [ ]
@@ -133,12 +136,28 @@ subscriptions model = Sub.batch [ ]
 
 -- VIEW
 
-card word =
-  div [class  <| "word-card team-" ++ (toString word.team)] [
-   (text (Maybe.withDefault "" word.word))
-  ]
+card showColor word =
+  if showColor == True
+    then
+        div [class  <| "word-card team-" ++ (toString word.team)] [
+        (text (Maybe.withDefault "" word.word))
+        ]
+    else
+        div [class  <| "word-card"] [
+        (text (Maybe.withDefault "" word.word))
+        ]
+
 
 view : Model -> Html.Html Msg
 view model =
   div [class "board"]
-        (List.map card model.words)
+      (List.concat [
+            (List.map (card model.isSpymaster) model.words), [
+                if model.isSpymaster
+                then
+                    button [onClick (HideLabels)] [(text "Hide") ]
+                else
+                    button [onClick (ShowLabels)] [(text "Reveal") ],
+                button [onClick (NewSeed (model.seed+1))] [(text "Next Game") ]
+            ]
+        ])

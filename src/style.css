@@ -1,0 +1,40 @@
+h2 {
+  color: red;
+  font-family: monospace;
+}
+
+.team-Neutral {
+    background: tan;
+}
+
+.team-Red {
+    background: red;
+}
+
+.team-Blue {
+    background: slateblue;
+}
+
+.team-Evil {
+    background: black;
+    color: white;
+}
+
+
+.word-card {
+    display: inline-block;
+    margin: 1em;
+    padding: 1em;
+    width: calc(100% * 1/5 - 2em - 2em);
+    min-width: 5em;
+    text-align: center;
+    font-family: monospace;
+    color: white;
+    font-size: 2em;
+    font-weight: bold;
+}
+
+.board {
+    display: flex;
+    flex-wrap: wrap;
+}

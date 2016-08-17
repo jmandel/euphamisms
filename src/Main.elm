@@ -43,7 +43,7 @@ type alias Card =
 type alias Model =
     { isSpymaster : Bool
     , seed : Int
-    , words : List Card
+    , cards : List Card
     }
 
 
@@ -56,8 +56,7 @@ totalCards =
 
 teamList =
     let
-        count =
-            totalCards // 3
+        count = totalCards // 3
     in
         List.concat
             [ [ Evil ]
@@ -90,7 +89,7 @@ shuffle seed pile =
             |> List.filterMap identity
 
 
-allCards seed =
+dealCards seed =
     let teams = shuffle seed teamList
         picks = shuffle seed <| Words.all
     in
@@ -123,13 +122,13 @@ update msg model =
         ToggleLabels ->
             ( { model | isSpymaster = not model.isSpymaster }, Cmd.none )
         Reveal word ->
-            ({ model | words = List.map (reveal word) model.words}, Cmd.none)
+            ({ model | cards = List.map (reveal word) model.cards}, Cmd.none)
 
         HideLabels ->
             ( { model | isSpymaster = False }, Cmd.none )
 
         NewSeed seed ->
-            ( { model | seed = seed, words = allCards <| Random.initialSeed seed }, Cmd.none )
+            ( { model | seed = seed, cards = dealCards <| Random.initialSeed seed }, Cmd.none )
 
 
 
@@ -171,5 +170,5 @@ view model =
                 onClick <| NewSeed (model.seed + 1)] []
         ],
         div [ class "board" ]
-             (List.map (card model.isSpymaster) model.words)
+             (List.map (card model.isSpymaster) model.cards)
     ]

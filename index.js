@@ -95,7 +95,7 @@
 
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(4) + ") format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(5) + ") format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\nhtml, body {\n    margin: 0px;\n    border: 0px;\n    padding: 0px;\n    height: 100%;\n}\n\n.main {\n    height: calc(100%  - 10em);\n}\n\nh2 {\n  color: red;\n  font-family: monospace;\n}\n\n.word-card.team-Neutral {\n    background: tan;\n    color: white;\n}\n\n.word-card.team-Red {\n    background: red;\n    color: white;\n}\n\n.word-card.team-Blue {\n    background: slateblue;\n    color: white;\n}\n\n.word-card.team-Evil {\n    background: black;\n    color: white;\n}\n\n\n.word-card {\n    cursor: pointer;\n    display: inline-block;\n    border: 1px solid black;\n    color: black;\n    margin-left: .5em;\n    margin-right: .5em;\n    margin-top: 0em;\n    margin-bottom: .5em;\n    padding: .2em;\n    width: calc(100% * 1/5 - 2em );\n    min-width: 5em;\n    flex-grow: 1;\n    font-family: Passion One;\n    font-size: 2.7em;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    transition: background-color .1s ease-in;\n}\n\n.board {\n    padding-left: 2em;\n    padding-right: 2em;\n    display: flex;\n    flex-wrap: wrap;\n    height: 100%;\n    padding-top: 5em;\n    padding-bottom: 5em;\n    align-items: stretch;\n}\n\n.fa {\n    font-size: 2em;\n}\n\n.reveal-board {\n    position: fixed;\n    top: 0px;\n    padding: 0.5em;\n    cursor: pointer;\n}\n\n.next-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    left: 0px;\n    padding: 0.5em;\n}\n\n@media (max-width: 800px){\n    .word-card {\n        min-height: 1em;\n        padding: 0px;\n        margin-top: 0px;\n        margin-bottom: 0px;\n        margin: 0px;\n        min-width: 4em;\n        width: calc(100% * 1/5 - 5px);\n        font-size: 1.6em;\n        text-align: center;\n        line-height: .7em;\n        border: 0px;\n    }\n    .board {\n        padding-top: 1em;\n        padding-bottom: 1em;\n        padding-left: 4em;\n        padding-right: 4em;\n        height: 100%;\n    }\n    .main {\n        height: calc(100% - 2em);\n    }\n\n\n}\n\n@media (max-width: 600px){\n    .word-card {\n        min-width: 7em;\n    }\n\n}\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(4) + ") format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(5) + ") format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\nhtml, body {\n    margin: 0px;\n    border: 0px;\n    font-family: Passion One;\n    padding: 0px;\n    height: 100%;\n}\n\n.main {\n    height: calc(100%  - 10em);\n}\n\n.word-card.team-Neutral {\n    background: tan;\n    color: white;\n}\n\n.word-card.team-Red {\n    background: red;\n    color: white;\n}\n\n.word-card.team-Blue {\n    background: slateblue;\n    color: white;\n}\n\n.word-card.team-Evil {\n    background: black;\n    color: white;\n}\n\n\n.word-card {\n    cursor: pointer;\n    display: inline-block;\n    border: 1px solid black;\n    color: black;\n    padding: .2em;\n    width: calc(100% * 1/5 - 1em );\n    margin-left: 0.25em;\n    margin-right: 0.25em;\n    margin-bottom: 0.25em;\n    margin-top: 0.25em;\n    min-width: 4em;\n    flex-grow: 1;\n    font-size: 2.7em;\n    display: flex;\n    align-items: center;\n    justify-content: center;\n    transition: background-color .1s ease-in;\n}\n\n.board {\n    margin-left: 4em;\n    margin-right: 3.5em;\n    display: flex;\n    flex-wrap: wrap;\n    height: 100%;\n    padding-left: 0px;\n    padding-right: 0px;\n    padding-top: 5em;\n    padding-bottom: 5em;\n    align-items: stretch;\n}\n\n.fa {\n    font-size: 2em;\n}\n\n.reveal-board {\n    cursor: pointer;\n    position: fixed;\n    top: 0px;\n    padding: 0.5em;\n}\n\n.prev-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    left: 0px;\n    padding: 0.5em;\n}\n\n.next-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    right: 0px;\n    padding: 0.5em;\n}\n\n.which-game {\n    font-family: monospace;\n    padding-bottom: 0em;\n    position: absolute;\n    right: 0px;\n    top: 0px;\n    padding-top: 1em;\n    text-align: center;\n    padding-right: 2em;\n}\n\n@media (max-width: 1100px){\n    .word-card {\n        min-height: 1em;\n        padding: 0px;\n        margin: 0px;\n        min-width: 1em;\n        width: calc(100% * 1/5 - .5em);\n        margin-left: 0em;\n        margin-right: 0em;\n        font-size: 1.5em;\n        text-align: center;\n        line-height: .7em;\n        border: 0px;\n    }\n    .board {\n        padding-top: 1.8em;\n        padding-bottom: 0em;\n        padding-left: 1em;\n        padding-right: 1em;\n        height: 100%;\n    }\n    .main {\n        height: calc(100% - 2em);\n    }\n\n\n}\n\n@media (max-width: 600px){\n    .word-card {\n        min-width: 7em;\n        width: 100%;\n    }\n    .board {\n        padding-bottom: 0em;\n        padding-bottom: 0em;\n    }\n\n}\n", ""]);
 
 	// exports
 
@@ -3141,6 +3141,39 @@
 			$char));
 	};
 
+	//import Result //
+
+	var _elm_lang$core$Native_Date = function() {
+
+	function fromString(str)
+	{
+		var date = new Date(str);
+		return isNaN(date.getTime())
+			? _elm_lang$core$Result$Err('Unable to parse \'' + str + '\' as a date. Dates must be in the ISO 8601 format.')
+			: _elm_lang$core$Result$Ok(date);
+	}
+
+	var dayTable = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+	var monthTable =
+		['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+		 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+
+
+	return {
+		fromString: fromString,
+		year: function(d) { return d.getFullYear(); },
+		month: function(d) { return { ctor: monthTable[d.getMonth()] }; },
+		day: function(d) { return d.getDate(); },
+		hour: function(d) { return d.getHours(); },
+		minute: function(d) { return d.getMinutes(); },
+		second: function(d) { return d.getSeconds(); },
+		millisecond: function(d) { return d.getMilliseconds(); },
+		toTime: function(d) { return d.getTime(); },
+		fromTime: function(t) { return new Date(t); },
+		dayOfWeek: function(d) { return { ctor: dayTable[d.getDay()] }; }
+	};
+
+	}();
 	//import Native.Utils //
 
 	var _elm_lang$core$Native_Scheduler = function() {
@@ -5958,6 +5991,39 @@
 				});
 		});
 	_elm_lang$core$Native_Platform.effectManagers['Time'] = {pkg: 'elm-lang/core', init: _elm_lang$core$Time$init, onEffects: _elm_lang$core$Time$onEffects, onSelfMsg: _elm_lang$core$Time$onSelfMsg, tag: 'sub', subMap: _elm_lang$core$Time$subMap};
+
+	var _elm_lang$core$Date$millisecond = _elm_lang$core$Native_Date.millisecond;
+	var _elm_lang$core$Date$second = _elm_lang$core$Native_Date.second;
+	var _elm_lang$core$Date$minute = _elm_lang$core$Native_Date.minute;
+	var _elm_lang$core$Date$hour = _elm_lang$core$Native_Date.hour;
+	var _elm_lang$core$Date$dayOfWeek = _elm_lang$core$Native_Date.dayOfWeek;
+	var _elm_lang$core$Date$day = _elm_lang$core$Native_Date.day;
+	var _elm_lang$core$Date$month = _elm_lang$core$Native_Date.month;
+	var _elm_lang$core$Date$year = _elm_lang$core$Native_Date.year;
+	var _elm_lang$core$Date$fromTime = _elm_lang$core$Native_Date.fromTime;
+	var _elm_lang$core$Date$toTime = _elm_lang$core$Native_Date.toTime;
+	var _elm_lang$core$Date$fromString = _elm_lang$core$Native_Date.fromString;
+	var _elm_lang$core$Date$now = A2(_elm_lang$core$Task$map, _elm_lang$core$Date$fromTime, _elm_lang$core$Time$now);
+	var _elm_lang$core$Date$Date = {ctor: 'Date'};
+	var _elm_lang$core$Date$Sun = {ctor: 'Sun'};
+	var _elm_lang$core$Date$Sat = {ctor: 'Sat'};
+	var _elm_lang$core$Date$Fri = {ctor: 'Fri'};
+	var _elm_lang$core$Date$Thu = {ctor: 'Thu'};
+	var _elm_lang$core$Date$Wed = {ctor: 'Wed'};
+	var _elm_lang$core$Date$Tue = {ctor: 'Tue'};
+	var _elm_lang$core$Date$Mon = {ctor: 'Mon'};
+	var _elm_lang$core$Date$Dec = {ctor: 'Dec'};
+	var _elm_lang$core$Date$Nov = {ctor: 'Nov'};
+	var _elm_lang$core$Date$Oct = {ctor: 'Oct'};
+	var _elm_lang$core$Date$Sep = {ctor: 'Sep'};
+	var _elm_lang$core$Date$Aug = {ctor: 'Aug'};
+	var _elm_lang$core$Date$Jul = {ctor: 'Jul'};
+	var _elm_lang$core$Date$Jun = {ctor: 'Jun'};
+	var _elm_lang$core$Date$May = {ctor: 'May'};
+	var _elm_lang$core$Date$Apr = {ctor: 'Apr'};
+	var _elm_lang$core$Date$Mar = {ctor: 'Mar'};
+	var _elm_lang$core$Date$Feb = {ctor: 'Feb'};
+	var _elm_lang$core$Date$Jan = {ctor: 'Jan'};
 
 	var _elm_lang$core$Debug$crash = _elm_lang$core$Native_Debug.crash;
 	var _elm_lang$core$Debug$log = _elm_lang$core$Native_Debug.log;
@@ -9157,6 +9223,24 @@
 
 	var _user$project$Words$all = _elm_lang$core$String$lines('AFRICA\nAGENT\nAIR\nALIEN\nALPS\nAMAZON\nAMBULANCE\nAMERICA\nANGEL\nANTARCTICA\nAPPLE\nARM\nATLANTIS\nAUSTRALIA\nAZTEC\nBACK\nBALL\nBAND\nBANK\nBAR\nBARK\nBAT\nBATTERY\nBEACH\nBEAR\nBEAT\nBED\nBEIJING\nBELL\nBELT\nBERLIN\nBERMUDA\nBERRY\nBILL\nBLOCK\nBOARD\nBOLT\nBOMB\nBOND\nBOOM\nBOOT\nBOTTLE\nBOW\nBOX\nBRIDGE\nBRUSH\nBUCK\nBUFFALO\nBUG\nBUGLE\nBUTTON\nCALF\nCANADA\nCAP\nCAPITAL\nCAR\nCARD\nCARROT\nCASINO\nCAST\nCAT\nCELL\nCENTAUR\nCENTER\nCHAIR\nCHANGE\nCHARGE\nCHECK\nCHEST\nCHICK\nCHINA\nCHOCOLATE\nCHURCH\nCIRCLE\nCLIFF\nCLOAK\nCLUB\nCODE\nCOLD\nCOMIC\nCOMPOUND\nCONCERT\nCONDUCTOR\nCONTRACT\nCOOK\nCOPPER\nCOTTON\nCOURT\nCOVER\nCRANE\nCRASH\nCRICKET\nCROSS\nCROWN\nCYCLE\nCZECH\nDANCE\nDATE\nDAY\nDEATH\nDECK\nDEGREE\nDIAMOND\nDICE\nDINOSAUR\nDISEASE\nDOCTOR\nDOG\nDRAFT\nDRAGON\nDRESS\nDRILL\nDROP\nDUCK\nDWARF\nEAGLE\nEGYPT\nEMBASSY\nENGINE\nENGLAND\nEUROPE\nEYE\nFACE\nFAIR\nFALL\nFAN\nFENCE\nFIELD\nFIGHTER\nFIGURE\nFILE\nFILM\nFIRE\nFISH\nFLUTE\nFLY\nFOOT\nFORCE\nFOREST\nFORK\nFRANCE\nGAME\nGAS\nGENIUS\nGERMANY\nGHOST\nGIANT\nGLASS\nGLOVE\nGOLD\nGRACE\nGRASS\nGREECE\nGREEN\nGROUND\nHAM\nHAND\nHAWK\nHEAD\nHEART\nHELICOPTER\nHIMALAYAS\nHOLE\nHOLLYWOOD\nHONEY\nHOOD\nHOOK\nHORN\nHORSE\nHORSESHOE\nHOSPITAL\nHOTEL\nICE\nICE CREAM\nINDIA\nIRON\nIVORY\nJACK\nJAM\nJET\nJUPITER\nKANGAROO\nKETCHUP\nKEY\nKID\nKING\nKIWI\nKNIFE\nKNIGHT\nLAB\nLAP\nLASER\nLAWYER\nLEAD\nLEMON\nLEPRECHAUN\nLIFE\nLIGHT\nLIMOUSINE\nLINE\nLINK\nLION\nLITTER\nLOCH NESS\nLOCK\nLOG\nLONDON\nLUCK\nMAIL\nMAMMOTH\nMAPLE\nMARBLE\nMARCH\nMASS\nMATCH\nMERCURY\nMEXICO\nMICROSCOPE\nMILLIONAIRE\nMINE\nMINT\nMISSILE\nMODEL\nMOLE\nMOON\nMOSCOW\nMOUNT\nMOUSE\nMOUTH\nMUG\nNAIL\nNEEDLE\nNET\nNEW YORK\nNIGHT\nNINJA\nNOTE\nNOVEL\nNURSE\nNUT\nOCTOPUS\nOIL\nOLIVE\nOLYMPUS\nOPERA\nORANGE\nORGAN\nPALM\nPAN\nPANTS\nPAPER\nPARACHUTE\nPARK\nPART\nPASS\nPASTE\nPENGUIN\nPHOENIX\nPIANO\nPIE\nPILOT\nPIN\nPIPE\nPIRATE\nPISTOL\nPIT\nPITCH\nPLANE\nPLASTIC\nPLATE\nPLATYPUS\nPLAY\nPLOT\nPOINT\nPOISON\nPOLE\nPOLICE\nPOOL\nPORT\nPOST\nPOUND\nPRESS\nPRINCESS\nPUMPKIN\nPUPIL\nPYRAMID\nQUEEN\nRABBIT\nRACKET\nRAY\nREVOLUTION\nRING\nROBIN\nROBOT\nROCK\nROME\nROOT\nROSE\nROULETTE\nROUND\nROW\nRULER\nSATELLITE\nSATURN\nSCALE\nSCHOOL\nSCIENTIST\nSCORPION\nSCREEN\nSCUBA DIVER\nSEAL\nSERVER\nSHADOW\nSHAKESPEARE\nSHARK\nSHIP\nSHOE\nSHOP\nSHOT\nSINK\nSKYSCRAPER\nSLIP\nSLUG\nSMUGGLER\nSNOW\nSNOWMAN\nSOCK\nSOLDIER\nSOUL\nSOUND\nSPACE\nSPELL\nSPIDER\nSPIKE\nSPINE\nSPOT\nSPRING\nSPY\nSQUARE\nSTADIUM\nSTAFF\nSTAR\nSTATE\nSTICK\nSTOCK\nSTRAW\nSTREAM\nSTRIKE\nSTRING\nSUB\nSUIT\nSUPERHERO\nSWING\nSWITCH\nTABLE\nTABLET\nTAG\nTAIL\nTAP\nTEACHER\nTELESCOPE\nTEMPLE\nTHEATER\nTHIEF\nTHUMB\nTICK\nTIE\nTIME\nTOKYO\nTOOTH\nTORCH\nTOWER\nTRACK\nTRAIN\nTRIANGLE\nTRIP\nTRUNK\nTUBE\nTURKEY\nUNDERTAKER\nUNICORN\nVACUUM\nVAN\nVET\nWAKE\nWALL\nWAR\nWASHER\nWASHINGTON\nWATCH\nWATER\nWAVE\nWEB\nWELL\nWHALE\nWHIP\nWIND\nWITCH\nWORM\nYARD');
 
+	var _user$project$Main$asGameTime = function (h) {
+		return function (d) {
+			return A2(
+				_elm_lang$core$Basics_ops['++'],
+				_elm_lang$core$Basics$toString(
+					_elm_lang$core$Date$dayOfWeek(d)),
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					' ',
+					A2(
+						_elm_lang$core$Basics_ops['++'],
+						_elm_lang$core$Basics$toString(
+							_elm_lang$core$Date$hour(d)),
+						'h:00')));
+		}(
+			_elm_lang$core$Date$fromTime(
+				((_elm_lang$core$Basics$toFloat(h) * 60) * 60) * 1000));
+	};
 	var _user$project$Main$subscriptions = function (model) {
 		return _elm_lang$core$Platform_Sub$batch(
 			_elm_lang$core$Native_List.fromArray(
@@ -9413,12 +9497,34 @@
 					_elm_lang$core$Native_List.fromArray(
 						[
 							A2(
+							_elm_lang$html$Html$span,
+							_elm_lang$core$Native_List.fromArray(
+								[
+									_elm_lang$html$Html_Attributes$class('which-game')
+								]),
+							_elm_lang$core$Native_List.fromArray(
+								[
+									_elm_lang$html$Html$text(
+									_user$project$Main$asGameTime(model.seed))
+								])),
+							A2(
 							_elm_lang$html$Html$i,
 							_elm_lang$core$Native_List.fromArray(
 								[
 									_elm_lang$html$Html_Attributes$class('fa fa-eye reveal-board'),
 									A2(_elm_lang$html$Html_Attributes$attribute, 'aria-label', 'true'),
 									_elm_lang$html$Html_Events$onClick(_user$project$Main$ToggleLabels)
+								]),
+							_elm_lang$core$Native_List.fromArray(
+								[])),
+							A2(
+							_elm_lang$html$Html$i,
+							_elm_lang$core$Native_List.fromArray(
+								[
+									_elm_lang$html$Html_Attributes$class('fa fa-eye fa-arrow-circle-o-left prev-game'),
+									A2(_elm_lang$html$Html_Attributes$attribute, 'aria-label', 'true'),
+									_elm_lang$html$Html_Events$onClick(
+									_user$project$Main$NewSeed(model.seed - 1))
 								]),
 							_elm_lang$core$Native_List.fromArray(
 								[])),

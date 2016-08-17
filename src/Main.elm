@@ -74,17 +74,18 @@ shuffle seed pile =
             in
                 ( nextval :: acc, nextseed )
 
-        doSwaps ( i, r ) aa =
+        swap ( i, r ) aa =
             aa
                 |> Array.set i (Array.get r aa |> Maybe.withDefault Nothing)
                 |> Array.set r (Array.get i aa |> Maybe.withDefault Nothing)
     in
         [0..(List.length pile - 1)]
             |> List.reverse
+            |> List.indexedMap (+)
             |> List.foldl randomValsInRange ( [], seed )
             |> fst
-            |> List.map2 (\i r -> ( i, r )) [0..(List.length pile - 1)]
-            |> List.foldl doSwaps (Array.fromList pile |> Array.map Just)
+            |> List.map2 (,) [0..(List.length pile - 1)]
+            |> List.foldl swap (Array.fromList pile |> Array.map Just)
             |> Array.toList
             |> List.filterMap identity
 

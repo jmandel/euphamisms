@@ -100,3 +100,38 @@ h2 {
     left: 0px;
     padding: 0.5em;
 }
+
+@media (max-width: 800px){
+    .word-card {
+        min-height: 1em;
+        padding: 0px;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        margin: 0px;
+        min-width: 4em;
+        width: calc(100% * 1/5 - 5px);
+        font-size: 1.6em;
+        text-align: center;
+        line-height: .7em;
+        border: 0px;
+    }
+    .board {
+        padding-top: 1em;
+        padding-bottom: 1em;
+        padding-left: 4em;
+        padding-right: 4em;
+        height: 100%;
+    }
+    .main {
+        height: calc(100% - 2em);
+    }
+
+
+}
+
+@media (max-width: 600px){
+    .word-card {
+        min-width: 7em;
+    }
+
+}

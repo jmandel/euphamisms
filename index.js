@@ -9170,7 +9170,7 @@
 		});
 	var _user$project$Main$shuffle = F2(
 		function (seed, pile) {
-			var doSwaps = F2(
+			var swap = F2(
 				function (_p0, aa) {
 					var _p1 = _p0;
 					var _p3 = _p1._1;
@@ -9212,7 +9212,7 @@
 				_elm_lang$core$Array$toList(
 					A3(
 						_elm_lang$core$List$foldl,
-						doSwaps,
+						swap,
 						A2(
 							_elm_lang$core$Array$map,
 							_elm_lang$core$Maybe$Just,
@@ -9220,8 +9220,8 @@
 						A3(
 							_elm_lang$core$List$map2,
 							F2(
-								function (i, r) {
-									return {ctor: '_Tuple2', _0: i, _1: r};
+								function (v0, v1) {
+									return {ctor: '_Tuple2', _0: v0, _1: v1};
 								}),
 							_elm_lang$core$Native_List.range(
 								0,
@@ -9236,10 +9236,16 @@
 											[]),
 										_1: seed
 									},
-									_elm_lang$core$List$reverse(
-										_elm_lang$core$Native_List.range(
-											0,
-											_elm_lang$core$List$length(pile) - 1))))))));
+									A2(
+										_elm_lang$core$List$indexedMap,
+										F2(
+											function (x, y) {
+												return x + y;
+											}),
+										_elm_lang$core$List$reverse(
+											_elm_lang$core$Native_List.range(
+												0,
+												_elm_lang$core$List$length(pile) - 1)))))))));
 		});
 	var _user$project$Main$totalCards = 25;
 	var _user$project$Main$Card = F3(
@@ -9248,7 +9254,7 @@
 		});
 	var _user$project$Main$Model = F3(
 		function (a, b, c) {
-			return {isSpymaster: a, seed: b, words: c};
+			return {isSpymaster: a, seed: b, cards: c};
 		});
 	var _user$project$Main$Evil = {ctor: 'Evil'};
 	var _user$project$Main$Neutral = {ctor: 'Neutral'};
@@ -9267,7 +9273,7 @@
 					A2(_elm_lang$core$List$repeat, (_user$project$Main$totalCards - (2 * count)) - 2, _user$project$Main$Neutral)
 				]));
 	}();
-	var _user$project$Main$allCards = function (seed) {
+	var _user$project$Main$dealCards = function (seed) {
 		var picks = A2(_user$project$Main$shuffle, seed, _user$project$Words$all);
 		var teams = A2(_user$project$Main$shuffle, seed, _user$project$Main$teamList);
 		return A3(
@@ -9299,10 +9305,10 @@
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
 							{
-								words: A2(
+								cards: A2(
 									_elm_lang$core$List$map,
 									_user$project$Main$reveal(_p7._0),
-									model.words)
+									model.cards)
 							}),
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
@@ -9322,7 +9328,7 @@
 							model,
 							{
 								seed: _p8,
-								words: _user$project$Main$allCards(
+								cards: _user$project$Main$dealCards(
 									_elm_lang$core$Random$initialSeed(_p8))
 							}),
 						_1: _elm_lang$core$Platform_Cmd$none
@@ -9437,7 +9443,7 @@
 					A2(
 						_elm_lang$core$List$map,
 						_user$project$Main$card(model.isSpymaster),
-						model.words))
+						model.cards))
 				]));
 	};
 	var _user$project$Main$main = {

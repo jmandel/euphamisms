@@ -61,6 +61,7 @@ html, body {
     flex-grow: 1;
     font-size: 2.7em;
     display: flex;
+    text-align: center;
     align-items: center;
     justify-content: center;
     transition: background-color .1s ease-in;
@@ -127,7 +128,6 @@ html, body {
         margin-left: 0em;
         margin-right: 0em;
         font-size: 1.5em;
-        text-align: center;
         line-height: .7em;
         border: 0px;
     }

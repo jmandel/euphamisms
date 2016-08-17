@@ -1,6 +1,7 @@
 module Words exposing (all)
 
 import String
+import Array
 
 
 all = String.lines """AFRICA

@@ -1,3 +1,29 @@
+@font-face {
+  font-family: 'Passion One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Passion One'), local('PassionOne-Regular'), url(assets/fY6k21F1QT2c_Oc3HRNDwiYE0-AqJ3nfInTTiDXDjU4.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+@font-face {
+  font-family: 'Passion One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Passion One'), local('PassionOne-Regular'), url(assets/fY6k21F1QT2c_Oc3HRNDwo4P5ICox8Kq3LLUNMylGO4.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
+}
+
+html, body {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+.main {
+    height: calc(100%  - 10em);
+}
+
 h2 {
   color: red;
   font-family: monospace;
@@ -25,20 +51,52 @@ h2 {
 
 
 .word-card {
+    cursor: pointer;
     display: inline-block;
     border: 1px solid black;
     color: black;
-    margin: 1em;
-    padding: 1em;
-    width: calc(100% * 1/5 - 2em - 2em - 4px);
+    margin-left: .5em;
+    margin-right: .5em;
+    margin-top: 0em;
+    margin-bottom: .5em;
+    padding: .2em;
+    width: calc(100% * 1/5 - 2em );
     min-width: 5em;
-    text-align: center;
-    font-family: monospace;
-    font-size: 2em;
-    font-weight: bold;
+    flex-grow: 1;
+    font-family: Passion One;
+    font-size: 2.7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color .1s ease-in;
 }
 
 .board {
+    padding-left: 2em;
+    padding-right: 2em;
     display: flex;
     flex-wrap: wrap;
+    height: 100%;
+    padding-top: 5em;
+    padding-bottom: 5em;
+    align-items: stretch;
+}
+
+.fa {
+    font-size: 2em;
+}
+
+.reveal-board {
+    position: fixed;
+    top: 0px;
+    padding: 0.5em;
+    cursor: pointer;
+}
+
+.next-game {
+    cursor: pointer;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    padding: 0.5em;
 }

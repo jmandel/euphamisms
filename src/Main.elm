@@ -5,6 +5,7 @@ import Html.App exposing (program)
 import Html.Events exposing (onClick, onInput)
 import Html.Attributes exposing (..)
 import Time
+import Date
 import Random
 import String
 import Array
@@ -158,14 +159,22 @@ card showColor word =
             [ (text word.word)
             ]
 
+asGameTime h =
+    ( (toFloat h) * 60 * 60 * 1000)
+    |> Date.fromTime
+    |> (\d -> (toString (Date.dayOfWeek d)) ++ " " ++ (toString (Date.hour d)) ++ "h:00")
 
 view : Model -> Html.Html Msg
 view model =
     div [class "main"] [
         span [class "controls"] [
+            span [class "which-game"] [(text <| asGameTime model.seed)],
             i [ class "fa fa-eye reveal-board",
                 attribute "aria-label" "true",
                 onClick ToggleLabels] [],
+            i [ class "fa fa-eye fa-arrow-circle-o-left prev-game",
+                attribute "aria-label" "true",
+                onClick <| NewSeed (model.seed - 1)] [],
             i [ class "fa fa-arrow-circle-o-right next-game",
                 attribute "aria-label" "true",
                 onClick <| NewSeed (model.seed + 1)] []

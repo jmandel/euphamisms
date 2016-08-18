@@ -9225,18 +9225,34 @@
 
 	var _user$project$Main$asGameTime = function (h) {
 		return function (d) {
-			return A2(
-				_elm_lang$core$Basics_ops['++'],
-				_elm_lang$core$Basics$toString(
-					_elm_lang$core$Date$dayOfWeek(d)),
-				A2(
+			return function (_p0) {
+				var _p1 = _p0;
+				return A2(
 					_elm_lang$core$Basics_ops['++'],
-					' ',
+					_elm_lang$core$Basics$toString(_p1._0),
 					A2(
 						_elm_lang$core$Basics_ops['++'],
-						_elm_lang$core$Basics$toString(
-							_elm_lang$core$Date$hour(d)),
-						'h:00')));
+						' ',
+						A2(
+							_elm_lang$core$Basics_ops['++'],
+							_elm_lang$core$Basics$toString(_p1._1._0),
+							_p1._1._1)));
+			}(
+				{
+					ctor: '_Tuple2',
+					_0: _elm_lang$core$Date$dayOfWeek(d),
+					_1: (_elm_lang$core$Native_Utils.cmp(
+						_elm_lang$core$Date$hour(d),
+						12) > 0) ? {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Date$hour(d) - 12,
+						_1: 'pm'
+					} : {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Date$hour(d),
+						_1: 'am'
+					}
+				});
 		}(
 			_elm_lang$core$Date$fromTime(
 				((_elm_lang$core$Basics$toFloat(h) * 60) * 60) * 1000));
@@ -9255,38 +9271,38 @@
 	var _user$project$Main$shuffle = F2(
 		function (seed, pile) {
 			var swap = F2(
-				function (_p0, aa) {
-					var _p1 = _p0;
-					var _p3 = _p1._1;
-					var _p2 = _p1._0;
+				function (_p2, aa) {
+					var _p3 = _p2;
+					var _p5 = _p3._1;
+					var _p4 = _p3._0;
 					return A3(
 						_elm_lang$core$Array$set,
-						_p3,
+						_p5,
 						A2(
 							_elm_lang$core$Maybe$withDefault,
 							_elm_lang$core$Maybe$Nothing,
-							A2(_elm_lang$core$Array$get, _p2, aa)),
+							A2(_elm_lang$core$Array$get, _p4, aa)),
 						A3(
 							_elm_lang$core$Array$set,
-							_p2,
+							_p4,
 							A2(
 								_elm_lang$core$Maybe$withDefault,
 								_elm_lang$core$Maybe$Nothing,
-								A2(_elm_lang$core$Array$get, _p3, aa)),
+								A2(_elm_lang$core$Array$get, _p5, aa)),
 							aa));
 				});
 			var randomValsInRange = F2(
-				function (topEnd, _p4) {
-					var _p5 = _p4;
-					var _p6 = A2(
+				function (topEnd, _p6) {
+					var _p7 = _p6;
+					var _p8 = A2(
 						_elm_lang$core$Random$step,
 						A2(_elm_lang$core$Random$int, 0, topEnd),
-						_p5._1);
-					var nextval = _p6._0;
-					var nextseed = _p6._1;
+						_p7._1);
+					var nextval = _p8._0;
+					var nextseed = _p8._1;
 					return {
 						ctor: '_Tuple2',
-						_0: A2(_elm_lang$core$List_ops['::'], nextval, _p5._0),
+						_0: A2(_elm_lang$core$List_ops['::'], nextval, _p7._0),
 						_1: nextseed
 					};
 				});
@@ -9371,8 +9387,8 @@
 	};
 	var _user$project$Main$update = F2(
 		function (msg, model) {
-			var _p7 = msg;
-			switch (_p7.ctor) {
+			var _p9 = msg;
+			switch (_p9.ctor) {
 				case 'ToggleLabels':
 					return {
 						ctor: '_Tuple2',
@@ -9391,7 +9407,7 @@
 							{
 								cards: A2(
 									_elm_lang$core$List$map,
-									_user$project$Main$reveal(_p7._0),
+									_user$project$Main$reveal(_p9._0),
 									model.cards)
 							}),
 						_1: _elm_lang$core$Platform_Cmd$none
@@ -9405,15 +9421,15 @@
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
 				default:
-					var _p8 = _p7._0;
+					var _p10 = _p9._0;
 					return {
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
 							{
-								seed: _p8,
+								seed: _p10,
 								cards: _user$project$Main$dealCards(
-									_elm_lang$core$Random$initialSeed(_p8))
+									_elm_lang$core$Random$initialSeed(_p10))
 							}),
 						_1: _elm_lang$core$Platform_Cmd$none
 					};

@@ -162,7 +162,11 @@ card showColor word =
 asGameTime h =
     ( (toFloat h) * 60 * 60 * 1000)
     |> Date.fromTime
-    |> (\d -> (toString (Date.dayOfWeek d)) ++ " " ++ (toString (Date.hour d)) ++ "h:00")
+    |> \d -> (Date.dayOfWeek d, (
+        if Date.hour d > 12
+        then ((Date.hour d) - 12, "pm")
+        else ((Date.hour d), "am") ))
+    |> (\(day, (hour, ampm)) -> (toString day) ++ " " ++ (toString hour) ++ ampm)
 
 view : Model -> Html.Html Msg
 view model =

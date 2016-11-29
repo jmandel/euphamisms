@@ -95,7 +95,7 @@
 
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(4) + ") format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(5) + ") format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\nhtml, body {\n    margin: 0px;\n    border: 0px;\n    font-family: Passion One;\n    padding: 0px;\n    height: 100%;\n}\n\n.main {\n    height: calc(100%  - 10em);\n}\n\n.word-card.team-Neutral {\n    background: tan;\n    color: white;\n}\n\n.word-card.team-Red {\n    background: red;\n    color: white;\n}\n\n.word-card.team-Blue {\n    background: slateblue;\n    color: white;\n}\n\n.word-card.team-Evil {\n    background: black;\n    color: white;\n}\n\n\n.word-card {\n    cursor: pointer;\n    display: inline-block;\n    border: 1px solid black;\n    color: black;\n    padding: .2em;\n    width: calc(100% * 1/5 - 1em );\n    margin-left: 0.25em;\n    margin-right: 0.25em;\n    margin-bottom: 0.25em;\n    margin-top: 0.25em;\n    min-width: 4em;\n    flex-grow: 1;\n    font-size: 2.7em;\n    display: flex;\n    text-align: center;\n    align-items: center;\n    justify-content: center;\n    transition: background-color .1s ease-in;\n}\n\n.board {\n    margin-left: 4em;\n    margin-right: 3.5em;\n    display: flex;\n    flex-wrap: wrap;\n    height: 100%;\n    padding-left: 0px;\n    padding-right: 0px;\n    padding-top: 5em;\n    padding-bottom: 5em;\n    align-items: stretch;\n}\n\n.fa {\n    font-size: 2em;\n}\n\n.reveal-board {\n    cursor: pointer;\n    position: fixed;\n    top: 0px;\n    padding: 0.5em;\n}\n\n.prev-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    left: 0px;\n    padding: 0.5em;\n}\n\n.next-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    right: 0px;\n    padding: 0.5em;\n}\n\n.which-game {\n    font-family: monospace;\n    padding-bottom: 0em;\n    position: absolute;\n    right: 0px;\n    top: 0px;\n    padding-top: 1em;\n    text-align: center;\n    padding-right: 2em;\n}\n\n@media (max-width: 1100px){\n    .word-card {\n        min-height: 1em;\n        padding: 0px;\n        margin: 0px;\n        min-width: 1em;\n        width: calc(100% * 1/5 - .5em);\n        margin-left: 0em;\n        margin-right: 0em;\n        font-size: 1.5em;\n        line-height: .7em;\n        border: 0px;\n    }\n    .board {\n        padding-top: 1.8em;\n        padding-bottom: 0em;\n        padding-left: 1em;\n        padding-right: 1em;\n        height: 100%;\n    }\n    .main {\n        height: calc(100% - 2em);\n    }\n\n\n}\n\n@media (max-width: 600px){\n    .word-card {\n        min-width: 7em;\n        width: 100%;\n    }\n    .board {\n        padding-bottom: 0em;\n        padding-bottom: 0em;\n    }\n\n}\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(4) + ") format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(5) + ") format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\nhtml, body {\n    margin: 0px;\n    border: 0px;\n    font-family: Passion One;\n    padding: 0px;\n    height: 100%;\n}\n\n.main {\n    height: calc(100%  - 10em);\n}\n\n.word-card.team-Neutral.background {\n    background: tan;\n    color: tan;\n}\n\n.word-card.team-Red.background {\n    background: red;\n    color: red;\n}\n\n.word-card.team-Blue.background {\n    background: blue;\n    color: blue;\n}\n\n.word-card.team-Evil.background {\n    background: black;\n    color: black;\n}\n\n.word-card.team-Neutral.background.foreground {\n    color: white;\n}\n\n.word-card.team-Red.background.foreground {\n    color: white;\n}\n\n.word-card.team-Blue.background.foreground {\n    color: white;\n}\n\n.word-card.team-Evil.background.foreground {\n    color: white;\n}\n\n\n.word-card {\n    cursor: pointer;\n    display: inline-block;\n    border: 1px solid black;\n    color: black;\n    padding: .2em;\n    width: calc(100% * 1/5 - 1em );\n    margin-left: 0.25em;\n    margin-right: 0.25em;\n    margin-bottom: 0.25em;\n    margin-top: 0.25em;\n    min-width: 4em;\n    flex-grow: 1;\n    font-size: 2.7em;\n    display: flex;\n    text-align: center;\n    align-items: center;\n    justify-content: center;\n    transition: background-color .1s ease-in;\n}\n\n.board {\n    margin-left: 4em;\n    margin-right: 3.5em;\n    display: flex;\n    flex-wrap: wrap;\n    height: 100%;\n    padding-left: 0px;\n    padding-right: 0px;\n    padding-top: 5em;\n    padding-bottom: 5em;\n    align-items: stretch;\n}\n\n.fa {\n    font-size: 2em;\n}\n\n.reveal-board {\n    cursor: pointer;\n    position: fixed;\n    top: 0px;\n    padding: 0.5em;\n}\n\n.prev-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    left: 0px;\n    padding: 0.5em;\n}\n\n.next-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    right: 0px;\n    padding: 0.5em;\n}\n\n.which-game {\n    font-family: monospace;\n    padding-bottom: 0em;\n    position: absolute;\n    right: 0px;\n    top: 0px;\n    padding-top: 1em;\n    text-align: center;\n    padding-right: 2em;\n}\n\n@media (max-width: 1100px){\n    .word-card {\n        min-height: 1em;\n        padding: 0px;\n        margin: 0px;\n        min-width: 1em;\n        width: calc(100% * 1/5 - .5em);\n        margin-left: 0em;\n        margin-right: 0em;\n        font-size: 1.5em;\n        line-height: .7em;\n        border: 0px;\n    }\n    .board {\n        padding-top: 1.8em;\n        padding-bottom: 0em;\n        padding-left: 1em;\n        padding-right: 1em;\n        height: 100%;\n    }\n    .main {\n        height: calc(100% - 2em);\n    }\n\n\n}\n\n@media (max-width: 600px){\n    .word-card {\n        min-width: 7em;\n        width: 100%;\n    }\n    .board {\n        padding-bottom: 0em;\n        padding-bottom: 0em;\n    }\n\n}\n", ""]);
 
 	// exports
 
@@ -9247,11 +9247,13 @@
 			_elm_lang$core$Native_List.fromArray(
 				[]));
 	};
-	var _user$project$Main$reveal = F2(
+	var _user$project$Main$guess = F2(
 		function (word, w) {
 			return _elm_lang$core$Native_Utils.eq(w, word) ? _elm_lang$core$Native_Utils.update(
 				word,
-				{revealed: true}) : w;
+				{
+					guessed: _elm_lang$core$Basics$not(word.guessed)
+				}) : w;
 		});
 	var _user$project$Main$shuffle = F2(
 		function (seed, pile) {
@@ -9335,7 +9337,7 @@
 	var _user$project$Main$totalCards = 25;
 	var _user$project$Main$Card = F3(
 		function (a, b, c) {
-			return {team: a, word: b, revealed: c};
+			return {team: a, word: b, guessed: c};
 		});
 	var _user$project$Main$Model = F3(
 		function (a, b, c) {
@@ -9365,7 +9367,7 @@
 			_elm_lang$core$List$map2,
 			F2(
 				function (t, p) {
-					return {team: t, word: p, revealed: false};
+					return {team: t, word: p, guessed: false};
 				}),
 			teams,
 			picks);
@@ -9384,7 +9386,7 @@
 							}),
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
-				case 'Reveal':
+				case 'Guess':
 					return {
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
@@ -9392,7 +9394,7 @@
 							{
 								cards: A2(
 									_elm_lang$core$List$map,
-									_user$project$Main$reveal(_p8._0),
+									_user$project$Main$guess(_p8._0),
 									model.cards)
 							}),
 						_1: _elm_lang$core$Platform_Cmd$none
@@ -9420,31 +9422,34 @@
 					};
 			}
 		});
-	var _user$project$Main$Reveal = function (a) {
-		return {ctor: 'Reveal', _0: a};
+	var _user$project$Main$Guess = function (a) {
+		return {ctor: 'Guess', _0: a};
 	};
 	var _user$project$Main$card = F2(
-		function (showColor, word) {
-			return (_elm_lang$core$Native_Utils.eq(showColor, true) || word.revealed) ? A2(
+		function (isSpymaster, word) {
+			var showText = _elm_lang$core$Basics$not(word.guessed);
+			var showBackground = isSpymaster || word.guessed;
+			var team = A2(
+				_elm_lang$core$Basics_ops['++'],
+				'team-',
+				_elm_lang$core$Basics$toString(word.team));
+			return A2(
 				_elm_lang$html$Html$div,
 				_elm_lang$core$Native_List.fromArray(
 					[
 						_elm_lang$html$Html_Attributes$class(
 						A2(
 							_elm_lang$core$Basics_ops['++'],
-							'word-card team-',
-							_elm_lang$core$Basics$toString(word.team)))
-					]),
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html$text(word.word)
-					])) : A2(
-				_elm_lang$html$Html$div,
-				_elm_lang$core$Native_List.fromArray(
-					[
-						_elm_lang$html$Html_Attributes$class('word-card'),
+							'word-card ',
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								team,
+								A2(
+									_elm_lang$core$Basics_ops['++'],
+									showBackground ? ' background ' : '',
+									showText ? ' foreground ' : '')))),
 						_elm_lang$html$Html_Events$onClick(
-						_user$project$Main$Reveal(word))
+						_user$project$Main$Guess(word))
 					]),
 				_elm_lang$core$Native_List.fromArray(
 					[

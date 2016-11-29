@@ -25,6 +25,13 @@ html, body {
     height: calc(100%  - 10em);
 }
 
+.word-card {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
 .word-card.team-Neutral.background {
     background: tan;
     color: tan;

@@ -25,23 +25,39 @@ html, body {
     height: calc(100%  - 10em);
 }
 
-.word-card.team-Neutral {
+.word-card.team-Neutral.background {
     background: tan;
-    color: white;
+    color: tan;
 }
 
-.word-card.team-Red {
+.word-card.team-Red.background {
     background: red;
-    color: white;
+    color: red;
 }
 
-.word-card.team-Blue {
+.word-card.team-Blue.background {
     background: blue;
+    color: blue;
+}
+
+.word-card.team-Evil.background {
+    background: black;
+    color: black;
+}
+
+.word-card.team-Neutral.background.foreground {
     color: white;
 }
 
-.word-card.team-Evil {
-    background: black;
+.word-card.team-Red.background.foreground {
+    color: white;
+}
+
+.word-card.team-Blue.background.foreground {
+    color: white;
+}
+
+.word-card.team-Evil.background.foreground {
     color: white;
 }
 

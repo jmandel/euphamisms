@@ -37,7 +37,7 @@ type Team
 type alias Card =
     { team : Team
     , word : String
-    , revealed: Bool
+    , guessed: Bool
     }
 
 
@@ -95,7 +95,7 @@ dealCards seed =
     let teams = shuffle seed teamList
         picks = shuffle seed <| Words.all
     in
-        List.map2 (\t p -> {team=t, word=p, revealed=False}) teams picks
+        List.map2 (\t p -> {team=t, word=p, guessed=False}) teams picks
 
 
 init =
@@ -113,18 +113,18 @@ type Msg
     = ToggleLabels
     | HideLabels
     | NewSeed Int
-    | Reveal Card
+    | Guess Card
 
-reveal word w =
-    if w == word then {word | revealed=True}
+guess word w =
+    if w == word then {word | guessed= not word.guessed}
     else w
 
 update msg model =
     case msg of
         ToggleLabels ->
             ( { model | isSpymaster = not model.isSpymaster }, Cmd.none )
-        Reveal word ->
-            ({ model | cards = List.map (reveal word) model.cards}, Cmd.none)
+        Guess word ->
+            ({ model | cards = List.map (guess word) model.cards}, Cmd.none)
 
         HideLabels ->
             ( { model | isSpymaster = False }, Cmd.none )
@@ -147,17 +147,17 @@ subscriptions model =
 -- VIEW
 
 
-card showColor word =
-    if showColor == True || word.revealed then
-        div [ class <| "word-card team-" ++ (toString word.team) ]
-            [ (text word.word)
+card isSpymaster word =
+    let team = "team-" ++ (toString word.team)
+        showBackground = isSpymaster || word.guessed
+        showText = not word.guessed
+    in
+        div [ class <| "word-card " ++ team 
+                                    ++ (if showBackground then " background " else "")
+                                    ++ (if showText then " foreground " else "" ),
+              onClick (Guess word)
             ]
-    else
-        div [ class <| "word-card",
-              onClick (Reveal word)
-            ]
-            [ (text word.word)
-            ]
+            [ (text word.word) ]
 
 asGameTime h =
     let t = ( (toFloat h) * 60 * 60 * 1000) |> Date.fromTime

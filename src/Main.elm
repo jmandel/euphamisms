@@ -91,9 +91,12 @@ shuffle seed pile =
             |> List.filterMap identity
 
 
-dealCards seed =
-    let teams = shuffle seed teamList
-        picks = shuffle seed <| Words.all
+dealCards hour =
+    let teams = shuffle (Random.initialSeed hour) teamList
+        picks = Words.all
+            |> shuffle (sessionSeed hour)
+            |> List.drop (totalCards * (hoursIntoSession hour))
+
     in
         List.map2 (\t p -> {team=t, word=p, guessed=False}) teams picks
 
@@ -119,6 +122,11 @@ guess word w =
     if w == word then {word | guessed= not word.guessed}
     else w
 
+hoursPerSession = 12
+hoursIntoSession hour = (hour % hoursPerSession)
+sessionSeed hour = (hour // hoursPerSession)
+    |> Random.initialSeed
+
 update msg model =
     case msg of
         ToggleLabels ->
@@ -130,7 +138,7 @@ update msg model =
             ( { model | isSpymaster = False }, Cmd.none )
 
         NewSeed seed ->
-            ( { model | seed = seed, cards = dealCards <| Random.initialSeed seed }, Cmd.none )
+            ( { model | seed = seed, cards = dealCards seed }, Cmd.none )
 
 
 

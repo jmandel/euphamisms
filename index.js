@@ -95,7 +95,7 @@
 
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(4) + ") format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(5) + ") format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\nhtml, body {\n    margin: 0px;\n    border: 0px;\n    font-family: Passion One;\n    padding: 0px;\n    height: 100%;\n}\n\n.main {\n    height: calc(100%  - 10em);\n}\n\n.word-card {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n.word-card.team-Neutral.background {\n    background: tan;\n    color: tan;\n}\n\n.word-card.team-Red.background {\n    background: red;\n    color: red;\n}\n\n.word-card.team-Blue.background {\n    background: blue;\n    color: blue;\n}\n\n.word-card.team-Evil.background {\n    background: black;\n    color: black;\n}\n\n.word-card.team-Neutral.background.foreground {\n    color: white;\n}\n\n.word-card.team-Red.background.foreground {\n    color: white;\n}\n\n.word-card.team-Blue.background.foreground {\n    color: white;\n}\n\n.word-card.team-Evil.background.foreground {\n    color: white;\n}\n\n\n.word-card {\n    cursor: pointer;\n    display: inline-block;\n    border: 1px solid black;\n    color: black;\n    padding: .2em;\n    width: calc(100% * 1/5 - 1em );\n    margin-left: 0.25em;\n    margin-right: 0.25em;\n    margin-bottom: 0.25em;\n    margin-top: 0.25em;\n    min-width: 4em;\n    flex-grow: 1;\n    font-size: 2.7em;\n    display: flex;\n    text-align: center;\n    align-items: center;\n    justify-content: center;\n    transition: background-color .1s ease-in;\n}\n\n.board {\n    margin-left: 4em;\n    margin-right: 3.5em;\n    display: flex;\n    flex-wrap: wrap;\n    height: 100%;\n    padding-left: 0px;\n    padding-right: 0px;\n    padding-top: 5em;\n    padding-bottom: 5em;\n    align-items: stretch;\n}\n\n.fa {\n    font-size: 2em;\n}\n\n.reveal-board {\n    cursor: pointer;\n    position: fixed;\n    top: 0px;\n    padding: 0.5em;\n}\n\n.prev-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    left: 0px;\n    padding: 0.5em;\n}\n\n.next-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    right: 0px;\n    padding: 0.5em;\n}\n\n.which-game {\n    font-family: monospace;\n    padding-bottom: 0em;\n    position: absolute;\n    right: 0px;\n    top: 0px;\n    padding-top: 1em;\n    text-align: center;\n    padding-right: 2em;\n}\n\n@media (max-width: 1100px){\n    .word-card {\n        min-height: 1em;\n        padding: 0px;\n        margin: 0px;\n        min-width: 1em;\n        width: calc(100% * 1/5 - .5em);\n        margin-left: 0em;\n        margin-right: 0em;\n        font-size: 1.5em;\n        line-height: .7em;\n        border: 0px;\n    }\n    .board {\n        padding-top: 1.8em;\n        padding-bottom: 0em;\n        padding-left: 1em;\n        padding-right: 1em;\n        height: 100%;\n    }\n    .main {\n        height: calc(100% - 2em);\n    }\n\n\n}\n\n@media (max-width: 600px){\n    .word-card {\n        min-width: 7em;\n        width: 100%;\n    }\n    .board {\n        padding-bottom: 0em;\n        padding-bottom: 0em;\n    }\n\n}\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(4) + ") format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(5) + ") format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\nhtml, body {\n    margin: 0px;\n    border: 0px;\n    font-family: Passion One;\n    padding: 0px;\n    height: 100%;\n}\n\n.main {\n    height: calc(100%  - 10em);\n}\n\n.frame {\n  box-sizing: border-box;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: -1;\n}\n\n.frame.first-Blue {\n  border: 0.5em solid blue;\n}\n\n.frame.first-Red {\n  border: 0.5em solid red;\n}\n\n.word-card {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n.word-card.team-Neutral.background {\n    background: tan;\n    color: tan;\n}\n\n.word-card.team-Red.background {\n    background: red;\n    color: red;\n}\n\n.word-card.team-Blue.background {\n    background: blue;\n    color: blue;\n}\n\n.word-card.team-Evil.background {\n    background: black;\n    color: black;\n}\n\n.word-card.team-Neutral.background.foreground {\n    color: white;\n}\n\n.word-card.team-Red.background.foreground {\n    color: white;\n}\n\n.word-card.team-Blue.background.foreground {\n    color: white;\n}\n\n.word-card.team-Evil.background.foreground {\n    color: white;\n}\n\n\n.word-card {\n    cursor: pointer;\n    display: inline-block;\n    border: 1px solid black;\n    color: black;\n    padding: .2em;\n    width: calc(100% * 1/5 - 1em );\n    margin-left: 0.25em;\n    margin-right: 0.25em;\n    margin-bottom: 0.25em;\n    margin-top: 0.25em;\n    min-width: 4em;\n    flex-grow: 1;\n    font-size: 2.7em;\n    display: flex;\n    text-align: center;\n    align-items: center;\n    justify-content: center;\n    transition: background-color .1s ease-in;\n}\n\n.board {\n    margin-left: 4em;\n    margin-right: 3.5em;\n    display: flex;\n    flex-wrap: wrap;\n    height: 100%;\n    padding-left: 0px;\n    padding-right: 0px;\n    padding-top: 5em;\n    padding-bottom: 5em;\n    align-items: stretch;\n}\n\n.fa {\n    font-size: 2em;\n}\n\n.reveal-board {\n    cursor: pointer;\n    position: fixed;\n    top: 0px;\n    padding: 0.5em;\n}\n\n.prev-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    left: 0px;\n    padding: 0.5em;\n}\n\n.next-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    right: 0px;\n    padding: 0.5em;\n}\n\n.which-game {\n    font-family: monospace;\n    padding-bottom: 0em;\n    position: absolute;\n    right: 0px;\n    top: 0px;\n    padding-top: 1em;\n    text-align: center;\n    padding-right: 2em;\n}\n\n@media (max-width: 1100px){\n    .word-card {\n        min-height: 1em;\n        padding: 0px;\n        margin: 0px;\n        min-width: 1em;\n        width: calc(100% * 1/5 - .5em);\n        margin-left: 0em;\n        margin-right: 0em;\n        font-size: 1.5em;\n        line-height: .7em;\n        border: 0px;\n    }\n    .board {\n        padding-top: 1.8em;\n        padding-bottom: 1.8em;\n        padding-left: 1em;\n        padding-right: 1em;\n        height: 100%;\n    }\n    .main {\n        height: calc(100% - 3.6em);\n    }\n\n\n}\n\n@media (max-width: 600px){\n    .word-card {\n        min-width: 7em;\n        width: 100%;\n    }\n    .board {\n        padding-bottom: 0em;\n        padding-bottom: 0em;\n    }\n\n}\n", ""]);
 
 	// exports
 
@@ -9223,6 +9223,12 @@
 
 	var _user$project$Words$all = _elm_lang$core$String$lines('AFRICA\nAGENT\nAIR\nALIEN\nALPS\nAMAZON\nAMBULANCE\nAMERICA\nANGEL\nANTARCTICA\nAPPLE\nARM\nATLANTIS\nAUSTRALIA\nAZTEC\nBACK\nBALL\nBAND\nBANK\nBAR\nBARK\nBAT\nBATTERY\nBEACH\nBEAR\nBEAT\nBED\nBEIJING\nBELL\nBELT\nBERLIN\nBERMUDA\nBERRY\nBILL\nBLOCK\nBOARD\nBOLT\nBOMB\nBOND\nBOOM\nBOOT\nBOTTLE\nBOW\nBOX\nBRIDGE\nBRUSH\nBUCK\nBUFFALO\nBUG\nBUGLE\nBUTTON\nCALF\nCANADA\nCAP\nCAPITAL\nCAR\nCARD\nCARROT\nCASINO\nCAST\nCAT\nCELL\nCENTAUR\nCENTER\nCHAIR\nCHANGE\nCHARGE\nCHECK\nCHEST\nCHICK\nCHINA\nCHOCOLATE\nCHURCH\nCIRCLE\nCLIFF\nCLOAK\nCLUB\nCODE\nCOLD\nCOMIC\nCOMPOUND\nCONCERT\nCONDUCTOR\nCONTRACT\nCOOK\nCOPPER\nCOTTON\nCOURT\nCOVER\nCRANE\nCRASH\nCRICKET\nCROSS\nCROWN\nCYCLE\nCZECH\nDANCE\nDATE\nDAY\nDEATH\nDECK\nDEGREE\nDIAMOND\nDICE\nDINOSAUR\nDISEASE\nDOCTOR\nDOG\nDRAFT\nDRAGON\nDRESS\nDRILL\nDROP\nDUCK\nDWARF\nEAGLE\nEGYPT\nEMBASSY\nENGINE\nENGLAND\nEUROPE\nEYE\nFACE\nFAIR\nFALL\nFAN\nFENCE\nFIELD\nFIGHTER\nFIGURE\nFILE\nFILM\nFIRE\nFISH\nFLUTE\nFLY\nFOOT\nFORCE\nFOREST\nFORK\nFRANCE\nGAME\nGAS\nGENIUS\nGERMANY\nGHOST\nGIANT\nGLASS\nGLOVE\nGOLD\nGRACE\nGRASS\nGREECE\nGREEN\nGROUND\nHAM\nHAND\nHAWK\nHEAD\nHEART\nHELICOPTER\nHIMALAYAS\nHOLE\nHOLLYWOOD\nHONEY\nHOOD\nHOOK\nHORN\nHORSE\nHORSESHOE\nHOSPITAL\nHOTEL\nICE\nICE CREAM\nINDIA\nIRON\nIVORY\nJACK\nJAM\nJET\nJUPITER\nKANGAROO\nKETCHUP\nKEY\nKID\nKING\nKIWI\nKNIFE\nKNIGHT\nLAB\nLAP\nLASER\nLAWYER\nLEAD\nLEMON\nLEPRECHAUN\nLIFE\nLIGHT\nLIMOUSINE\nLINE\nLINK\nLION\nLITTER\nLOCH NESS\nLOCK\nLOG\nLONDON\nLUCK\nMAIL\nMAMMOTH\nMAPLE\nMARBLE\nMARCH\nMASS\nMATCH\nMERCURY\nMEXICO\nMICROSCOPE\nMILLIONAIRE\nMINE\nMINT\nMISSILE\nMODEL\nMOLE\nMOON\nMOSCOW\nMOUNT\nMOUSE\nMOUTH\nMUG\nNAIL\nNEEDLE\nNET\nNEW YORK\nNIGHT\nNINJA\nNOTE\nNOVEL\nNURSE\nNUT\nOCTOPUS\nOIL\nOLIVE\nOLYMPUS\nOPERA\nORANGE\nORGAN\nPALM\nPAN\nPANTS\nPAPER\nPARACHUTE\nPARK\nPART\nPASS\nPASTE\nPENGUIN\nPHOENIX\nPIANO\nPIE\nPILOT\nPIN\nPIPE\nPIRATE\nPISTOL\nPIT\nPITCH\nPLANE\nPLASTIC\nPLATE\nPLATYPUS\nPLAY\nPLOT\nPOINT\nPOISON\nPOLE\nPOLICE\nPOOL\nPORT\nPOST\nPOUND\nPRESS\nPRINCESS\nPUMPKIN\nPUPIL\nPYRAMID\nQUEEN\nRABBIT\nRACKET\nRAY\nREVOLUTION\nRING\nROBIN\nROBOT\nROCK\nROME\nROOT\nROSE\nROULETTE\nROUND\nROW\nRULER\nSATELLITE\nSATURN\nSCALE\nSCHOOL\nSCIENTIST\nSCORPION\nSCREEN\nSCUBA DIVER\nSEAL\nSERVER\nSHADOW\nSHAKESPEARE\nSHARK\nSHIP\nSHOE\nSHOP\nSHOT\nSINK\nSKYSCRAPER\nSLIP\nSLUG\nSMUGGLER\nSNOW\nSNOWMAN\nSOCK\nSOLDIER\nSOUL\nSOUND\nSPACE\nSPELL\nSPIDER\nSPIKE\nSPINE\nSPOT\nSPRING\nSPY\nSQUARE\nSTADIUM\nSTAFF\nSTAR\nSTATE\nSTICK\nSTOCK\nSTRAW\nSTREAM\nSTRIKE\nSTRING\nSUB\nSUIT\nSUPERHERO\nSWING\nSWITCH\nTABLE\nTABLET\nTAG\nTAIL\nTAP\nTEACHER\nTELESCOPE\nTEMPLE\nTHEATER\nTHIEF\nTHUMB\nTICK\nTIE\nTIME\nTOKYO\nTOOTH\nTORCH\nTOWER\nTRACK\nTRAIN\nTRIANGLE\nTRIP\nTRUNK\nTUBE\nTURKEY\nUNDERTAKER\nUNICORN\nVACUUM\nVAN\nVET\nWAKE\nWALL\nWAR\nWASHER\nWASHINGTON\nWATCH\nWATER\nWAVE\nWEB\nWELL\nWHALE\nWHIP\nWIND\nWITCH\nWORM\nYARD');
 
+	var _user$project$Main$teamFrame = function (model) {
+		return model.isSpymaster ? A2(
+			_elm_lang$core$Basics_ops['++'],
+			'first-',
+			_elm_lang$core$Basics$toString(model.firstTeam)) : '';
+	};
 	var _user$project$Main$asGameTime = function (h) {
 		var t = _elm_lang$core$Date$fromTime(
 			((_elm_lang$core$Basics$toFloat(h) * 60) * 60) * 1000);
@@ -9247,6 +9253,22 @@
 			_elm_lang$core$Native_List.fromArray(
 				[]));
 	};
+	var _user$project$Main$gameSeed = function (hour) {
+		var seed = _elm_lang$core$Random$initialSeed(hour);
+		var _p1 = A2(_elm_lang$core$Random$step, _elm_lang$core$Random$bool, seed);
+		var seed$ = _p1._1;
+		return seed$;
+	};
+	var _user$project$Main$hoursPerSession = 12;
+	var _user$project$Main$hoursIntoSession = function (hour) {
+		return A2(_elm_lang$core$Basics_ops['%'], hour, _user$project$Main$hoursPerSession);
+	};
+	var _user$project$Main$sessionSeed = function (hour) {
+		var seed = _elm_lang$core$Random$initialSeed((hour / _user$project$Main$hoursPerSession) | 0);
+		var _p2 = A2(_elm_lang$core$Random$step, _elm_lang$core$Random$bool, seed);
+		var seed$ = _p2._1;
+		return seed$;
+	};
 	var _user$project$Main$guess = F2(
 		function (word, w) {
 			return _elm_lang$core$Native_Utils.eq(w, word) ? _elm_lang$core$Native_Utils.update(
@@ -9258,38 +9280,38 @@
 	var _user$project$Main$shuffle = F2(
 		function (seed, pile) {
 			var swap = F2(
-				function (_p1, aa) {
-					var _p2 = _p1;
-					var _p4 = _p2._1;
-					var _p3 = _p2._0;
+				function (_p3, aa) {
+					var _p4 = _p3;
+					var _p6 = _p4._1;
+					var _p5 = _p4._0;
 					return A3(
 						_elm_lang$core$Array$set,
-						_p4,
+						_p6,
 						A2(
 							_elm_lang$core$Maybe$withDefault,
 							_elm_lang$core$Maybe$Nothing,
-							A2(_elm_lang$core$Array$get, _p3, aa)),
+							A2(_elm_lang$core$Array$get, _p5, aa)),
 						A3(
 							_elm_lang$core$Array$set,
-							_p3,
+							_p5,
 							A2(
 								_elm_lang$core$Maybe$withDefault,
 								_elm_lang$core$Maybe$Nothing,
-								A2(_elm_lang$core$Array$get, _p4, aa)),
+								A2(_elm_lang$core$Array$get, _p6, aa)),
 							aa));
 				});
 			var randomValsInRange = F2(
-				function (topEnd, _p5) {
-					var _p6 = _p5;
-					var _p7 = A2(
+				function (topEnd, _p7) {
+					var _p8 = _p7;
+					var _p9 = A2(
 						_elm_lang$core$Random$step,
 						A2(_elm_lang$core$Random$int, 0, topEnd),
-						_p6._1);
-					var nextval = _p7._0;
-					var nextseed = _p7._1;
+						_p8._1);
+					var nextval = _p9._0;
+					var nextseed = _p9._1;
 					return {
 						ctor: '_Tuple2',
-						_0: A2(_elm_lang$core$List_ops['::'], nextval, _p6._0),
+						_0: A2(_elm_lang$core$List_ops['::'], nextval, _p8._0),
 						_1: nextseed
 					};
 				});
@@ -9339,43 +9361,66 @@
 		function (a, b, c) {
 			return {team: a, word: b, guessed: c};
 		});
-	var _user$project$Main$Model = F3(
-		function (a, b, c) {
-			return {isSpymaster: a, seed: b, cards: c};
+	var _user$project$Main$Model = F4(
+		function (a, b, c, d) {
+			return {isSpymaster: a, hour: b, cards: c, firstTeam: d};
 		});
 	var _user$project$Main$Evil = {ctor: 'Evil'};
 	var _user$project$Main$Neutral = {ctor: 'Neutral'};
 	var _user$project$Main$deadCard = {word: _elm_lang$core$Maybe$Nothing, team: _user$project$Main$Neutral};
 	var _user$project$Main$Blue = {ctor: 'Blue'};
 	var _user$project$Main$Red = {ctor: 'Red'};
-	var _user$project$Main$teamList = function () {
+	var _user$project$Main$teamGenerator = A2(
+		_elm_lang$core$Random$map,
+		function (b) {
+			return b ? _user$project$Main$Blue : _user$project$Main$Red;
+		},
+		_elm_lang$core$Random$bool);
+	var _user$project$Main$randomTeam = function (seed) {
+		var _p10 = A2(_elm_lang$core$Random$step, _user$project$Main$teamGenerator, seed);
+		var team = _p10._0;
+		var seed$ = _p10._1;
+		return team;
+	};
+	var _user$project$Main$teamList = function (hour) {
+		var blueDelta = _elm_lang$core$Native_Utils.eq(
+			_user$project$Main$randomTeam(hour),
+			_user$project$Main$Blue) ? 1 : 0;
+		var redDelta = 1 - blueDelta;
 		var count = (_user$project$Main$totalCards / 3) | 0;
 		return _elm_lang$core$List$concat(
 			_elm_lang$core$Native_List.fromArray(
 				[
 					_elm_lang$core$Native_List.fromArray(
 					[_user$project$Main$Evil]),
-					A2(_elm_lang$core$List$repeat, count, _user$project$Main$Red),
-					A2(_elm_lang$core$List$repeat, count + 1, _user$project$Main$Blue),
+					A2(_elm_lang$core$List$repeat, count + redDelta, _user$project$Main$Red),
+					A2(_elm_lang$core$List$repeat, count + blueDelta, _user$project$Main$Blue),
 					A2(_elm_lang$core$List$repeat, (_user$project$Main$totalCards - (2 * count)) - 2, _user$project$Main$Neutral)
 				]));
-	}();
-	var _user$project$Main$dealCards = function (seed) {
-		var picks = A2(_user$project$Main$shuffle, seed, _user$project$Words$all);
-		var teams = A2(_user$project$Main$shuffle, seed, _user$project$Main$teamList);
-		return A3(
-			_elm_lang$core$List$map2,
-			F2(
-				function (t, p) {
-					return {team: t, word: p, guessed: false};
-				}),
-			teams,
-			picks);
 	};
+	var _user$project$Main$dealCards = F3(
+		function (sessionSeed, gameSeed, hour) {
+			var picks = A2(
+				_elm_lang$core$List$drop,
+				_user$project$Main$totalCards * _user$project$Main$hoursIntoSession(hour),
+				A2(_user$project$Main$shuffle, sessionSeed, _user$project$Words$all));
+			var teams = A2(
+				_user$project$Main$shuffle,
+				gameSeed,
+				_user$project$Main$teamList(gameSeed));
+			return A3(
+				_elm_lang$core$List$map2,
+				F2(
+					function (t, p) {
+						return {team: t, word: p, guessed: false};
+					}),
+				teams,
+				picks);
+		});
 	var _user$project$Main$update = F2(
 		function (msg, model) {
-			var _p8 = msg;
-			switch (_p8.ctor) {
+			var _p11 = msg;
+			switch (_p11.ctor) {
 				case 'ToggleLabels':
 					return {
 						ctor: '_Tuple2',
@@ -9394,7 +9439,7 @@
 							{
 								cards: A2(
 									_elm_lang$core$List$map,
-									_user$project$Main$guess(_p8._0),
+									_user$project$Main$guess(_p11._0),
 									model.cards)
 							}),
 						_1: _elm_lang$core$Platform_Cmd$none
@@ -9408,15 +9453,20 @@
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
 				default:
-					var _p9 = _p8._0;
+					var _p12 = _p11._0;
 					return {
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
 							{
-								seed: _p9,
-								cards: _user$project$Main$dealCards(
-									_elm_lang$core$Random$initialSeed(_p9))
+								hour: _p12,
+								cards: A3(
+									_user$project$Main$dealCards,
+									_user$project$Main$sessionSeed(_p12),
+									_user$project$Main$gameSeed(_p12),
+									_p12),
+								firstTeam: _user$project$Main$randomTeam(
+									_user$project$Main$gameSeed(_p12))
 							}),
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
@@ -9456,24 +9506,25 @@
 						_elm_lang$html$Html$text(word.word)
 					]));
 		});
-	var _user$project$Main$NewSeed = function (a) {
-		return {ctor: 'NewSeed', _0: a};
+	var _user$project$Main$NewHour = function (a) {
+		return {ctor: 'NewHour', _0: a};
 	};
 	var _user$project$Main$init = {
 		ctor: '_Tuple2',
-		_0: A3(
+		_0: A4(
 			_user$project$Main$Model,
 			false,
 			0,
 			_elm_lang$core$Native_List.fromArray(
-				[])),
+				[]),
+			_user$project$Main$Blue),
 		_1: _elm_lang$core$Platform_Cmd$batch(
 			_elm_lang$core$Native_List.fromArray(
 				[
 					A2(
 					_elm_lang$core$Platform_Cmd$map,
 					function (x) {
-						return _user$project$Main$NewSeed(
+						return _user$project$Main$NewHour(
 							_elm_lang$core$Basics$floor(x));
 					},
 					A3(
@@ -9495,6 +9546,18 @@
 			_elm_lang$core$Native_List.fromArray(
 				[
 					A2(
+					_elm_lang$html$Html$div,
+					_elm_lang$core$Native_List.fromArray(
+						[
+							_elm_lang$html$Html_Attributes$class(
+							A2(
+								_elm_lang$core$Basics_ops['++'],
+								'frame ',
+								_user$project$Main$teamFrame(model)))
+						]),
+					_elm_lang$core$Native_List.fromArray(
+						[])),
+					A2(
 					_elm_lang$html$Html$span,
 					_elm_lang$core$Native_List.fromArray(
 						[
@@ -9511,7 +9574,7 @@
 							_elm_lang$core$Native_List.fromArray(
 								[
 									_elm_lang$html$Html$text(
-									_user$project$Main$asGameTime(model.seed))
+									_user$project$Main$asGameTime(model.hour))
 								])),
 							A2(
 							_elm_lang$html$Html$i,
@@ -9530,7 +9593,7 @@
 									_elm_lang$html$Html_Attributes$class('fa fa-eye fa-arrow-circle-o-left prev-game'),
 									A2(_elm_lang$html$Html_Attributes$attribute, 'aria-label', 'true'),
 									_elm_lang$html$Html_Events$onClick(
-									_user$project$Main$NewSeed(model.seed - 1))
+									_user$project$Main$NewHour(model.hour - 1))
 								]),
 							_elm_lang$core$Native_List.fromArray(
 								[])),
@@ -9541,7 +9604,7 @@
 									_elm_lang$html$Html_Attributes$class('fa fa-arrow-circle-o-right next-game'),
 									A2(_elm_lang$html$Html_Attributes$attribute, 'aria-label', 'true'),
 									_elm_lang$html$Html_Events$onClick(
-									_user$project$Main$NewSeed(model.seed + 1))
+									_user$project$Main$NewHour(model.hour + 1))
 								]),
 							_elm_lang$core$Native_List.fromArray(
 								[]))

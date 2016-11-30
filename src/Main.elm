@@ -43,8 +43,9 @@ type alias Card =
 
 type alias Model =
     { isSpymaster : Bool
-    , seed : Int
+    , hour : Int
     , cards : List Card
+    , firstTeam: Team
     }
 
 
@@ -55,14 +56,16 @@ deadCard =
 totalCards =
     25
 
-teamList =
+teamList hour =
     let
         count = totalCards // 3
+        blueDelta = if (randomTeam hour) == Blue then 1 else 0
+        redDelta = 1 - blueDelta
     in
         List.concat
             [ [ Evil ]
-            , List.repeat count Red
-            , List.repeat (count + 1) Blue
+            , List.repeat (count + redDelta) Red
+            , List.repeat (count + blueDelta) Blue
             , List.repeat (totalCards - 2 * count - 2) Neutral
             ]
 
@@ -91,10 +94,10 @@ shuffle seed pile =
             |> List.filterMap identity
 
 
-dealCards hour =
-    let teams = shuffle (Random.initialSeed hour) teamList
+dealCards sessionSeed gameSeed hour =
+    let teams = shuffle gameSeed (teamList gameSeed)
         picks = Words.all
-            |> shuffle (sessionSeed hour)
+            |> shuffle sessionSeed
             |> List.drop (totalCards * (hoursIntoSession hour))
 
     in
@@ -102,9 +105,9 @@ dealCards hour =
 
 
 init =
-    ( Model False 0 []
+    ( Model False 0 [] Blue
     , Cmd.batch
-        [ Time.now |> Task.perform (always 0) Time.inHours |> Cmd.map (\x -> NewSeed <| floor x) ]
+        [ Time.now |> Task.perform (always 0) Time.inHours |> Cmd.map (\x -> NewHour <| floor x) ]
     )
 
 
@@ -115,17 +118,35 @@ init =
 type Msg
     = ToggleLabels
     | HideLabels
-    | NewSeed Int
+    | NewHour Int
     | Guess Card
 
 guess word w =
     if w == word then {word | guessed= not word.guessed}
     else w
 
+
+teamGenerator  = Random.map (\b -> if b then Blue else Red) Random.bool
+
+randomTeam seed=
+    let
+        (team, seed') = Random.step teamGenerator seed
+    in
+        team
+
+
 hoursPerSession = 12
 hoursIntoSession hour = (hour % hoursPerSession)
-sessionSeed hour = (hour // hoursPerSession)
-    |> Random.initialSeed
+
+sessionSeed hour =
+    let seed = (hour // hoursPerSession) |> Random.initialSeed
+        (_, seed') = Random.step Random.bool seed
+    in seed'
+
+gameSeed hour =
+    let seed = hour |> Random.initialSeed
+        (_, seed') = Random.step Random.bool seed
+    in seed'
 
 update msg model =
     case msg of
@@ -133,12 +154,11 @@ update msg model =
             ( { model | isSpymaster = not model.isSpymaster }, Cmd.none )
         Guess word ->
             ({ model | cards = List.map (guess word) model.cards}, Cmd.none)
-
         HideLabels ->
             ( { model | isSpymaster = False }, Cmd.none )
 
-        NewSeed seed ->
-            ( { model | seed = seed, cards = dealCards seed }, Cmd.none )
+        NewHour hour ->
+            ( { model | hour = hour, cards = dealCards (sessionSeed hour) (gameSeed hour) hour, firstTeam = randomTeam (gameSeed hour)  }, Cmd.none )
 
 
 
@@ -179,20 +199,23 @@ asGameTime h =
         else (h-12, "pm")) in
     (toString d) ++ " " ++ (toString fh) ++ fampm
 
+teamFrame model = if model.isSpymaster then "first-" ++ (toString model.firstTeam) else ""
+
 view : Model -> Html.Html Msg
 view model =
     div [class "main"] [
+        div [class <| "frame " ++ (teamFrame model)][],
         span [class "controls"] [
-            span [class "which-game"] [(text <| asGameTime model.seed)],
+            span [class "which-game"] [(text <| asGameTime model.hour)],
             i [ class "fa fa-eye reveal-board",
                 attribute "aria-label" "true",
                 onClick ToggleLabels] [],
             i [ class "fa fa-eye fa-arrow-circle-o-left prev-game",
                 attribute "aria-label" "true",
-                onClick <| NewSeed (model.seed - 1)] [],
+                onClick <| NewHour (model.hour - 1)] [],
             i [ class "fa fa-arrow-circle-o-right next-game",
                 attribute "aria-label" "true",
-                onClick <| NewSeed (model.seed + 1)] []
+                onClick <| NewHour (model.hour + 1)] []
         ],
         div [ class "board" ]
              (List.map (card model.isSpymaster) model.cards)

@@ -4,7 +4,8 @@ import String
 import Array
 
 
-all = String.lines """AFRICA
+all =
+    String.lines """AFRICA
 AGENT
 AIR
 ALIEN

@@ -21,6 +21,29 @@ html, body {
     height: 100%;
 }
 
+.chip {
+  width: 50px;
+  opacity: 1.0;
+  height: 50px;
+  border: 1px dotted black;
+  position: absolute;
+  bottom: 0px;
+  border-radius: 100px;
+  margin: 4px;
+  background: white;
+}
+
+.background .chip {
+ border: 1px dotted white;
+}
+
+.alice {
+  left: 0px;
+}
+.bob {
+  right: 0px;
+}
+
 .main {
     height: calc(100%  - 10em);
 }
@@ -41,16 +64,36 @@ html, body {
   border: 0.5em solid red;
 }
 
+.guessed-Green {
+  background: green;
+}
+
+.guessed-Evil {
+  background: black;
+}
+
+.guessed-Neutral {
+  background: slategray;
+}
+
+
+
 .word-card {
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  position: relative;
 }
 
 .word-card.team-Neutral.background {
-    background: tan;
-    color: tan;
+    background: slategray;
+    color: slategray;
+}
+
+.word-card.team-Green.background {
+    background: green;
+    color: green;
 }
 
 .word-card.team-Red.background {
@@ -69,6 +112,10 @@ html, body {
 }
 
 .word-card.team-Neutral.background.foreground {
+    color: white;
+}
+
+.word-card.team-Green.background.foreground {
     color: white;
 }
 
@@ -123,6 +170,14 @@ html, body {
     font-size: 2em;
 }
 
+
+.viewas-active {
+  font-weight: bold;
+}
+
+.reveal-board span {
+  margin-right: .2em;
+}
 .reveal-board {
     cursor: pointer;
     position: fixed;
@@ -171,7 +226,7 @@ html, body {
         border: 0px;
     }
     .board {
-        padding-top: 1.8em;
+        padding-top: 3em;
         padding-bottom: 1.8em;
         padding-left: 1em;
         padding-right: 1em;
@@ -187,11 +242,18 @@ html, body {
 @media (max-width: 600px){
     .word-card {
         min-width: 7em;
+        min-height: 75px;
         width: 100%;
     }
     .board {
-        padding-bottom: 0em;
+        padding-top: 0em;
         padding-bottom: 0em;
     }
+
+    .chip {
+      margin-bottom: 10px;
+    }
+
+    .reveal-board {position: relative;}
 
 }

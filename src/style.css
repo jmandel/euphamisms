@@ -38,10 +38,10 @@ html, body {
 }
 
 .alice {
-  left: 0px;
+  right: 0px;
 }
 .bob {
-  right: 0px;
+  left: 0px;
 }
 
 .main {

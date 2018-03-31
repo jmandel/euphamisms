@@ -1,6 +1,6 @@
 port module Main exposing (..)
 
-import Html exposing (div, button, text, h2, input, ul, li, i, span, program)
+import Html exposing (div, button, text, h2, input, ul, li, i, span, program, select, option)
 import Html.Events exposing (onClick, onInput)
 import Html.Attributes exposing (..)
 import Time
@@ -50,11 +50,8 @@ type alias Model =
     { viewAs : Player
     , hour : Int
     , cards : List Card
+    , isSpymaster: Bool
     }
-
-
-deadCard =
-    { word = Nothing, team = Neutral }
 
 
 totalCards =
@@ -111,7 +108,7 @@ dealCards sessionSeed seed hour =
         List.map3 (\a b p -> { aliceLabel = a, bobLabel = b, word = p, aliceGuessed = False, bobGuessed = False }) aliceLabelKey bobLabelKey picks
 
 init =
-    ( Model Observer 0 []
+    ( Model Alice 0 [] False
     , Cmd.batch
         [ Time.now |> Task.perform  Time.inHours |> Cmd.map (\x -> NewHour <| floor x) ]
     )
@@ -126,6 +123,7 @@ type Msg
     | NewHour Int
     | AliceGuess Card
     | BobGuess Card
+    | ToggleSpymaster
 
 
 aliceGuess word w =
@@ -172,6 +170,8 @@ gameSeed hour =
 
 update msg model =
     case msg of
+        ToggleSpymaster ->
+            ( { model | isSpymaster = not model.isSpymaster}, Cmd.none )
 
         AliceGuess word ->
             ( { model | cards = List.map (aliceGuess word) model.cards }, Cmd.none )
@@ -180,7 +180,7 @@ update msg model =
             ( { model | cards = List.map (bobGuess word) model.cards }, Cmd.none )
 
         ViewAs player ->
-            ( { model | viewAs = player }, Cmd.none )
+            ( { model | viewAs = player, isSpymaster = False }, Cmd.none )
 
         NewHour hour ->
             ( { model | hour = hour, cards = dealCards (sessionSeed hour) (gameSeed hour) hour }, Cmd.none )
@@ -198,8 +198,8 @@ subscriptions model =
 -- VIEW
 
 
-card : Player -> Card ->  Html.Html Msg
-card viewAsPlayer word =
+card : Player -> Bool -> Card ->  Html.Html Msg
+card viewAsPlayer isSpymaster word =
     let
         aliceLabel =
             " team-" ++ (toString word.aliceLabel) ++ " "
@@ -207,15 +207,17 @@ card viewAsPlayer word =
             " team-" ++ (toString word.bobLabel) ++ " "
         guessedGreen = (word.aliceLabel == Green && word.bobGuessed) || (word.bobLabel == Green && word.aliceGuessed)
         guessedBlack = (word.aliceLabel == Evil && word.bobGuessed) || (word.bobLabel == Evil && word.aliceGuessed)
+        playerGuessed = (viewAsPlayer == Alice && word.aliceGuessed || viewAsPlayer == Bob && word.bobGuessed)
         showBackground =
-            guessedGreen || guessedBlack || (viewAsPlayer /= Observer) || (word.aliceGuessed && word.bobGuessed)
+            guessedGreen || guessedBlack || isSpymaster || playerGuessed
         showText =
-            if viewAsPlayer == Bob then
-                not word.aliceGuessed && not guessedGreen && not guessedBlack
-            else if viewAsPlayer == Alice then
-                not word.bobGuessed && not guessedGreen && not guessedBlack
+            if not isSpymaster then
+                not guessedGreen && not guessedBlack && not playerGuessed
             else
-                not (word.aliceGuessed && word.bobGuessed) && not (guessedGreen) && not (guessedBlack)
+                if viewAsPlayer == Bob then
+                    not word.aliceGuessed && not guessedGreen && not guessedBlack
+                else
+                    not word.bobGuessed && not guessedGreen && not guessedBlack
         team =
             if guessedGreen then
                 "team-Green"
@@ -243,24 +245,19 @@ card viewAsPlayer word =
                         else
                             ""
                        )
+            , onClick ( if isSpymaster then
+                            if viewAsPlayer == Bob then
+                                (AliceGuess word)
+                            else
+                                (BobGuess word)
+                        else
+                            if viewAsPlayer == Bob then
+                                (BobGuess word)
+                            else
+                                (AliceGuess  word))
 
             ]
-            [ (text word.word) 
-            , div [ class <| "chip alice " ++ (
-                    if word.bobGuessed then
-                        ("guessed-" ++ (toString word.aliceLabel))
-                    else ""
-                    )
-                  , onClick (BobGuess word)
-            ] []
-            , div [ class <| "chip bob " ++ (
-                    if word.aliceGuessed then
-                        "guessed-" ++ (toString word.bobLabel)
-                    else ""
-                    )
-                  , onClick (AliceGuess word)
-            ] []
-            ]
+            [ text word.word ]
 
 
 asGameTime h =
@@ -291,13 +288,17 @@ view model =
     div [ class "main" ]
         [ span [ class "controls" ]
             [ span [ class "which-game" ] [ (text <| asGameTime model.hour) ]
-            , i
-                [ class "fa fa-eye reveal-board"
+            , span [class "reveal-board"] [i
+                [ class "fa fa-eye"
                 , attribute "aria-label" "true"
-                ]
-                [ span [class (if model.viewAs == Alice then "viewas-active" else ""), onClick <| ViewAs Alice] [text "Alice"]
-                , span [class (if model.viewAs == Observer then "viewas-active" else ""), onClick <| ViewAs Observer] [text "Observer"]
-                , span [class (if model.viewAs == Bob then "viewas-active" else ""), onClick <| ViewAs Bob] [text "Bob"]]
+                , onClick ToggleSpymaster
+                ] []
+        , select [class "player-select", onInput <| \s -> if s == "Alice" then 
+                            ViewAs Alice
+                        else
+                            ViewAs Bob]
+                        [ option [value "Alice"] [text "Alice"]
+                        , option [value "Bob"] [text "Bob"] ]]
             , i
                 [ class "fa fa-eye fa-arrow-circle-o-left prev-game"
                 , attribute "aria-label" "true"
@@ -312,5 +313,5 @@ view model =
                 []
             ]
         , div [ class "board" ]
-            (List.map (card model.viewAs) model.cards)
+            (List.map (card model.viewAs model.isSpymaster) model.cards)
         ]

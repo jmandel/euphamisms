@@ -95,7 +95,7 @@
 
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(4) + ") format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(5) + ") format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\nhtml, body {\n    margin: 0px;\n    border: 0px;\n    font-family: Passion One;\n    padding: 0px;\n    height: 100%;\n}\n\n.chip {\n  width: 10px;\n  opacity: 1.0;\n  height: 10px;\n  margin: 20px;\n  border: 1px dotted black;\n  position: absolute;\n  bottom: 0px;\n  border-radius: 100px;\n  margin: 4px;\n  background: white;\n}\n\n.background .chip {\n border: 1px dotted white;\n}\n\n.alice {\n  right: 0px;\n}\n.bob {\n  left: 0px;\n}\n\n.main {\n    height: calc(100%  - 10em);\n}\n\n.frame {\n  box-sizing: border-box;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: -1;\n}\n\n.frame.first-Blue {\n  border: 0.5em solid blue;\n}\n\n.frame.first-Red {\n  border: 0.5em solid red;\n}\n\n.guessed-Green {\n  background: green;\n}\n\n.guessed-Evil {\n  background: black;\n}\n\n.guessed-Neutral {\n  background: slategray;\n}\n\n\n\n.word-card {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  position: relative;\n}\n\n.word-card.team-Neutral.background {\n    background: slategray;\n    color: slategray;\n}\n\n.word-card.team-Green.background {\n    background: green;\n    color: green;\n}\n\n.word-card.team-Red.background {\n    background: red;\n    color: red;\n}\n\n.word-card.team-Blue.background {\n    background: blue;\n    color: blue;\n}\n\n.word-card.team-Evil.background {\n    background: black;\n    color: black;\n}\n\n.word-card.team-Neutral.background.foreground {\n    color: white;\n}\n\n.word-card.team-Green.background.foreground {\n    color: white;\n}\n\n.word-card.team-Red.background.foreground {\n    color: white;\n}\n\n.word-card.team-Blue.background.foreground {\n    color: white;\n}\n\n.word-card.team-Evil.background.foreground {\n    color: white;\n}\n\n\n.word-card {\n    cursor: pointer;\n    display: inline-block;\n    border: 1px solid black;\n    color: black;\n    padding: .2em;\n    width: calc(100% * 1/5 - 1em );\n    margin-left: 0.25em;\n    margin-right: 0.25em;\n    margin-bottom: 0.25em;\n    margin-top: 0.25em;\n    min-width: 4em;\n    flex-grow: 1;\n    font-size: 2.7em;\n    display: flex;\n    text-align: center;\n    align-items: center;\n    justify-content: center;\n    transition: background-color .1s ease-in;\n}\n\n.board {\n    margin-left: 4em;\n    margin-right: 3.5em;\n    display: flex;\n    flex-wrap: wrap;\n    height: 100%;\n    padding-left: 0px;\n    padding-right: 0px;\n    padding-top: 5em;\n    padding-bottom: 5em;\n    align-items: stretch;\n}\n\n.fa {\n    font-size: 2em;\n}\n\n\n.viewas-active {\n  font-weight: bold;\n}\n\n.reveal-board span {\n  margin-right: .2em;\n}\n.reveal-board {\n    cursor: pointer;\n    position: fixed;\n    top: 0px;\n    padding: 0.5em;\n}\n\n.prev-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    left: 0px;\n    padding: 0.5em;\n}\n\n.next-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    right: 0px;\n    padding: 0.5em;\n}\n\n.which-game {\n    font-family: monospace;\n    padding-bottom: 0em;\n    position: absolute;\n    right: 0px;\n    top: 0px;\n    padding-top: 1em;\n    text-align: center;\n    padding-right: 2em;\n}\n\n@media (max-width: 1100px){\n    .word-card {\n        min-height: 1em;\n        padding: 0px;\n        margin: 0px;\n        min-width: 1em;\n        width: calc(100% * 1/5 - .5em);\n        margin-left: 0em;\n        margin-right: 0em;\n        font-size: 1.5em;\n        line-height: .7em;\n        border: 0px;\n    }\n    .board {\n        padding-top: 3em;\n        padding-bottom: 1.8em;\n        padding-left: 1em;\n        padding-right: 1em;\n        height: 100%;\n    }\n    .main {\n        height: calc(100% - 3.6em);\n    }\n    .chip {\n      border: 1px solid black;\n      width: 5px;\n      height: 5px;\n      margin: 20px;\n      margin-bottom: 16px;\n    }\n\n\n}\n\n@media (max-width: 600px){\n    .word-card {\n        min-width: 7em;\n        //min-height: 75px;\n        width: 100%;\n    }\n    .board {\n        padding-top: 0em;\n        padding-bottom: 0em;\n    }\n\n    .chip {\n      border: 1px solid black;\n      width: 5px;\n      height: 5px;\n      margin: 20px;\n      margin-bottom: 10px;\n    }\n\n    .reveal-board {position: relative;}\n\n}\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(4) + ") format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(5) + ") format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\nhtml, body {\n    margin: 0px;\n    border: 0px;\n    font-family: Passion One;\n    padding: 0px;\n    height: 100%;\n}\n\n.chip {\n  width: 10px;\n  opacity: 1.0;\n  height: 10px;\n  margin: 20px;\n  border: 1px dotted black;\n  position: absolute;\n  bottom: 0px;\n  border-radius: 100px;\n  margin: 4px;\n  background: white;\n}\n\n.background .chip {\n border: 1px dotted white;\n}\n\n.player-select {\n    background: white;\n    margin-left: 1em;\n    font-family: Passion One;\n    font-size: 2em;\n}\n\n.alice {\n  right: 0px;\n}\n.bob {\n  left: 0px;\n}\n\n.main {\n    height: calc(100%  - 10em);\n}\n\n.frame {\n  box-sizing: border-box;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: -1;\n}\n\n.frame.first-Blue {\n  border: 0.5em solid blue;\n}\n\n.frame.first-Red {\n  border: 0.5em solid red;\n}\n\n.guessed-Green {\n  background: green;\n}\n\n.guessed-Evil {\n  background: black;\n}\n\n.guessed-Neutral {\n  background: slategray;\n}\n\n\n\n.word-card {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  position: relative;\n}\n\n.word-card.team-Neutral.background {\n    background: slategray;\n    color: slategray;\n}\n\n.word-card.team-Green.background {\n    background: green;\n    color: green;\n}\n\n.word-card.team-Red.background {\n    background: red;\n    color: red;\n}\n\n.word-card.team-Blue.background {\n    background: blue;\n    color: blue;\n}\n\n.word-card.team-Evil.background {\n    background: black;\n    color: black;\n}\n\n.word-card.team-Neutral.background.foreground {\n    color: white;\n}\n\n.word-card.team-Green.background.foreground {\n    color: white;\n}\n\n.word-card.team-Red.background.foreground {\n    color: white;\n}\n\n.word-card.team-Blue.background.foreground {\n    color: white;\n}\n\n.word-card.team-Evil.background.foreground {\n    color: white;\n}\n\n\n.word-card {\n    cursor: pointer;\n    display: inline-block;\n    border: 1px solid black;\n    color: black;\n    padding: .2em;\n    width: calc(100% * 1/5 - 1em );\n    margin-left: 0.25em;\n    margin-right: 0.25em;\n    margin-bottom: 0.25em;\n    margin-top: 0.25em;\n    min-width: 4em;\n    flex-grow: 1;\n    font-size: 2.7em;\n    display: flex;\n    text-align: center;\n    align-items: center;\n    justify-content: center;\n    transition: background-color .1s ease-in;\n}\n\n.board {\n    margin-left: 4em;\n    margin-right: 3.5em;\n    display: flex;\n    flex-wrap: wrap;\n    height: 100%;\n    padding-left: 0px;\n    padding-right: 0px;\n    padding-top: 5em;\n    padding-bottom: 5em;\n    align-items: stretch;\n}\n\n.fa {\n    font-size: 2em;\n}\n\n\n.viewas-active {\n  font-weight: bold;\n}\n\n.reveal-board span {\n  margin-right: .2em;\n}\n\n.reveal-board {\n    cursor: pointer;\n    position: fixed;\n    top: 0px;\n    padding: 0.5em;\n}\n\n.choose-player {\n  margin-top: 1em;\n  margin-left: 5em;\n}\n\n.prev-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    left: 0px;\n    padding: 0.5em;\n}\n\n.next-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    right: 0px;\n    padding: 0.5em;\n}\n\n.which-game {\n    font-family: monospace;\n    padding-bottom: 0em;\n    position: absolute;\n    right: 0px;\n    top: 0px;\n    padding-top: 1em;\n    text-align: center;\n    padding-right: 2em;\n}\n\n@media (max-width: 1100px){\n    .word-card {\n        min-height: 1em;\n        padding: 0px;\n        margin: 0px;\n        min-width: 1em;\n        width: calc(100% * 1/5 - .5em);\n        margin-left: 0em;\n        margin-right: 0em;\n        font-size: 1.5em;\n        line-height: .7em;\n        border: 0px;\n    }\n    .board {\n        padding-top: 3em;\n        padding-bottom: 1.8em;\n        padding-left: 1em;\n        padding-right: 1em;\n        height: 100%;\n    }\n    .main {\n        height: calc(100% - 3.6em);\n    }\n    .chip {\n      border: 1px solid black;\n      width: 5px;\n      height: 5px;\n      margin: 20px;\n      margin-bottom: 16px;\n    }\n\n\n    .reveal-board {position: relative;}\n}\n\n@media (max-width: 600px){\n    .word-card {\n        min-width: 7em;\n        //min-height: 75px;\n        width: 100%;\n    }\n    .board {\n        padding-top: 0em;\n        padding-bottom: 0em;\n    }\n\n    .chip {\n      border: 1px solid black;\n      width: 5px;\n      height: 5px;\n      margin: 20px;\n      margin-bottom: 10px;\n    }\n\n    .reveal-board {position: relative;}\n\n}\n", ""]);
 
 	// exports
 
@@ -9683,16 +9683,15 @@
 		function (a, b, c, d, e) {
 			return {aliceLabel: a, bobLabel: b, word: c, aliceGuessed: d, bobGuessed: e};
 		});
-	var _user$project$Main$Model = F3(
-		function (a, b, c) {
-			return {viewAs: a, hour: b, cards: c};
+	var _user$project$Main$Model = F4(
+		function (a, b, c, d) {
+			return {viewAs: a, hour: b, cards: c, isSpymaster: d};
 		});
 	var _user$project$Main$Observer = {ctor: 'Observer'};
 	var _user$project$Main$Bob = {ctor: 'Bob'};
 	var _user$project$Main$Alice = {ctor: 'Alice'};
 	var _user$project$Main$Evil = {ctor: 'Evil'};
 	var _user$project$Main$Neutral = {ctor: 'Neutral'};
-	var _user$project$Main$deadCard = {word: _elm_lang$core$Maybe$Nothing, team: _user$project$Main$Neutral};
 	var _user$project$Main$Green = {ctor: 'Green'};
 	var _user$project$Main$labelKey = function () {
 		var evilCount = 3;
@@ -9738,6 +9737,14 @@
 		function (msg, model) {
 			var _p12 = msg;
 			switch (_p12.ctor) {
+				case 'ToggleSpymaster':
+					return {
+						ctor: '_Tuple2',
+						_0: _elm_lang$core$Native_Utils.update(
+							model,
+							{isSpymaster: !model.isSpymaster}),
+						_1: _elm_lang$core$Platform_Cmd$none
+					};
 				case 'AliceGuess':
 					return {
 						ctor: '_Tuple2',
@@ -9769,7 +9776,7 @@
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
-							{viewAs: _p12._0}),
+							{viewAs: _p12._0, isSpymaster: false}),
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
 				default:
@@ -9790,18 +9797,20 @@
 					};
 			}
 		});
+	var _user$project$Main$ToggleSpymaster = {ctor: 'ToggleSpymaster'};
 	var _user$project$Main$BobGuess = function (a) {
 		return {ctor: 'BobGuess', _0: a};
 	};
 	var _user$project$Main$AliceGuess = function (a) {
 		return {ctor: 'AliceGuess', _0: a};
 	};
-	var _user$project$Main$card = F2(
-		function (viewAsPlayer, word) {
+	var _user$project$Main$card = F3(
+		function (viewAsPlayer, isSpymaster, word) {
+			var playerGuessed = (_elm_lang$core$Native_Utils.eq(viewAsPlayer, _user$project$Main$Alice) && word.aliceGuessed) || (_elm_lang$core$Native_Utils.eq(viewAsPlayer, _user$project$Main$Bob) && word.bobGuessed);
 			var guessedBlack = (_elm_lang$core$Native_Utils.eq(word.aliceLabel, _user$project$Main$Evil) && word.bobGuessed) || (_elm_lang$core$Native_Utils.eq(word.bobLabel, _user$project$Main$Evil) && word.aliceGuessed);
 			var guessedGreen = (_elm_lang$core$Native_Utils.eq(word.aliceLabel, _user$project$Main$Green) && word.bobGuessed) || (_elm_lang$core$Native_Utils.eq(word.bobLabel, _user$project$Main$Green) && word.aliceGuessed);
-			var showBackground = guessedGreen || (guessedBlack || ((!_elm_lang$core$Native_Utils.eq(viewAsPlayer, _user$project$Main$Observer)) || (word.aliceGuessed && word.bobGuessed)));
-			var showText = _elm_lang$core$Native_Utils.eq(viewAsPlayer, _user$project$Main$Bob) ? ((!word.aliceGuessed) && ((!guessedGreen) && (!guessedBlack))) : (_elm_lang$core$Native_Utils.eq(viewAsPlayer, _user$project$Main$Alice) ? ((!word.bobGuessed) && ((!guessedGreen) && (!guessedBlack))) : ((!(word.aliceGuessed && word.bobGuessed)) && ((!guessedGreen) && (!guessedBlack))));
+			var showBackground = guessedGreen || (guessedBlack || (isSpymaster || playerGuessed));
+			var showText = (!isSpymaster) ? ((!guessedGreen) && ((!guessedBlack) && (!playerGuessed))) : (_elm_lang$core$Native_Utils.eq(viewAsPlayer, _user$project$Main$Bob) ? ((!word.aliceGuessed) && ((!guessedGreen) && (!guessedBlack))) : ((!word.bobGuessed) && ((!guessedGreen) && (!guessedBlack))));
 			var bobLabel = A2(
 				_elm_lang$core$Basics_ops['++'],
 				' team-',
@@ -9835,58 +9844,17 @@
 									_elm_lang$core$Basics_ops['++'],
 									showBackground ? ' background ' : '',
 									showText ? ' foreground ' : '')))),
-					_1: {ctor: '[]'}
+					_1: {
+						ctor: '::',
+						_0: _elm_lang$html$Html_Events$onClick(
+							isSpymaster ? (_elm_lang$core$Native_Utils.eq(viewAsPlayer, _user$project$Main$Bob) ? _user$project$Main$AliceGuess(word) : _user$project$Main$BobGuess(word)) : (_elm_lang$core$Native_Utils.eq(viewAsPlayer, _user$project$Main$Bob) ? _user$project$Main$BobGuess(word) : _user$project$Main$AliceGuess(word))),
+						_1: {ctor: '[]'}
+					}
 				},
 				{
 					ctor: '::',
 					_0: _elm_lang$html$Html$text(word.word),
-					_1: {
-						ctor: '::',
-						_0: A2(
-							_elm_lang$html$Html$div,
-							{
-								ctor: '::',
-								_0: _elm_lang$html$Html_Attributes$class(
-									A2(
-										_elm_lang$core$Basics_ops['++'],
-										'chip alice ',
-										word.bobGuessed ? A2(
-											_elm_lang$core$Basics_ops['++'],
-											'guessed-',
-											_elm_lang$core$Basics$toString(word.aliceLabel)) : '')),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html_Events$onClick(
-										_user$project$Main$BobGuess(word)),
-									_1: {ctor: '[]'}
-								}
-							},
-							{ctor: '[]'}),
-						_1: {
-							ctor: '::',
-							_0: A2(
-								_elm_lang$html$Html$div,
-								{
-									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class(
-										A2(
-											_elm_lang$core$Basics_ops['++'],
-											'chip bob ',
-											word.aliceGuessed ? A2(
-												_elm_lang$core$Basics_ops['++'],
-												'guessed-',
-												_elm_lang$core$Basics$toString(word.bobLabel)) : '')),
-									_1: {
-										ctor: '::',
-										_0: _elm_lang$html$Html_Events$onClick(
-											_user$project$Main$AliceGuess(word)),
-										_1: {ctor: '[]'}
-									}
-								},
-								{ctor: '[]'}),
-							_1: {ctor: '[]'}
-						}
-					}
+					_1: {ctor: '[]'}
 				});
 		});
 	var _user$project$Main$NewHour = function (a) {
@@ -9894,11 +9862,12 @@
 	};
 	var _user$project$Main$init = {
 		ctor: '_Tuple2',
-		_0: A3(
+		_0: A4(
 			_user$project$Main$Model,
-			_user$project$Main$Observer,
+			_user$project$Main$Alice,
 			0,
-			{ctor: '[]'}),
+			{ctor: '[]'},
+			false),
 		_1: _elm_lang$core$Platform_Cmd$batch(
 			{
 				ctor: '::',
@@ -9950,78 +9919,78 @@
 						_1: {
 							ctor: '::',
 							_0: A2(
-								_elm_lang$html$Html$i,
+								_elm_lang$html$Html$span,
 								{
 									ctor: '::',
-									_0: _elm_lang$html$Html_Attributes$class('fa fa-eye reveal-board'),
-									_1: {
-										ctor: '::',
-										_0: A2(_elm_lang$html$Html_Attributes$attribute, 'aria-label', 'true'),
-										_1: {ctor: '[]'}
-									}
+									_0: _elm_lang$html$Html_Attributes$class('reveal-board'),
+									_1: {ctor: '[]'}
 								},
 								{
 									ctor: '::',
 									_0: A2(
-										_elm_lang$html$Html$span,
+										_elm_lang$html$Html$i,
 										{
 											ctor: '::',
-											_0: _elm_lang$html$Html_Attributes$class(
-												_elm_lang$core$Native_Utils.eq(model.viewAs, _user$project$Main$Alice) ? 'viewas-active' : ''),
+											_0: _elm_lang$html$Html_Attributes$class('fa fa-eye'),
 											_1: {
 												ctor: '::',
-												_0: _elm_lang$html$Html_Events$onClick(
-													_user$project$Main$ViewAs(_user$project$Main$Alice)),
-												_1: {ctor: '[]'}
+												_0: A2(_elm_lang$html$Html_Attributes$attribute, 'aria-label', 'true'),
+												_1: {
+													ctor: '::',
+													_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$ToggleSpymaster),
+													_1: {ctor: '[]'}
+												}
 											}
 										},
-										{
-											ctor: '::',
-											_0: _elm_lang$html$Html$text('Alice'),
-											_1: {ctor: '[]'}
-										}),
+										{ctor: '[]'}),
 									_1: {
 										ctor: '::',
 										_0: A2(
-											_elm_lang$html$Html$span,
+											_elm_lang$html$Html$select,
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$class(
-													_elm_lang$core$Native_Utils.eq(model.viewAs, _user$project$Main$Observer) ? 'viewas-active' : ''),
+												_0: _elm_lang$html$Html_Attributes$class('player-select'),
 												_1: {
 													ctor: '::',
-													_0: _elm_lang$html$Html_Events$onClick(
-														_user$project$Main$ViewAs(_user$project$Main$Observer)),
+													_0: _elm_lang$html$Html_Events$onInput(
+														function (s) {
+															return _elm_lang$core$Native_Utils.eq(s, 'Alice') ? _user$project$Main$ViewAs(_user$project$Main$Alice) : _user$project$Main$ViewAs(_user$project$Main$Bob);
+														}),
 													_1: {ctor: '[]'}
 												}
 											},
 											{
 												ctor: '::',
-												_0: _elm_lang$html$Html$text('Observer'),
-												_1: {ctor: '[]'}
-											}),
-										_1: {
-											ctor: '::',
-											_0: A2(
-												_elm_lang$html$Html$span,
-												{
-													ctor: '::',
-													_0: _elm_lang$html$Html_Attributes$class(
-														_elm_lang$core$Native_Utils.eq(model.viewAs, _user$project$Main$Bob) ? 'viewas-active' : ''),
-													_1: {
+												_0: A2(
+													_elm_lang$html$Html$option,
+													{
 														ctor: '::',
-														_0: _elm_lang$html$Html_Events$onClick(
-															_user$project$Main$ViewAs(_user$project$Main$Bob)),
+														_0: _elm_lang$html$Html_Attributes$value('Alice'),
 														_1: {ctor: '[]'}
-													}
-												},
-												{
+													},
+													{
+														ctor: '::',
+														_0: _elm_lang$html$Html$text('Alice'),
+														_1: {ctor: '[]'}
+													}),
+												_1: {
 													ctor: '::',
-													_0: _elm_lang$html$Html$text('Bob'),
+													_0: A2(
+														_elm_lang$html$Html$option,
+														{
+															ctor: '::',
+															_0: _elm_lang$html$Html_Attributes$value('Bob'),
+															_1: {ctor: '[]'}
+														},
+														{
+															ctor: '::',
+															_0: _elm_lang$html$Html$text('Bob'),
+															_1: {ctor: '[]'}
+														}),
 													_1: {ctor: '[]'}
-												}),
-											_1: {ctor: '[]'}
-										}
+												}
+											}),
+										_1: {ctor: '[]'}
 									}
 								}),
 							_1: {
@@ -10078,7 +10047,7 @@
 						},
 						A2(
 							_elm_lang$core$List$map,
-							_user$project$Main$card(model.viewAs),
+							A2(_user$project$Main$card, model.viewAs, model.isSpymaster),
 							model.cards)),
 					_1: {ctor: '[]'}
 				}

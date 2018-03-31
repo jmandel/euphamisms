@@ -62,8 +62,7 @@ totalCards =
 
 labelKey =
     let
-        count = totalCards // 3
-        greenCount = count
+        greenCount = 9
         evilCount = 3
         neutralCount = totalCards - greenCount - evilCount
 

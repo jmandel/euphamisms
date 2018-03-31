@@ -235,6 +235,13 @@ html, body {
     .main {
         height: calc(100% - 3.6em);
     }
+    .chip {
+      border: 1px solid black;
+      width: 5px;
+      height: 5px;
+      margin: 20px;
+      margin-bottom: 16px;
+    }
 
 
 }
@@ -242,7 +249,7 @@ html, body {
 @media (max-width: 600px){
     .word-card {
         min-width: 7em;
-        min-height: 75px;
+        //min-height: 75px;
         width: 100%;
     }
     .board {
@@ -251,6 +258,10 @@ html, body {
     }
 
     .chip {
+      border: 1px solid black;
+      width: 5px;
+      height: 5px;
+      margin: 20px;
       margin-bottom: 10px;
     }
 

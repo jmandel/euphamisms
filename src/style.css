@@ -21,6 +21,9 @@ html, body {
     height: 100%;
 }
 
+.turns {
+  margin-left: 10px;
+}
 .chip {
   width: 10px;
   opacity: 1.0;

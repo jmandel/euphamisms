@@ -10,7 +10,7 @@ import String
 import Array
 import Words
 import Task
-
+import Debug
 
 main : Program Never Model Msg
 main =
@@ -52,6 +52,7 @@ type alias Model =
     , hour : Int
     , cards : List Card
     , isSpymaster : Bool
+    , history : List Player
     }
 
 
@@ -158,7 +159,7 @@ dealCards sessionSeed seed hour =
 
 
 init =
-    ( Model Alice 0 [] False
+    ( Model Alice 0 [] False []
     , Cmd.batch
         [ Time.now |> Task.perform Time.inHours |> Cmd.map (\x -> NewHour <| floor x) ]
     )
@@ -226,10 +227,10 @@ update msg model =
             ( { model | isSpymaster = not model.isSpymaster }, Cmd.none )
 
         AliceGuess word ->
-            ( { model | cards = List.map (aliceGuess word) model.cards }, Cmd.none )
+            ( { model | cards = List.map (aliceGuess word) model.cards, history = Alice :: model.history }, Cmd.none )
 
         BobGuess word ->
-            ( { model | cards = List.map (bobGuess word) model.cards }, Cmd.none )
+            ( { model | cards = List.map (bobGuess word) model.cards, history = Bob :: model.history  }, Cmd.none )
 
         ViewAs player ->
             ( { model | viewAs = player, isSpymaster = False }, Cmd.none )
@@ -287,12 +288,10 @@ card viewAsPlayer isSpymaster word =
                 "team-Black"
             else if word.aliceGuessed && word.bobGuessed && word.aliceLabel == word.bobLabel then
                 "team-" ++ (toString word.aliceLabel)
-            else if viewAsPlayer == Bob then
+            else if viewAsPlayer == Bob && isSpymaster || viewAsPlayer == Alice && not isSpymaster then
                 bobLabel
-            else if viewAsPlayer == Alice then
-                aliceLabel
             else
-                "team-"
+                aliceLabel
     in
         div
             [ class <|
@@ -370,6 +369,9 @@ view model =
                     [ option [ value "Alice" ] [ text "Alice" ]
                     , option [ value "Bob" ] [ text "Bob" ]
                     ]
+                , span [class "turns"] [text <| "Turns: " ++ toString (
+                        List.foldl (\player (turns, last) -> (if player == last then (turns, last) else (turns+1, player))) (0, Observer) model.history |> Tuple.first
+                    )]
                 ]
             , i
                 [ class "fa fa-eye fa-arrow-circle-o-left prev-game"

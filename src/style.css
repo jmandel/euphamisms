@@ -76,7 +76,7 @@ html, body {
   background: green;
 }
 
-.guessed-Evil {
+.guessed-Black {
   background: black;
 }
 
@@ -114,7 +114,7 @@ html, body {
     color: blue;
 }
 
-.word-card.team-Evil.background {
+.word-card.team-Black.background {
     background: black;
     color: black;
 }
@@ -135,7 +135,7 @@ html, body {
     color: white;
 }
 
-.word-card.team-Evil.background.foreground {
+.word-card.team-Black.background.foreground {
     color: white;
 }
 

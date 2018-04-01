@@ -31,18 +31,19 @@ type Player
     | Bob
     | Observer
 
+
 type Team
     = Green
     | Neutral
-    | Evil
+    | Black
 
 
 type alias Card =
-    { aliceLabel: Team
-    , bobLabel: Team
+    { aliceLabel : Team
+    , bobLabel : Team
     , word : String
-    , aliceGuessed: Bool
-    , bobGuessed: Bool
+    , aliceGuessed : Bool
+    , bobGuessed : Bool
     }
 
 
@@ -50,29 +51,35 @@ type alias Model =
     { viewAs : Player
     , hour : Int
     , cards : List Card
-    , isSpymaster: Bool
+    , isSpymaster : Bool
     }
 
 
 totalCards =
     25
 
+
 labelKey =
     let
-        greenCount = 9
-        evilCount = 3
-        neutralCount = totalCards - greenCount - evilCount
+        greenCount =
+            9
 
+        blackCount =
+            3
+
+        neutralCount =
+            totalCards - greenCount - blackCount
     in
         List.concat
-            [ List.repeat evilCount Evil
+            [ List.repeat blackCount Black
             , List.repeat greenCount Green
             , List.repeat neutralCount Neutral
             ]
 
+
 shuffle seed pile =
     let
-        randomValsInRange (bottomEnd, topEnd) ( acc, seed ) =
+        randomValsInRange ( bottomEnd, topEnd ) ( acc, seed ) =
             let
                 ( nextval, nextseed ) =
                     Random.step (Random.int 0 topEnd) seed
@@ -84,7 +91,7 @@ shuffle seed pile =
                 |> Array.set i (Array.get r aa |> Maybe.withDefault Nothing)
                 |> Array.set r (Array.get i aa |> Maybe.withDefault Nothing)
     in
-        List.repeat(List.length pile - 1) (List.length pile - 1)
+        List.repeat (List.length pile - 1) (List.length pile - 1)
             |> List.indexedMap (,)
             |> List.foldl randomValsInRange ( [], seed )
             |> Tuple.first
@@ -98,8 +105,50 @@ dealCards sessionSeed seed hour =
     let
         aliceLabelKey =
             shuffle seed labelKey
+
+        -- TODO: DRY
+        aliceGreens =
+            List.indexedMap (,) aliceLabelKey
+                |> List.filter ((==) Green << Tuple.second)
+                |> shuffle (gameSeed hour)
+                |> List.map Tuple.first
+
+        aliceBlacks =
+            List.indexedMap (,) aliceLabelKey
+                |> List.filter ((==) Black << Tuple.second)
+                |> shuffle (gameSeed hour)
+                |> List.map Tuple.first
+
+        aliceNeutrals =
+            List.indexedMap (,) aliceLabelKey
+                |> List.filter ((==) Neutral << Tuple.second)
+                |> shuffle (gameSeed hour)
+                |> List.map Tuple.first
+
+        greensForBob =
+            (aliceGreens |> List.take 3)
+                ++ (aliceBlacks |> List.take 1)
+                ++ (aliceNeutrals |> List.take 5)
+
+        blacksForBob =
+            (aliceBlacks |> List.drop 1 |> List.take 1)
+                ++ (aliceGreens |> List.drop 3 |> List.take 1)
+                ++ (aliceNeutrals |> List.drop 5 |> List.take 1)
+
+        neutralsForBob =
+            (aliceGreens |> List.drop 4)
+                ++ (aliceBlacks |> List.drop 2)
+                ++ (aliceNeutrals |> List.drop 1)
+
         bobLabelKey =
-            shuffle (gameSeed <| hour*2+1) labelKey
+            List.range 0 totalCards
+                |> List.map (\x -> if List.member x greensForBob then
+                    Green
+                else if List.member x blacksForBob then
+                    Black
+                else
+                    Neutral)
+
         picks =
             Words.all
                 |> shuffle sessionSeed
@@ -107,10 +156,11 @@ dealCards sessionSeed seed hour =
     in
         List.map3 (\a b p -> { aliceLabel = a, bobLabel = b, word = p, aliceGuessed = False, bobGuessed = False }) aliceLabelKey bobLabelKey picks
 
+
 init =
     ( Model Alice 0 [] False
     , Cmd.batch
-        [ Time.now |> Task.perform  Time.inHours |> Cmd.map (\x -> NewHour <| floor x) ]
+        [ Time.now |> Task.perform Time.inHours |> Cmd.map (\x -> NewHour <| floor x) ]
     )
 
 
@@ -132,11 +182,13 @@ aliceGuess word w =
     else
         w
 
+
 bobGuess word w =
     if w == word then
         { word | bobGuessed = not word.bobGuessed }
     else
         w
+
 
 hoursPerSession =
     12
@@ -171,7 +223,7 @@ gameSeed hour =
 update msg model =
     case msg of
         ToggleSpymaster ->
-            ( { model | isSpymaster = not model.isSpymaster}, Cmd.none )
+            ( { model | isSpymaster = not model.isSpymaster }, Cmd.none )
 
         AliceGuess word ->
             ( { model | cards = List.map (aliceGuess word) model.cards }, Cmd.none )
@@ -186,6 +238,7 @@ update msg model =
             ( { model | hour = hour, cards = dealCards (sessionSeed hour) (gameSeed hour) hour }, Cmd.none )
 
 
+
 -- SUBSCRIPTIONS
 
 
@@ -198,43 +251,53 @@ subscriptions model =
 -- VIEW
 
 
-card : Player -> Bool -> Card ->  Html.Html Msg
+card : Player -> Bool -> Card -> Html.Html Msg
 card viewAsPlayer isSpymaster word =
     let
         aliceLabel =
             " team-" ++ (toString word.aliceLabel) ++ " "
+
         bobLabel =
             " team-" ++ (toString word.bobLabel) ++ " "
-        guessedGreen = (word.aliceLabel == Green && word.bobGuessed) || (word.bobLabel == Green && word.aliceGuessed)
-        guessedBlack = (word.aliceLabel == Evil && word.bobGuessed) || (word.bobLabel == Evil && word.aliceGuessed)
-        playerGuessed = (viewAsPlayer == Alice && word.aliceGuessed || viewAsPlayer == Bob && word.bobGuessed)
+
+        guessedGreen =
+            (word.aliceLabel == Green && word.bobGuessed) || (word.bobLabel == Green && word.aliceGuessed)
+
+        guessedBlack =
+            (word.aliceLabel == Black && word.bobGuessed) || (word.bobLabel == Black && word.aliceGuessed)
+
+        playerGuessed =
+            (viewAsPlayer == Alice && word.aliceGuessed || viewAsPlayer == Bob && word.bobGuessed)
+
         showBackground =
             guessedGreen || guessedBlack || isSpymaster || playerGuessed
+
         showText =
             if not isSpymaster then
                 not guessedGreen && not guessedBlack && not playerGuessed
+            else if viewAsPlayer == Bob then
+                not word.aliceGuessed && not guessedGreen && not guessedBlack
             else
-                if viewAsPlayer == Bob then
-                    not word.aliceGuessed && not guessedGreen && not guessedBlack
-                else
-                    not word.bobGuessed && not guessedGreen && not guessedBlack
+                not word.bobGuessed && not guessedGreen && not guessedBlack
+
         team =
             if guessedGreen then
                 "team-Green"
             else if guessedBlack then
-                "team-Evil"
+                "team-Black"
             else if word.aliceGuessed && word.bobGuessed && word.aliceLabel == word.bobLabel then
                 "team-" ++ (toString word.aliceLabel)
+            else if viewAsPlayer == Bob then
+                bobLabel
+            else if viewAsPlayer == Alice then
+                aliceLabel
             else
-                if viewAsPlayer == Bob then
-                    bobLabel
-                else if viewAsPlayer == Alice then
-                    aliceLabel
-                else "team-"
+                "team-"
     in
         div
             [ class <|
-                "word-card " ++ team 
+                "word-card "
+                    ++ team
                     ++ (if showBackground then
                             " background "
                         else
@@ -245,17 +308,17 @@ card viewAsPlayer isSpymaster word =
                         else
                             ""
                        )
-            , onClick ( if isSpymaster then
-                            if viewAsPlayer == Bob then
-                                (AliceGuess word)
-                            else
-                                (BobGuess word)
-                        else
-                            if viewAsPlayer == Bob then
-                                (BobGuess word)
-                            else
-                                (AliceGuess  word))
-
+            , onClick
+                (if isSpymaster then
+                    if viewAsPlayer == Bob then
+                        (AliceGuess word)
+                    else
+                        (BobGuess word)
+                 else if viewAsPlayer == Bob then
+                    (BobGuess word)
+                 else
+                    (AliceGuess word)
+                )
             ]
             [ text word.word ]
 
@@ -288,17 +351,26 @@ view model =
     div [ class "main" ]
         [ span [ class "controls" ]
             [ span [ class "which-game" ] [ (text <| asGameTime model.hour) ]
-            , span [class "reveal-board"] [i
-                [ class "fa fa-eye"
-                , attribute "aria-label" "true"
-                , onClick ToggleSpymaster
-                ] []
-        , select [class "player-select", onInput <| \s -> if s == "Alice" then 
-                            ViewAs Alice
-                        else
-                            ViewAs Bob]
-                        [ option [value "Alice"] [text "Alice"]
-                        , option [value "Bob"] [text "Bob"] ]]
+            , span [ class "reveal-board" ]
+                [ i
+                    [ class "fa fa-eye"
+                    , attribute "aria-label" "true"
+                    , onClick ToggleSpymaster
+                    ]
+                    []
+                , select
+                    [ class "player-select"
+                    , onInput <|
+                        \s ->
+                            if s == "Alice" then
+                                ViewAs Alice
+                            else
+                                ViewAs Bob
+                    ]
+                    [ option [ value "Alice" ] [ text "Alice" ]
+                    , option [ value "Bob" ] [ text "Bob" ]
+                    ]
+                ]
             , i
                 [ class "fa fa-eye fa-arrow-circle-o-left prev-game"
                 , attribute "aria-label" "true"

@@ -95,7 +95,7 @@
 
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(4) + ") format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(5) + ") format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\nhtml, body {\n    margin: 0px;\n    border: 0px;\n    font-family: Passion One;\n    padding: 0px;\n    height: 100%;\n}\n\n.turns {\n  margin-left: 10px;\n}\n.chip {\n  width: 10px;\n  opacity: 1.0;\n  height: 10px;\n  margin: 20px;\n  border: 1px dotted black;\n  position: absolute;\n  bottom: 0px;\n  border-radius: 100px;\n  margin: 4px;\n  background: white;\n}\n\n.background .chip {\n border: 1px dotted white;\n}\n\n.player-select {\n    background: white;\n    margin-left: 1em;\n    font-family: Passion One;\n    font-size: 2em;\n}\n\n.alice {\n  right: 0px;\n}\n.bob {\n  left: 0px;\n}\n\n.main {\n    height: calc(100%  - 10em);\n}\n\n.frame {\n  box-sizing: border-box;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: -1;\n}\n\n.frame.first-Blue {\n  border: 0.5em solid blue;\n}\n\n.frame.first-Red {\n  border: 0.5em solid red;\n}\n\n.guessed-Green {\n  background: green;\n}\n\n.guessed-Black {\n  background: black;\n}\n\n.guessed-Neutral {\n  background: slategray;\n}\n\n\n\n.word-card {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  position: relative;\n}\n\n.word-card.team-Neutral.background {\n    background: slategray;\n    color: slategray;\n}\n\n.word-card.team-Green.background {\n    background: green;\n    color: green;\n}\n\n.word-card.team-Red.background {\n    background: red;\n    color: red;\n}\n\n.word-card.team-Blue.background {\n    background: blue;\n    color: blue;\n}\n\n.word-card.team-Black.background {\n    background: black;\n    color: black;\n}\n\n.word-card.team-Neutral.background.foreground {\n    color: white;\n}\n\n.word-card.team-Green.background.foreground {\n    color: white;\n}\n\n.word-card.team-Red.background.foreground {\n    color: white;\n}\n\n.word-card.team-Blue.background.foreground {\n    color: white;\n}\n\n.word-card.team-Black.background.foreground {\n    color: white;\n}\n\n\n.word-card {\n    cursor: pointer;\n    display: inline-block;\n    border: 1px solid black;\n    color: black;\n    padding: .2em;\n    width: calc(100% * 1/5 - 1em );\n    margin-left: 0.25em;\n    margin-right: 0.25em;\n    margin-bottom: 0.25em;\n    margin-top: 0.25em;\n    min-width: 4em;\n    flex-grow: 1;\n    font-size: 2.7em;\n    display: flex;\n    text-align: center;\n    align-items: center;\n    justify-content: center;\n    transition: background-color .1s ease-in;\n}\n\n.board {\n    margin-left: 4em;\n    margin-right: 3.5em;\n    display: flex;\n    flex-wrap: wrap;\n    height: 100%;\n    padding-left: 0px;\n    padding-right: 0px;\n    padding-top: 5em;\n    padding-bottom: 5em;\n    align-items: stretch;\n}\n\n.fa {\n    font-size: 2em;\n}\n\n\n.viewas-active {\n  font-weight: bold;\n}\n\n.reveal-board span {\n  margin-right: .2em;\n}\n\n.reveal-board {\n    cursor: pointer;\n    position: fixed;\n    top: 0px;\n    padding: 0.5em;\n}\n\n.choose-player {\n  margin-top: 1em;\n  margin-left: 5em;\n}\n\n.prev-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    left: 0px;\n    padding: 0.5em;\n}\n\n.next-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    right: 0px;\n    padding: 0.5em;\n}\n\n.which-game {\n    font-family: monospace;\n    padding-bottom: 0em;\n    position: absolute;\n    right: 0px;\n    top: 0px;\n    padding-top: 1em;\n    text-align: center;\n    padding-right: 2em;\n}\n\n@media (max-width: 1100px){\n    .word-card {\n        min-height: 1em;\n        padding: 0px;\n        margin: 0px;\n        min-width: 1em;\n        width: calc(100% * 1/5 - .5em);\n        margin-left: 0em;\n        margin-right: 0em;\n        font-size: 1.5em;\n        line-height: .7em;\n        border: 0px;\n    }\n    .board {\n        padding-top: 3em;\n        padding-bottom: 1.8em;\n        padding-left: 1em;\n        padding-right: 1em;\n        height: 100%;\n    }\n    .main {\n        height: calc(100% - 3.6em);\n    }\n    .chip {\n      border: 1px solid black;\n      width: 5px;\n      height: 5px;\n      margin: 20px;\n      margin-bottom: 16px;\n    }\n\n\n    .reveal-board {position: relative;}\n}\n\n@media (max-width: 600px){\n    .word-card {\n        min-width: 7em;\n        //min-height: 75px;\n        width: 100%;\n    }\n    .board {\n        padding-top: 0em;\n        padding-bottom: 0em;\n    }\n\n    .chip {\n      border: 1px solid black;\n      width: 5px;\n      height: 5px;\n      margin: 20px;\n      margin-bottom: 10px;\n    }\n\n    .reveal-board {position: relative;}\n\n}\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(4) + ") format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(5) + ") format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\nhtml, body {\n    margin: 0px;\n    border: 0px;\n    font-family: Passion One;\n    padding: 0px;\n    height: 100%;\n}\n\n.turns {\n  margin-left: 10px;\n  font-family: monospace;\n}\n.chip {\n  width: 10px;\n  opacity: 1.0;\n  height: 10px;\n  margin: 20px;\n  border: 1px dotted black;\n  position: absolute;\n  bottom: 0px;\n  border-radius: 100px;\n  margin: 4px;\n  background: white;\n}\n\n.background .chip {\n border: 1px dotted white;\n}\n\n.player-select {\n    background: white;\n    margin-left: 1em;\n    font-family: Passion One;\n    font-size: 2em;\n}\n\n.alice {\n  right: 0px;\n}\n.bob {\n  left: 0px;\n}\n\n.main {\n    height: calc(100%  - 10em);\n}\n\n.frame {\n  box-sizing: border-box;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: -1;\n}\n\n.frame.first-Blue {\n  border: 0.5em solid blue;\n}\n\n.frame.first-Red {\n  border: 0.5em solid red;\n}\n\n.guessed-Green {\n  background: green;\n}\n\n.guessed-Black {\n  background: black;\n}\n\n.guessed-Neutral {\n  background: slategray;\n}\n\n\n\n.word-card {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  position: relative;\n}\n\n.word-card.team-Neutral.background {\n    background: slategray;\n    color: slategray;\n}\n\n.word-card.team-Green.background {\n    background: green;\n    color: green;\n}\n\n.word-card.team-Red.background {\n    background: red;\n    color: red;\n}\n\n.word-card.team-Blue.background {\n    background: blue;\n    color: blue;\n}\n\n.word-card.team-Black.background {\n    background: black;\n    color: black;\n}\n\n.word-card.team-Neutral.background.foreground {\n    color: white;\n}\n\n.word-card.team-Green.background.foreground {\n    color: white;\n}\n\n.word-card.team-Red.background.foreground {\n    color: white;\n}\n\n.word-card.team-Blue.background.foreground {\n    color: white;\n}\n\n.word-card.team-Black.background.foreground {\n    color: white;\n}\n\n\n.word-card {\n    cursor: pointer;\n    display: inline-block;\n    border: 1px solid black;\n    color: black;\n    padding: .2em;\n    width: calc(100% * 1/5 - 1em );\n    margin-left: 0.25em;\n    margin-right: 0.25em;\n    margin-bottom: 0.25em;\n    margin-top: 0.25em;\n    min-width: 4em;\n    flex-grow: 1;\n    font-size: 2.7em;\n    display: flex;\n    text-align: center;\n    align-items: center;\n    justify-content: center;\n    transition: background-color .1s ease-in;\n}\n\n.board {\n    margin-left: 4em;\n    margin-right: 3.5em;\n    display: flex;\n    flex-wrap: wrap;\n    height: 100%;\n    padding-left: 0px;\n    padding-right: 0px;\n    padding-top: 5em;\n    padding-bottom: 5em;\n    align-items: stretch;\n}\n\n.fa {\n    font-size: 2em;\n}\n\n\n.viewas-active {\n  font-weight: bold;\n}\n\n.reveal-board span {\n  margin-right: .2em;\n}\n\n.reveal-board {\n    cursor: pointer;\n    position: fixed;\n    top: 0px;\n    padding: 0.5em;\n}\n\n.choose-player {\n  margin-top: 1em;\n  margin-left: 5em;\n}\n\n.prev-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    left: 0px;\n    padding: 0.5em;\n}\n\n.next-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    right: 0px;\n    padding: 0.5em;\n}\n\n.which-game {\n    font-family: monospace;\n    padding-bottom: 0em;\n    position: absolute;\n    right: 0px;\n    top: 0px;\n    padding-top: 1em;\n    text-align: center;\n    padding-right: 2em;\n}\n\n@media (max-width: 1100px){\n    .word-card {\n        min-height: 1em;\n        padding: 0px;\n        margin: 0px;\n        min-width: 1em;\n        width: calc(100% * 1/5 - .5em);\n        margin-left: 0em;\n        margin-right: 0em;\n        font-size: 1.5em;\n        line-height: .7em;\n        border: 0px;\n    }\n    .board {\n        padding-top: 3em;\n        padding-bottom: 1.8em;\n        padding-left: 1em;\n        padding-right: 1em;\n        height: 100%;\n    }\n    .main {\n        height: calc(100% - 3.6em);\n    }\n    .chip {\n      border: 1px solid black;\n      width: 5px;\n      height: 5px;\n      margin: 20px;\n      margin-bottom: 16px;\n    }\n\n\n    .reveal-board {position: relative;}\n}\n\n@media (max-width: 600px){\n    .word-card {\n        min-width: 7em;\n        //min-height: 75px;\n        width: 100%;\n    }\n    .board {\n        padding-top: 0em;\n        padding-bottom: 0em;\n    }\n\n    .chip {\n      border: 1px solid black;\n      width: 5px;\n      height: 5px;\n      margin: 20px;\n      margin-bottom: 10px;\n    }\n\n    .reveal-board {position: relative;}\n\n}\n", ""]);
 
 	// exports
 
@@ -9901,7 +9901,8 @@
 									_user$project$Main$dealCards,
 									_user$project$Main$sessionSeed(_p16),
 									_user$project$Main$gameSeed(_p16),
-									_p16)
+									_p16),
+								history: {ctor: '[]'}
 							}),
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
@@ -9996,6 +9997,18 @@
 		return {ctor: 'ViewAs', _0: a};
 	};
 	var _user$project$Main$view = function (model) {
+		var turns = _elm_lang$core$Tuple$first(
+			A3(
+				_elm_lang$core$List$foldl,
+				F2(
+					function (player, _p17) {
+						var _p18 = _p17;
+						var _p20 = _p18._0;
+						var _p19 = _p18._1;
+						return _elm_lang$core$Native_Utils.eq(player, _p19) ? {ctor: '_Tuple2', _0: _p20, _1: _p19} : {ctor: '_Tuple2', _0: _p20 + 1, _1: player};
+					}),
+				{ctor: '_Tuple2', _0: 0, _1: _user$project$Main$Observer},
+				model.history));
 		return A2(
 			_elm_lang$html$Html$div,
 			{
@@ -10113,22 +10126,10 @@
 												{
 													ctor: '::',
 													_0: _elm_lang$html$Html$text(
-														A2(
+														(_elm_lang$core$Native_Utils.cmp(turns, 0) > 0) ? A2(
 															_elm_lang$core$Basics_ops['++'],
-															'Turns: ',
-															_elm_lang$core$Basics$toString(
-																_elm_lang$core$Tuple$first(
-																	A3(
-																		_elm_lang$core$List$foldl,
-																		F2(
-																			function (player, _p17) {
-																				var _p18 = _p17;
-																				var _p20 = _p18._0;
-																				var _p19 = _p18._1;
-																				return _elm_lang$core$Native_Utils.eq(player, _p19) ? {ctor: '_Tuple2', _0: _p20, _1: _p19} : {ctor: '_Tuple2', _0: _p20 + 1, _1: player};
-																			}),
-																		{ctor: '_Tuple2', _0: 0, _1: _user$project$Main$Observer},
-																		model.history))))),
+															'Turn ',
+															_elm_lang$core$Basics$toString(turns)) : ''),
 													_1: {ctor: '[]'}
 												}),
 											_1: {ctor: '[]'}

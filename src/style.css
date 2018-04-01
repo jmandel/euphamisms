@@ -23,6 +23,7 @@ html, body {
 
 .turns {
   margin-left: 10px;
+  font-family: monospace;
 }
 .chip {
   width: 10px;

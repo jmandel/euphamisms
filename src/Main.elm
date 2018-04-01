@@ -236,7 +236,7 @@ update msg model =
             ( { model | viewAs = player, isSpymaster = False }, Cmd.none )
 
         NewHour hour ->
-            ( { model | hour = hour, cards = dealCards (sessionSeed hour) (gameSeed hour) hour }, Cmd.none )
+            ( { model | hour = hour, cards = dealCards (sessionSeed hour) (gameSeed hour) hour, history = [] }, Cmd.none )
 
 
 
@@ -347,6 +347,8 @@ asGameTime h =
 
 view : Model -> Html.Html Msg
 view model =
+    let turns = List.foldl (\player (turns, last) -> (if player == last then (turns, last) else (turns+1, player))) (0, Observer) model.history |> Tuple.first
+    in
     div [ class "main" ]
         [ span [ class "controls" ]
             [ span [ class "which-game" ] [ (text <| asGameTime model.hour) ]
@@ -369,9 +371,7 @@ view model =
                     [ option [ value "Alice" ] [ text "Alice" ]
                     , option [ value "Bob" ] [ text "Bob" ]
                     ]
-                , span [class "turns"] [text <| "Turns: " ++ toString (
-                        List.foldl (\player (turns, last) -> (if player == last then (turns, last) else (turns+1, player))) (0, Observer) model.history |> Tuple.first
-                    )]
+                , span [class "turns"] [text <| if turns > 0 then "Turn " ++ toString turns else ""]
                 ]
             , i
                 [ class "fa fa-eye fa-arrow-circle-o-left prev-game"

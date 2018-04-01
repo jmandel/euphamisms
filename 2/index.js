@@ -95,7 +95,7 @@
 
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(4) + ") format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(5) + ") format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\nhtml, body {\n    margin: 0px;\n    border: 0px;\n    font-family: Passion One;\n    padding: 0px;\n    height: 100%;\n}\n\n.chip {\n  width: 10px;\n  opacity: 1.0;\n  height: 10px;\n  margin: 20px;\n  border: 1px dotted black;\n  position: absolute;\n  bottom: 0px;\n  border-radius: 100px;\n  margin: 4px;\n  background: white;\n}\n\n.background .chip {\n border: 1px dotted white;\n}\n\n.player-select {\n    background: white;\n    margin-left: 1em;\n    font-family: Passion One;\n    font-size: 2em;\n}\n\n.alice {\n  right: 0px;\n}\n.bob {\n  left: 0px;\n}\n\n.main {\n    height: calc(100%  - 10em);\n}\n\n.frame {\n  box-sizing: border-box;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: -1;\n}\n\n.frame.first-Blue {\n  border: 0.5em solid blue;\n}\n\n.frame.first-Red {\n  border: 0.5em solid red;\n}\n\n.guessed-Green {\n  background: green;\n}\n\n.guessed-Evil {\n  background: black;\n}\n\n.guessed-Neutral {\n  background: slategray;\n}\n\n\n\n.word-card {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  position: relative;\n}\n\n.word-card.team-Neutral.background {\n    background: slategray;\n    color: slategray;\n}\n\n.word-card.team-Green.background {\n    background: green;\n    color: green;\n}\n\n.word-card.team-Red.background {\n    background: red;\n    color: red;\n}\n\n.word-card.team-Blue.background {\n    background: blue;\n    color: blue;\n}\n\n.word-card.team-Evil.background {\n    background: black;\n    color: black;\n}\n\n.word-card.team-Neutral.background.foreground {\n    color: white;\n}\n\n.word-card.team-Green.background.foreground {\n    color: white;\n}\n\n.word-card.team-Red.background.foreground {\n    color: white;\n}\n\n.word-card.team-Blue.background.foreground {\n    color: white;\n}\n\n.word-card.team-Evil.background.foreground {\n    color: white;\n}\n\n\n.word-card {\n    cursor: pointer;\n    display: inline-block;\n    border: 1px solid black;\n    color: black;\n    padding: .2em;\n    width: calc(100% * 1/5 - 1em );\n    margin-left: 0.25em;\n    margin-right: 0.25em;\n    margin-bottom: 0.25em;\n    margin-top: 0.25em;\n    min-width: 4em;\n    flex-grow: 1;\n    font-size: 2.7em;\n    display: flex;\n    text-align: center;\n    align-items: center;\n    justify-content: center;\n    transition: background-color .1s ease-in;\n}\n\n.board {\n    margin-left: 4em;\n    margin-right: 3.5em;\n    display: flex;\n    flex-wrap: wrap;\n    height: 100%;\n    padding-left: 0px;\n    padding-right: 0px;\n    padding-top: 5em;\n    padding-bottom: 5em;\n    align-items: stretch;\n}\n\n.fa {\n    font-size: 2em;\n}\n\n\n.viewas-active {\n  font-weight: bold;\n}\n\n.reveal-board span {\n  margin-right: .2em;\n}\n\n.reveal-board {\n    cursor: pointer;\n    position: fixed;\n    top: 0px;\n    padding: 0.5em;\n}\n\n.choose-player {\n  margin-top: 1em;\n  margin-left: 5em;\n}\n\n.prev-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    left: 0px;\n    padding: 0.5em;\n}\n\n.next-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    right: 0px;\n    padding: 0.5em;\n}\n\n.which-game {\n    font-family: monospace;\n    padding-bottom: 0em;\n    position: absolute;\n    right: 0px;\n    top: 0px;\n    padding-top: 1em;\n    text-align: center;\n    padding-right: 2em;\n}\n\n@media (max-width: 1100px){\n    .word-card {\n        min-height: 1em;\n        padding: 0px;\n        margin: 0px;\n        min-width: 1em;\n        width: calc(100% * 1/5 - .5em);\n        margin-left: 0em;\n        margin-right: 0em;\n        font-size: 1.5em;\n        line-height: .7em;\n        border: 0px;\n    }\n    .board {\n        padding-top: 3em;\n        padding-bottom: 1.8em;\n        padding-left: 1em;\n        padding-right: 1em;\n        height: 100%;\n    }\n    .main {\n        height: calc(100% - 3.6em);\n    }\n    .chip {\n      border: 1px solid black;\n      width: 5px;\n      height: 5px;\n      margin: 20px;\n      margin-bottom: 16px;\n    }\n\n\n    .reveal-board {position: relative;}\n}\n\n@media (max-width: 600px){\n    .word-card {\n        min-width: 7em;\n        //min-height: 75px;\n        width: 100%;\n    }\n    .board {\n        padding-top: 0em;\n        padding-bottom: 0em;\n    }\n\n    .chip {\n      border: 1px solid black;\n      width: 5px;\n      height: 5px;\n      margin: 20px;\n      margin-bottom: 10px;\n    }\n\n    .reveal-board {position: relative;}\n\n}\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(4) + ") format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(5) + ") format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\nhtml, body {\n    margin: 0px;\n    border: 0px;\n    font-family: Passion One;\n    padding: 0px;\n    height: 100%;\n}\n\n.chip {\n  width: 10px;\n  opacity: 1.0;\n  height: 10px;\n  margin: 20px;\n  border: 1px dotted black;\n  position: absolute;\n  bottom: 0px;\n  border-radius: 100px;\n  margin: 4px;\n  background: white;\n}\n\n.background .chip {\n border: 1px dotted white;\n}\n\n.player-select {\n    background: white;\n    margin-left: 1em;\n    font-family: Passion One;\n    font-size: 2em;\n}\n\n.alice {\n  right: 0px;\n}\n.bob {\n  left: 0px;\n}\n\n.main {\n    height: calc(100%  - 10em);\n}\n\n.frame {\n  box-sizing: border-box;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: -1;\n}\n\n.frame.first-Blue {\n  border: 0.5em solid blue;\n}\n\n.frame.first-Red {\n  border: 0.5em solid red;\n}\n\n.guessed-Green {\n  background: green;\n}\n\n.guessed-Black {\n  background: black;\n}\n\n.guessed-Neutral {\n  background: slategray;\n}\n\n\n\n.word-card {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  position: relative;\n}\n\n.word-card.team-Neutral.background {\n    background: slategray;\n    color: slategray;\n}\n\n.word-card.team-Green.background {\n    background: green;\n    color: green;\n}\n\n.word-card.team-Red.background {\n    background: red;\n    color: red;\n}\n\n.word-card.team-Blue.background {\n    background: blue;\n    color: blue;\n}\n\n.word-card.team-Black.background {\n    background: black;\n    color: black;\n}\n\n.word-card.team-Neutral.background.foreground {\n    color: white;\n}\n\n.word-card.team-Green.background.foreground {\n    color: white;\n}\n\n.word-card.team-Red.background.foreground {\n    color: white;\n}\n\n.word-card.team-Blue.background.foreground {\n    color: white;\n}\n\n.word-card.team-Black.background.foreground {\n    color: white;\n}\n\n\n.word-card {\n    cursor: pointer;\n    display: inline-block;\n    border: 1px solid black;\n    color: black;\n    padding: .2em;\n    width: calc(100% * 1/5 - 1em );\n    margin-left: 0.25em;\n    margin-right: 0.25em;\n    margin-bottom: 0.25em;\n    margin-top: 0.25em;\n    min-width: 4em;\n    flex-grow: 1;\n    font-size: 2.7em;\n    display: flex;\n    text-align: center;\n    align-items: center;\n    justify-content: center;\n    transition: background-color .1s ease-in;\n}\n\n.board {\n    margin-left: 4em;\n    margin-right: 3.5em;\n    display: flex;\n    flex-wrap: wrap;\n    height: 100%;\n    padding-left: 0px;\n    padding-right: 0px;\n    padding-top: 5em;\n    padding-bottom: 5em;\n    align-items: stretch;\n}\n\n.fa {\n    font-size: 2em;\n}\n\n\n.viewas-active {\n  font-weight: bold;\n}\n\n.reveal-board span {\n  margin-right: .2em;\n}\n\n.reveal-board {\n    cursor: pointer;\n    position: fixed;\n    top: 0px;\n    padding: 0.5em;\n}\n\n.choose-player {\n  margin-top: 1em;\n  margin-left: 5em;\n}\n\n.prev-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    left: 0px;\n    padding: 0.5em;\n}\n\n.next-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    right: 0px;\n    padding: 0.5em;\n}\n\n.which-game {\n    font-family: monospace;\n    padding-bottom: 0em;\n    position: absolute;\n    right: 0px;\n    top: 0px;\n    padding-top: 1em;\n    text-align: center;\n    padding-right: 2em;\n}\n\n@media (max-width: 1100px){\n    .word-card {\n        min-height: 1em;\n        padding: 0px;\n        margin: 0px;\n        min-width: 1em;\n        width: calc(100% * 1/5 - .5em);\n        margin-left: 0em;\n        margin-right: 0em;\n        font-size: 1.5em;\n        line-height: .7em;\n        border: 0px;\n    }\n    .board {\n        padding-top: 3em;\n        padding-bottom: 1.8em;\n        padding-left: 1em;\n        padding-right: 1em;\n        height: 100%;\n    }\n    .main {\n        height: calc(100% - 3.6em);\n    }\n    .chip {\n      border: 1px solid black;\n      width: 5px;\n      height: 5px;\n      margin: 20px;\n      margin-bottom: 16px;\n    }\n\n\n    .reveal-board {position: relative;}\n}\n\n@media (max-width: 600px){\n    .word-card {\n        min-width: 7em;\n        //min-height: 75px;\n        width: 100%;\n    }\n    .board {\n        padding-top: 0em;\n        padding-bottom: 0em;\n    }\n\n    .chip {\n      border: 1px solid black;\n      width: 5px;\n      height: 5px;\n      margin: 20px;\n      margin-bottom: 10px;\n    }\n\n    .reveal-board {position: relative;}\n\n}\n", ""]);
 
 	// exports
 
@@ -9545,7 +9545,7 @@
 			return {stopPropagation: a, preventDefault: b};
 		});
 
-	var _user$project$Words$all = _elm_lang$core$String$lines('AFRICA\nAGENT\nAIR\nALIEN\nALPS\nAMAZON\nAMBULANCE\nAMERICA\nANGEL\nANTARCTICA\nAPPLE\nARM\nATLANTIS\nAUSTRALIA\nAZTEC\nBACK\nBALL\nBAND\nBANK\nBAR\nBARK\nBAT\nBATTERY\nBEACH\nBEAR\nBEAT\nBED\nBEIJING\nBELL\nBELT\nBERLIN\nBERMUDA\nBERRY\nBILL\nBLOCK\nBOARD\nBOLT\nBOMB\nBOND\nBOOM\nBOOT\nBOTTLE\nBOW\nBOX\nBRIDGE\nBRUSH\nBUCK\nBUFFALO\nBUG\nBUGLE\nBUTTON\nCALF\nCANADA\nCAP\nCAPITAL\nCAR\nCARD\nCARROT\nCASINO\nCAST\nCAT\nCELL\nCENTAUR\nCENTER\nCHAIR\nCHANGE\nCHARGE\nCHECK\nCHEST\nCHICK\nCHINA\nCHOCOLATE\nCHURCH\nCIRCLE\nCLIFF\nCLOAK\nCLUB\nCODE\nCOLD\nCOMIC\nCOMPOUND\nCONCERT\nCONDUCTOR\nCONTRACT\nCOOK\nCOPPER\nCOTTON\nCOURT\nCOVER\nCRANE\nCRASH\nCRICKET\nCROSS\nCROWN\nCYCLE\nCZECH\nDANCE\nDATE\nDAY\nDEATH\nDECK\nDEGREE\nDIAMOND\nDICE\nDINOSAUR\nDISEASE\nDOCTOR\nDOG\nDRAFT\nDRAGON\nDRESS\nDRILL\nDROP\nDUCK\nDWARF\nEAGLE\nEGYPT\nEMBASSY\nENGINE\nENGLAND\nEUROPE\nEYE\nFACE\nFAIR\nFALL\nFAN\nFENCE\nFIELD\nFIGHTER\nFIGURE\nFILE\nFILM\nFIRE\nFISH\nFLUTE\nFLY\nFOOT\nFORCE\nFOREST\nFORK\nFRANCE\nGAME\nGAS\nGENIUS\nGERMANY\nGHOST\nGIANT\nGLASS\nGLOVE\nGOLD\nGRACE\nGRASS\nGREECE\nGREEN\nGROUND\nHAM\nHAND\nHAWK\nHEAD\nHEART\nHELICOPTER\nHIMALAYAS\nHOLE\nHOLLYWOOD\nHONEY\nHOOD\nHOOK\nHORN\nHORSE\nHORSESHOE\nHOSPITAL\nHOTEL\nICE\nICE CREAM\nINDIA\nIRON\nIVORY\nJACK\nJAM\nJET\nJUPITER\nKANGAROO\nKETCHUP\nKEY\nKID\nKING\nKIWI\nKNIFE\nKNIGHT\nLAB\nLAP\nLASER\nLAWYER\nLEAD\nLEMON\nLEPRECHAUN\nLIFE\nLIGHT\nLIMOUSINE\nLINE\nLINK\nLION\nLITTER\nLOCH NESS\nLOCK\nLOG\nLONDON\nLUCK\nMAIL\nMAMMOTH\nMAPLE\nMARBLE\nMARCH\nMASS\nMATCH\nMERCURY\nMEXICO\nMICROSCOPE\nMILLIONAIRE\nMINE\nMINT\nMISSILE\nMODEL\nMOLE\nMOON\nMOSCOW\nMOUNT\nMOUSE\nMOUTH\nMUG\nNAIL\nNEEDLE\nNET\nNEW YORK\nNIGHT\nNINJA\nNOTE\nNOVEL\nNURSE\nNUT\nOCTOPUS\nOIL\nOLIVE\nOLYMPUS\nOPERA\nORANGE\nORGAN\nPALM\nPAN\nPANTS\nPAPER\nPARACHUTE\nPARK\nPART\nPASS\nPASTE\nPENGUIN\nPHOENIX\nPIANO\nPIE\nPILOT\nPIN\nPIPE\nPIRATE\nPISTOL\nPIT\nPITCH\nPLANE\nPLASTIC\nPLATE\nPLATYPUS\nPLAY\nPLOT\nPOINT\nPOISON\nPOLE\nPOLICE\nPOOL\nPORT\nPOST\nPOUND\nPRESS\nPRINCESS\nPUMPKIN\nPUPIL\nPYRAMID\nQUEEN\nRABBIT\nRACKET\nRAY\nREVOLUTION\nRING\nROBIN\nROBOT\nROCK\nROME\nROOT\nROSE\nROULETTE\nROUND\nROW\nRULER\nSATELLITE\nSATURN\nSCALE\nSCHOOL\nSCIENTIST\nSCORPION\nSCREEN\nSCUBA DIVER\nSEAL\nSERVER\nSHADOW\nSHAKESPEARE\nSHARK\nSHIP\nSHOE\nSHOP\nSHOT\nSINK\nSKYSCRAPER\nSLIP\nSLUG\nSMUGGLER\nSNOW\nSNOWMAN\nSOCK\nSOLDIER\nSOUL\nSOUND\nSPACE\nSPELL\nSPIDER\nSPIKE\nSPINE\nSPOT\nSPRING\nSPY\nSQUARE\nSTADIUM\nSTAFF\nSTAR\nSTATE\nSTICK\nSTOCK\nSTRAW\nSTREAM\nSTRIKE\nSTRING\nSUB\nSUIT\nSUPERHERO\nSWING\nSWITCH\nTABLE\nTABLET\nTAG\nTAIL\nTAP\nTEACHER\nTELESCOPE\nTEMPLE\nTHEATER\nTHIEF\nTHUMB\nTICK\nTIE\nTIME\nTOKYO\nTOOTH\nTORCH\nTOWER\nTRACK\nTRAIN\nTRIANGLE\nTRIP\nTRUNK\nTUBE\nTURKEY\nUNDERTAKER\nUNICORN\nVACUUM\nVAN\nVET\nWAKE\nWALL\nWAR\nWASHER\nWASHINGTON\nWATCH\nWATER\nWAVE\nWEB\nWELL\nWHALE\nWHIP\nWIND\nWITCH\nWORM\nYARD');
+	var _user$project$Words$all = _elm_lang$core$String$lines('DRUM\nBRIDE\nWAGON\nUNIVERITY\nHIT\nASH\nBASS\nASTRONAUT\nDOLL\nNERVE\nCOACH\nBEAM\nSPOON\nCOUNTRY\nNOSE\nKING ARTHUR\nSTAMP\nCAMP\nBRAIN\nLEAF\nTUTU\nCOAST\nLUNCH\nTHUNDER\nPOTATO\nDESK\nONION\nELEPHANT\nANCHOR\nCOWBOY\nFLOOD\nMOHAWK\nSANTA\nPITCHER\nBARBECUE\nLEATHER\nSKATES\nMUSKETEER\nSNAP\nSADDLE\nGENIE\nMARK\nSHOULDER\nGOVERNOR\nMANICURE\nANTHEM\nHALLOWEEN\nNEWTON\nBALLOON\nFIDDLE\nCRAFT\nGLACIER\nCAKE\nRAT\nTANK\nBLIND\nSPIRIT\nCABLE\nSWAMP\nEINSTEIN\nHIDE\nCRYSTAL\nGEAR\nKISS\nPEW\nPOWDER\nTURTLE\nBACON\nSHERLOCK\nSQUASH\nBOOK\nRAZOR\nDRESSING\nBRICK\nBRAZIL\nTEAR\nSTABLE\nBIKINI\nPEN\nROLL\nCHRISTMAS\nRUBBER\nBAY\nMOTHER\nKICK\nFOG\nRADIO\nCRAB\nCONE\nSKULL\nWHEELCHAIR\nEGG\nBUTTER\nWEREWOLF\nCHERRY\nPATIENT\nDRYER\nDRAWING\nBOSS\nFEVER\nBANANA\nPOLISH\nKNOT\nPAINT\nSTORM\nGOLDILOCKS\nPILLOW\nCHAIN\nMOSES\nSAW\nBROTHER\nRAIL\nROPE\nSTREET\nPAD\nCAPTAIN\nWISH\nAXE\nSHORTS\nPOPCORN\nCASTLE\nSECOND\nTEAM\nOASIS\nMESS\nMISS\nAVALANCHE\nTEXAS\nSUN\nLETTER\nRUST\nWING\nSTEEL\nEAR\nSCROLL\nBUNK\nCANE\nVENUS\nLADDER\nPURSE\nSHEET\nNAPOLEON\nSUGAR\nDIRECTOR\nACE\nSCRATCH\nBUCKET\nCAESAR\nDISK\nBEARD\nBULB\nBENCH\nSCARECROW\nIGLOO\nTUXEDO\nEARTH\nRAM\nSISTER\nBREAD\nRECORD\nDASH\nGREENHOUSE\nDRONE\nSTEAM\nBISCUIT\nRIP\nNOTRE DAME\nLIP\nSHAMPOO\nCHEESE\nSACK\nMOUNTIE\nSUMO\nSAHARA\nWALRUS\nDUST\nHAMMER\nCLOUD\nSPRAY\nST.PATRICK\nKILT\nMONKEY\nFROG\nDENTIST\nRAINBOW\nWHISTLE\nREINDEER\nKITCHEN\nLEMONADE\nSLIPPER\nFLOOR\nVALENTINE\nPEPPER\nROAD\nSHED\nBOWLER\nMILK\nWHEEL\nMAGAZINE\nBRASS\nTEA\nHELMET\nFLAG\nTROLL\nJAIL\nSTICKER\nPUPPET\nCHALK\nBONSAI\nSWEAT\nGANGSTER\nBUTTERFLY\nSTORY\nSALAD\nARMOR\nSMOKE\nCAVE\nQUACK\nBREAK\nSNAKE\nMILL\nGYMNAST\nWONDERLAND\nDRIVER\nSPURS\nZOMBIE\nPIG\nCLEOPATRA\nTOAST\nPENNY\nANT\nVOLUME\nLACE\nBATTLESHIP\nMARACAS\nMETER\nSLING\nDELTA\nSTEP\nJOAN OF ARC\nCOMET\nBATH\nPOLO\nGUM\nVAMPIRE\nSKI\nPOCKET\nBATTLE\nFOAM\nRODEO\nSQUIRREL\nSALT\nMUMMY\nBLACKSMITH\nCHIP\nGOAT\nLAUNDRY\nBEE\nTATTOO\nRUSSIA\nTIN\nMAP\nYELLOWSTONE\nSILK\nHOSE\nSLOTH\nKUNG FU\nCLOCK\nBEAN\nLIGHTNING\nBOWL\nGUITAR\nRANCH\nPEARL\nFLAT\nVIRUS\nICE AGE\nCOFFEE\nMARATHON\nATTIC\nWEDDING\nCOLUMBUS\nPOP\nSHERWOOD\nTRICK\nNYLON\nLOCUST\nPACIFIC\nCUCKOO\nTORNADO\nMEMORY\nJOCKEY\nMINOTAUR\nBIG BANG\nPAGE\nSPHINX\nCRUSADER\nVOLCANO\nRIFLE\nBOIL\nHAIR\nBICYCLE\nJUMPER\nSMOOTHIE\nSLEEP\nPENTAGON\nGROOM\nRIVER\nFARM\nJUDGE\nVIKING\nEASTER\nMUD\nPARROT\nCOMB\nSALSA\nEDEN\nARMY\nPADDLE\nSALOON\nMONA LISA\nMILE\nBLIZZARD\nQUARTER\nJEWELER\nHAMBURGER\nGLASSES\nSAIL\nBOXER\nRICE\nMIRROR\nINK\nBEER\nTIPI\nMAKEUP\nMICROWAVE\nHERCULES\nSIGN\nPIZZA\nWOOL\nHOMER\nMINUTE\nSWORD\nSOUP\nALASKA\nBABY\nPOTTER\nSHOWER\nBLADE\nNOAH\nSOAP\nTUNNEL\nPEACH\nDOLLAR\nTIP\nLOVE\nJELLYFISH\nSTETHOSCOPE\nTASTE\nFUEL\nMOSQUITO\nWIZARD\nBIG BEN\nGARDEN\nWAITRESS\nSHOOT\nSHELL\nLUMBERJACK\nMEDIC\nDREAM\nBLUES\nEARTHQUAKE\nPEA\nPARADE\nSLED\nSMELL\nCOMPUTER\nCOW\nPEANUT\nWINDOW\nMUSTARD\nSAND\nGOLF\nCROW\nICELAND\nAPRON\nVIOLET\nDOOR\nTIGER\nJOKER\nHOUSE\nCOLLAR\nHAWAII\nDWARF\nPINE\nMAGICIAN\nFROST\nCURRY\nBUBBLE\nWOOD');
 
 	var _user$project$Main$asGameTime = function (h) {
 		var t = _elm_lang$core$Date$fromTime(
@@ -9690,17 +9690,17 @@
 	var _user$project$Main$Observer = {ctor: 'Observer'};
 	var _user$project$Main$Bob = {ctor: 'Bob'};
 	var _user$project$Main$Alice = {ctor: 'Alice'};
-	var _user$project$Main$Evil = {ctor: 'Evil'};
+	var _user$project$Main$Black = {ctor: 'Black'};
 	var _user$project$Main$Neutral = {ctor: 'Neutral'};
 	var _user$project$Main$Green = {ctor: 'Green'};
 	var _user$project$Main$labelKey = function () {
-		var evilCount = 3;
+		var blackCount = 3;
 		var greenCount = 9;
-		var neutralCount = (_user$project$Main$totalCards - greenCount) - evilCount;
+		var neutralCount = (_user$project$Main$totalCards - greenCount) - blackCount;
 		return _elm_lang$core$List$concat(
 			{
 				ctor: '::',
-				_0: A2(_elm_lang$core$List$repeat, evilCount, _user$project$Main$Evil),
+				_0: A2(_elm_lang$core$List$repeat, blackCount, _user$project$Main$Black),
 				_1: {
 					ctor: '::',
 					_0: A2(_elm_lang$core$List$repeat, greenCount, _user$project$Main$Green),
@@ -9718,11 +9718,115 @@
 				_elm_lang$core$List$drop,
 				_user$project$Main$totalCards * _user$project$Main$hoursIntoSession(hour),
 				A2(_user$project$Main$shuffle, sessionSeed, _user$project$Words$all));
-			var bobLabelKey = A2(
-				_user$project$Main$shuffle,
-				_user$project$Main$gameSeed((hour * 2) + 1),
-				_user$project$Main$labelKey);
 			var aliceLabelKey = A2(_user$project$Main$shuffle, seed, _user$project$Main$labelKey);
+			var aliceGreens = A2(
+				_elm_lang$core$List$map,
+				_elm_lang$core$Tuple$first,
+				A2(
+					_user$project$Main$shuffle,
+					_user$project$Main$gameSeed(hour),
+					A2(
+						_elm_lang$core$List$filter,
+						function (_p12) {
+							return A2(
+								F2(
+									function (x, y) {
+										return _elm_lang$core$Native_Utils.eq(x, y);
+									}),
+								_user$project$Main$Green,
+								_elm_lang$core$Tuple$second(_p12));
+						},
+						A2(
+							_elm_lang$core$List$indexedMap,
+							F2(
+								function (v0, v1) {
+									return {ctor: '_Tuple2', _0: v0, _1: v1};
+								}),
+							aliceLabelKey))));
+			var aliceBlacks = A2(
+				_elm_lang$core$List$map,
+				_elm_lang$core$Tuple$first,
+				A2(
+					_user$project$Main$shuffle,
+					_user$project$Main$gameSeed(hour),
+					A2(
+						_elm_lang$core$List$filter,
+						function (_p13) {
+							return A2(
+								F2(
+									function (x, y) {
+										return _elm_lang$core$Native_Utils.eq(x, y);
+									}),
+								_user$project$Main$Black,
+								_elm_lang$core$Tuple$second(_p13));
+						},
+						A2(
+							_elm_lang$core$List$indexedMap,
+							F2(
+								function (v0, v1) {
+									return {ctor: '_Tuple2', _0: v0, _1: v1};
+								}),
+							aliceLabelKey))));
+			var aliceNeutrals = A2(
+				_elm_lang$core$List$map,
+				_elm_lang$core$Tuple$first,
+				A2(
+					_user$project$Main$shuffle,
+					_user$project$Main$gameSeed(hour),
+					A2(
+						_elm_lang$core$List$filter,
+						function (_p14) {
+							return A2(
+								F2(
+									function (x, y) {
+										return _elm_lang$core$Native_Utils.eq(x, y);
+									}),
+								_user$project$Main$Neutral,
+								_elm_lang$core$Tuple$second(_p14));
+						},
+						A2(
+							_elm_lang$core$List$indexedMap,
+							F2(
+								function (v0, v1) {
+									return {ctor: '_Tuple2', _0: v0, _1: v1};
+								}),
+							aliceLabelKey))));
+			var greensForBob = A2(
+				_elm_lang$core$Basics_ops['++'],
+				A2(_elm_lang$core$List$take, 3, aliceGreens),
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					A2(_elm_lang$core$List$take, 1, aliceBlacks),
+					A2(_elm_lang$core$List$take, 5, aliceNeutrals)));
+			var blacksForBob = A2(
+				_elm_lang$core$Basics_ops['++'],
+				A2(
+					_elm_lang$core$List$take,
+					1,
+					A2(_elm_lang$core$List$drop, 1, aliceBlacks)),
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					A2(
+						_elm_lang$core$List$take,
+						1,
+						A2(_elm_lang$core$List$drop, 3, aliceGreens)),
+					A2(
+						_elm_lang$core$List$take,
+						1,
+						A2(_elm_lang$core$List$drop, 5, aliceNeutrals))));
+			var bobLabelKey = A2(
+				_elm_lang$core$List$map,
+				function (x) {
+					return A2(_elm_lang$core$List$member, x, greensForBob) ? _user$project$Main$Green : (A2(_elm_lang$core$List$member, x, blacksForBob) ? _user$project$Main$Black : _user$project$Main$Neutral);
+				},
+				A2(_elm_lang$core$List$range, 0, _user$project$Main$totalCards));
+			var neutralsForBob = A2(
+				_elm_lang$core$Basics_ops['++'],
+				A2(_elm_lang$core$List$drop, 4, aliceGreens),
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					A2(_elm_lang$core$List$drop, 2, aliceBlacks),
+					A2(_elm_lang$core$List$drop, 1, aliceNeutrals)));
 			return A4(
 				_elm_lang$core$List$map3,
 				F3(
@@ -9735,8 +9839,8 @@
 		});
 	var _user$project$Main$update = F2(
 		function (msg, model) {
-			var _p12 = msg;
-			switch (_p12.ctor) {
+			var _p15 = msg;
+			switch (_p15.ctor) {
 				case 'ToggleSpymaster':
 					return {
 						ctor: '_Tuple2',
@@ -9753,7 +9857,7 @@
 							{
 								cards: A2(
 									_elm_lang$core$List$map,
-									_user$project$Main$aliceGuess(_p12._0),
+									_user$project$Main$aliceGuess(_p15._0),
 									model.cards)
 							}),
 						_1: _elm_lang$core$Platform_Cmd$none
@@ -9766,7 +9870,7 @@
 							{
 								cards: A2(
 									_elm_lang$core$List$map,
-									_user$project$Main$bobGuess(_p12._0),
+									_user$project$Main$bobGuess(_p15._0),
 									model.cards)
 							}),
 						_1: _elm_lang$core$Platform_Cmd$none
@@ -9776,22 +9880,22 @@
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
-							{viewAs: _p12._0, isSpymaster: false}),
+							{viewAs: _p15._0, isSpymaster: false}),
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
 				default:
-					var _p13 = _p12._0;
+					var _p16 = _p15._0;
 					return {
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
 							{
-								hour: _p13,
+								hour: _p16,
 								cards: A3(
 									_user$project$Main$dealCards,
-									_user$project$Main$sessionSeed(_p13),
-									_user$project$Main$gameSeed(_p13),
-									_p13)
+									_user$project$Main$sessionSeed(_p16),
+									_user$project$Main$gameSeed(_p16),
+									_p16)
 							}),
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
@@ -9807,7 +9911,7 @@
 	var _user$project$Main$card = F3(
 		function (viewAsPlayer, isSpymaster, word) {
 			var playerGuessed = (_elm_lang$core$Native_Utils.eq(viewAsPlayer, _user$project$Main$Alice) && word.aliceGuessed) || (_elm_lang$core$Native_Utils.eq(viewAsPlayer, _user$project$Main$Bob) && word.bobGuessed);
-			var guessedBlack = (_elm_lang$core$Native_Utils.eq(word.aliceLabel, _user$project$Main$Evil) && word.bobGuessed) || (_elm_lang$core$Native_Utils.eq(word.bobLabel, _user$project$Main$Evil) && word.aliceGuessed);
+			var guessedBlack = (_elm_lang$core$Native_Utils.eq(word.aliceLabel, _user$project$Main$Black) && word.bobGuessed) || (_elm_lang$core$Native_Utils.eq(word.bobLabel, _user$project$Main$Black) && word.aliceGuessed);
 			var guessedGreen = (_elm_lang$core$Native_Utils.eq(word.aliceLabel, _user$project$Main$Green) && word.bobGuessed) || (_elm_lang$core$Native_Utils.eq(word.bobLabel, _user$project$Main$Green) && word.aliceGuessed);
 			var showBackground = guessedGreen || (guessedBlack || (isSpymaster || playerGuessed));
 			var showText = (!isSpymaster) ? ((!guessedGreen) && ((!guessedBlack) && (!playerGuessed))) : (_elm_lang$core$Native_Utils.eq(viewAsPlayer, _user$project$Main$Bob) ? ((!word.aliceGuessed) && ((!guessedGreen) && (!guessedBlack))) : ((!word.bobGuessed) && ((!guessedGreen) && (!guessedBlack))));
@@ -9825,7 +9929,7 @@
 					_elm_lang$core$Basics_ops['++'],
 					_elm_lang$core$Basics$toString(word.aliceLabel),
 					' '));
-			var team = guessedGreen ? 'team-Green' : (guessedBlack ? 'team-Evil' : ((word.aliceGuessed && (word.bobGuessed && _elm_lang$core$Native_Utils.eq(word.aliceLabel, word.bobLabel))) ? A2(
+			var team = guessedGreen ? 'team-Green' : (guessedBlack ? 'team-Black' : ((word.aliceGuessed && (word.bobGuessed && _elm_lang$core$Native_Utils.eq(word.aliceLabel, word.bobLabel))) ? A2(
 				_elm_lang$core$Basics_ops['++'],
 				'team-',
 				_elm_lang$core$Basics$toString(word.aliceLabel)) : (_elm_lang$core$Native_Utils.eq(viewAsPlayer, _user$project$Main$Bob) ? bobLabel : (_elm_lang$core$Native_Utils.eq(viewAsPlayer, _user$project$Main$Alice) ? aliceLabel : 'team-'))));

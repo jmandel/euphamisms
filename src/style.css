@@ -257,6 +257,10 @@ html, body {
 }
 
 @media (max-width: 1200px){
+
+    .player-select {
+      margin-left: 1.25em;
+    }
     .word-card {
         min-height: 1em;
         padding: 0px;
@@ -272,8 +276,8 @@ html, body {
         border-right: 1px solid white;
     }
     .board {
-        padding-top: 3em;
-        padding-bottom: 1.8em;
+        padding-top: 0em;
+        padding-bottom: 0em;
         padding-left: 1em;
         padding-right: 1em;
         height: 100%;
@@ -293,11 +297,13 @@ html, body {
     .reveal-board {position: relative;}
 }
 
-@media (max-width: 900px){
+@media (max-width: 650px){
     .word-card {
         min-width: 7em;
         //min-height: 75px;
         width: 100%;
+        font-size: 3.5vmax;
+
     }
     .board {
         padding-top: 0em;
@@ -311,6 +317,7 @@ html, body {
       margin: 20px;
       margin-bottom: 10px;
     }
+
 
     .reveal-board {position: relative;}
 

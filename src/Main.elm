@@ -78,7 +78,6 @@ labelKey =
 
         blackCount =
             3
-
         neutralCount =
             totalCards - greenCount - blackCount
     in
@@ -203,9 +202,7 @@ bobGuess word w =
         w
 
 
-hoursPerSession =
-    12
-
+hoursPerSession = (List.length  Words.all) // totalCards
 
 hoursIntoSession hour =
     (hour % hoursPerSession)

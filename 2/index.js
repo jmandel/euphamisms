@@ -11549,16 +11549,6 @@
 		var seed_ = _p6._1;
 		return seed_;
 	};
-	var _user$project$Main$hoursPerSession = 12;
-	var _user$project$Main$hoursIntoSession = function (hour) {
-		return A2(_elm_lang$core$Basics_ops['%'], hour, _user$project$Main$hoursPerSession);
-	};
-	var _user$project$Main$sessionSeed = function (hour) {
-		var seed = _elm_lang$core$Random$initialSeed((hour / _user$project$Main$hoursPerSession) | 0);
-		var _p7 = A2(_elm_lang$core$Random$step, _elm_lang$core$Random$bool, seed);
-		var seed_ = _p7._1;
-		return seed_;
-	};
 	var _user$project$Main$bobGuess = F2(
 		function (word, w) {
 			return _elm_lang$core$Native_Utils.eq(w, word) ? _elm_lang$core$Native_Utils.update(
@@ -11574,39 +11564,39 @@
 	var _user$project$Main$shuffle = F2(
 		function (seed, pile) {
 			var swap = F2(
-				function (_p8, aa) {
-					var _p9 = _p8;
-					var _p11 = _p9._1;
-					var _p10 = _p9._0;
+				function (_p7, aa) {
+					var _p8 = _p7;
+					var _p10 = _p8._1;
+					var _p9 = _p8._0;
 					return A3(
 						_elm_lang$core$Array$set,
-						_p11,
+						_p10,
 						A2(
 							_elm_lang$core$Maybe$withDefault,
 							_elm_lang$core$Maybe$Nothing,
-							A2(_elm_lang$core$Array$get, _p10, aa)),
+							A2(_elm_lang$core$Array$get, _p9, aa)),
 						A3(
 							_elm_lang$core$Array$set,
-							_p10,
+							_p9,
 							A2(
 								_elm_lang$core$Maybe$withDefault,
 								_elm_lang$core$Maybe$Nothing,
-								A2(_elm_lang$core$Array$get, _p11, aa)),
+								A2(_elm_lang$core$Array$get, _p10, aa)),
 							aa));
 				});
 			var randomValsInRange = F2(
-				function (_p13, _p12) {
-					var _p14 = _p13;
-					var _p15 = _p12;
-					var _p16 = A2(
+				function (_p12, _p11) {
+					var _p13 = _p12;
+					var _p14 = _p11;
+					var _p15 = A2(
 						_elm_lang$core$Random$step,
-						A2(_elm_lang$core$Random$int, 0, _p14._1),
-						_p15._1);
-					var nextval = _p16._0;
-					var nextseed = _p16._1;
+						A2(_elm_lang$core$Random$int, 0, _p13._1),
+						_p14._1);
+					var nextval = _p15._0;
+					var nextseed = _p15._1;
 					return {
 						ctor: '_Tuple2',
-						_0: {ctor: '::', _0: nextval, _1: _p15._0},
+						_0: {ctor: '::', _0: nextval, _1: _p14._0},
 						_1: nextseed
 					};
 				});
@@ -11652,6 +11642,16 @@
 											_elm_lang$core$List$length(pile) - 1))))))));
 		});
 	var _user$project$Main$totalCards = 25;
+	var _user$project$Main$hoursPerSession = (_elm_lang$core$List$length(_user$project$Words$all) / _user$project$Main$totalCards) | 0;
+	var _user$project$Main$hoursIntoSession = function (hour) {
+		return A2(_elm_lang$core$Basics_ops['%'], hour, _user$project$Main$hoursPerSession);
+	};
+	var _user$project$Main$sessionSeed = function (hour) {
+		var seed = _elm_lang$core$Random$initialSeed((hour / _user$project$Main$hoursPerSession) | 0);
+		var _p16 = A2(_elm_lang$core$Random$step, _elm_lang$core$Random$bool, seed);
+		var seed_ = _p16._1;
+		return seed_;
+	};
 	var _user$project$Main$Card = F5(
 		function (a, b, c, d, e) {
 			return {aliceLabel: a, bobLabel: b, word: c, aliceGuessed: d, bobGuessed: e};

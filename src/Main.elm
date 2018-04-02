@@ -12,6 +12,7 @@ import Array
 import Words
 import Task
 import Debug
+import List.Extra
 
 import Svg
 import Svg.Attributes
@@ -56,6 +57,7 @@ type alias Model =
     , hour : Int
     , cards : List Card
     , isSpymaster : Bool
+    , wantHints : Bool
     , history : List Player
     }
 
@@ -168,7 +170,7 @@ dealCards sessionSeed seed hour =
 
 
 init =
-    ( Model Alice 0 [] False []
+    ( Model Alice 0 [] False False []
     , Cmd.batch
         [ Time.now |> Task.perform Time.inHours |> Cmd.map (\x -> NewHour <| floor x) ]
     )
@@ -184,6 +186,7 @@ type Msg
     | AliceGuess Card
     | BobGuess Card
     | ToggleSpymaster
+    | ToggleHints
 
 
 aliceGuess word w =
@@ -232,6 +235,9 @@ gameSeed hour =
 
 update msg model =
     case msg of
+        ToggleHints ->
+            ( { model | wantHints = not model.wantHints }, Cmd.none )
+
         ToggleSpymaster ->
             ( { model | isSpymaster = not model.isSpymaster }, Cmd.none )
 
@@ -260,15 +266,18 @@ subscriptions model =
 
 -- VIEW
 
-
-card : Player -> Bool -> Card -> Html.Html Msg
-card viewAsPlayer isSpymaster word =
+card viewAsPlayer isSpymaster wantHints probs word =
     let
         aliceLabel =
             " team-" ++ (toString word.aliceLabel) ++ " "
 
         bobLabel =
             " team-" ++ (toString word.bobLabel) ++ " "
+        currentPlayerLabel =
+            if viewAsPlayer == Alice then
+                (toString word.aliceLabel)
+            else
+                (toString word.bobLabel)
 
         guessedGreen =
             (word.aliceLabel == Green && word.bobGuessed) || (word.bobLabel == Green && word.aliceGuessed)
@@ -288,6 +297,20 @@ card viewAsPlayer isSpymaster word =
                 toString word.aliceLabel
             else
                 ""
+        distributionHints =
+            let
+                colorProbs = probs 
+                    |> Dict.get currentPlayerLabel
+                    |> Maybe.withDefault (Dict.fromList [])
+            in
+                [Html.br [] [] ] ++ [div [class "distribution-hints"] <|
+                    ([Green, Black, Neutral]
+                    |> List.map toString
+                    |> List.map (\color ->
+                      span [class <| "probability-"++color] [text
+                          (toString (Dict.get color colorProbs
+                            |> Maybe.withDefault 0))]))]
+
 
         showText =
             if not isSpymaster then
@@ -335,10 +358,13 @@ card viewAsPlayer isSpymaster word =
                     (AliceGuess word)
                 )
             ]
-            ([ text word.word ] ++ if originalColor /= "" then
+            ([ div [] [text word.word] ] ++ if originalColor /= "" then
                     [flag <|"original-"++originalColor]
                 else
-                    [text ""])
+                    [text ""] ++ if not (isSpymaster || showBackground) && wantHints then
+                            distributionHints
+                        else
+                            [])
 
 
 asGameTime h =
@@ -389,11 +415,27 @@ view model =
             |> List.filter iGuessed
             |> List.map myProbabilities
             |> List.foldl (\k probs -> decrementProbability k probs) baseProbabilities
+            |> List.map (\((me, them), count) -> ((toString me, toString them), count))
+            |> List.Extra.groupWhile (\((me, _), _) ((me2, _),_ ) -> me == me2)
+            |> List.map (\l ->
+                let
+                    givenColor = List.head l
+                        |> Maybe.map (\((me, _), _) -> me)
+                        |> Maybe.withDefault "Bad"
+                    opponentTotals =
+                        l
+                            |> List.map (\((_, them), total) -> (them, total))
+                            |> Dict.fromList
+                in
+                    (givenColor, opponentTotals))
+            |> Dict.fromList
 
     in
     div [ class "main" ]
         [ span [ class "controls" ]
-            [ span [ class "which-game" ] [ (text <| asGameTime model.hour) ]
+            [ span [
+                class "which-game"
+                , onClick ToggleHints] [ (text <| asGameTime model.hour) ]
             , span [ class "reveal-board" ]
                 [ i
                     [ class "fa fa-eye"
@@ -429,5 +471,5 @@ view model =
                 []
             ]
         , div [ class "board" ]
-            (List.map (card model.viewAs model.isSpymaster) model.cards)
+            (List.map (card model.viewAs model.isSpymaster model.wantHints probabilities) model.cards)
         ]

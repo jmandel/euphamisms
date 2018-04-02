@@ -21,6 +21,33 @@ html, body {
     height: 100%;
 }
 
+.distribution-hints {
+  font-family: monospace;
+  font-size: .5em;
+  font-weight: bold;
+  color: white;
+  line-height: 1em;
+  position: absolute;
+  top: 0px;
+  margin-top:.5em;
+}
+
+.probability-Green {
+  background: Green;
+  padding: 4px;
+}
+
+.probability-Black {
+  background: Black;
+  padding: 4px;
+}
+.probability-Neutral {
+  background: slategray;
+  padding: 4px;
+}
+
+
+
 .flag {
   position: absolute;
   height: 25px;
@@ -182,8 +209,8 @@ html, body {
     margin-top: 0.25em;
     min-width: 5em;
     flex-grow: 1;
-    font-size: 3vmax;
-    line-height: 3vmax;
+    font-size: 2.5em;
+    line-height: 2.5em;
     display: flex;
     text-align: center;
     align-items: center;
@@ -258,6 +285,11 @@ html, body {
 
 @media (max-width: 1200px){
 
+    .distribution-hints {
+      top: inherit;
+      margin-top: -2em;
+    }
+
     .flag {
         bottom: 0px; right: 0px;
     }
@@ -301,7 +333,7 @@ html, body {
     .reveal-board {position: relative;}
 }
 
-@media (max-width: 650px){
+@media (max-width: 950px){
     .word-card {
         min-width: 7em;
         min-height: 25px;
@@ -321,6 +353,13 @@ html, body {
       height: 5px;
       margin: 20px;
       margin-bottom: 10px;
+    }
+
+    .distribution-hints {
+        position: relative;
+        margin: 0px;
+        font-size: .6em;
+        margin-left: .5em;
     }
 
 

@@ -21,6 +21,25 @@ html, body {
     height: 100%;
 }
 
+.flag {
+  position: absolute;
+  bottom: 0; right: 0;
+  margin-bottom: -.2em;
+}
+
+.original-Black {
+  fill: black;
+}
+
+.original-Green {
+  fill: green;
+}
+
+.original-Neutral {
+  fill: slategray;
+}
+
+
 .turns {
   margin-left: 10px;
   font-family: monospace;

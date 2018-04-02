@@ -5,12 +5,16 @@ import Html.Events exposing (onClick, onInput)
 import Html.Attributes exposing (..)
 import Time
 import Date
+import Dict
 import Random
 import String
 import Array
 import Words
 import Task
 import Debug
+
+import Svg
+import Svg.Attributes
 
 main : Program Never Model Msg
 main =
@@ -58,6 +62,11 @@ type alias Model =
 
 totalCards =
     25
+
+baseProbabilities = [
+    ((Green, Green), 3), ((Green, Black), 1), ((Green, Neutral), 5),
+    ((Black, Green), 1), ((Black, Black), 1), ((Black, Neutral), 1),
+    ((Neutral, Green), 5), ((Neutral, Black), 1), ((Neutral, Neutral), 7) ]
 
 
 labelKey =
@@ -107,7 +116,7 @@ dealCards sessionSeed seed hour =
         aliceLabelKey =
             shuffle seed labelKey
 
-        -- TODO: DRY
+        -- TODO: DRY based on baseProbabilities
         aliceGreens =
             List.indexedMap (,) aliceLabelKey
                 |> List.filter ((==) Green << Tuple.second)
@@ -272,6 +281,13 @@ card viewAsPlayer isSpymaster word =
 
         showBackground =
             guessedGreen || guessedBlack || isSpymaster || playerGuessed
+        originalColor =
+            if isSpymaster && viewAsPlayer == Bob && word.bobGuessed then
+                toString word.bobLabel
+            else if isSpymaster && viewAsPlayer == Alice && word.aliceGuessed then
+                toString word.aliceLabel
+            else
+                ""
 
         showText =
             if not isSpymaster then
@@ -319,7 +335,10 @@ card viewAsPlayer isSpymaster word =
                     (AliceGuess word)
                 )
             ]
-            [ text word.word ]
+            ([ text word.word ] ++ if originalColor /= "" then
+                    [flag <|"original-"++originalColor]
+                else
+                    [text ""])
 
 
 asGameTime h =
@@ -344,10 +363,33 @@ asGameTime h =
     in
         (toString day) ++ " " ++ (toString fh) ++ fampm
 
+decrementProbability : (Team, Team) -> List ((Team, Team), number) -> List((Team, Team), number)
+decrementProbability k probs =
+    probs |> List.map (\((mine, theirs), prob) -> if (mine, theirs) == k then
+            ((mine, theirs), prob-1)
+        else
+            ((mine, theirs), prob))
+
+flag color = div [class <| "flag " ++ color] [Svg.svg [Svg.Attributes.width "25", Svg.Attributes.height "25"] [Svg.polygon [Svg.Attributes.points "25,0 0,25 25,25"] []]]
 
 view : Model -> Html.Html Msg
 view model =
     let turns = List.foldl (\player (turns, last) -> (if player == last then (turns, last) else (turns+1, player))) (0, Observer) model.history |> Tuple.first
+
+        iGuessed = if model.viewAs == Alice then
+                (\w -> w.aliceGuessed)
+            else
+                (\w -> w.bobGuessed)
+
+        myProbabilities = if model.viewAs == Alice then
+                (\w -> (w.aliceLabel,  w.bobLabel))
+            else
+                (\w -> (w.bobLabel,  w.aliceLabel))
+        probabilities = model.cards
+            |> List.filter iGuessed
+            |> List.map myProbabilities
+            |> List.foldl (\k probs -> decrementProbability k probs) baseProbabilities
+
     in
     div [ class "main" ]
         [ span [ class "controls" ]
@@ -368,7 +410,7 @@ view model =
                             else
                                 ViewAs Bob
                     ]
-                    [ option [ value "Alice" ] [ text "Alice" ]
+                    [ option [ value "Alice" ] [ text ("Alice"  ) ]
                     , option [ value "Bob" ] [ text "Bob" ]
                     ]
                 , span [class "turns"] [text <| if turns > 0 then "Turn " ++ toString turns else ""]

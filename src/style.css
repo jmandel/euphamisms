@@ -344,6 +344,7 @@ html, body {
         //min-height: 75px;
         width: 100%;
         font-size: 1.8em;
+        justify-content: left;
 
     }
     .board {

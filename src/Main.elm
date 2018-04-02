@@ -301,10 +301,14 @@ card viewAsPlayer isSpymaster wantHints probs word =
                     |> Maybe.withDefault (Dict.fromList [])
             in
                 [Html.br [] [] ] ++ [div [class "distribution-hints"] <|
-                    ([Green, Black, Neutral]
+                    ([Green, Neutral, Black]
                     |> List.map toString
                     |> List.map (\color ->
-                      span [class <| "probability-"++color] [text
+                      span [class <| "probability-"++color
+                          , style [("width", (Dict.get color colorProbs
+                          |> Maybe.withDefault 0
+                          |> (\v -> v/2 + 0.5)
+                          |> toString) ++ "em")] ] [text
                           (toString (Dict.get color colorProbs
                             |> Maybe.withDefault 0))]))]
 

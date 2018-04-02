@@ -30,20 +30,24 @@ html, body {
   position: absolute;
   top: 0px;
   margin-top:.5em;
+  opacity: 0.3;
 }
 
 .probability-Green {
   background: Green;
   padding: 4px;
+  display: inline-block;
 }
 
 .probability-Black {
   background: Black;
   padding: 4px;
+  display: inline-block;
 }
 .probability-Neutral {
   background: slategray;
   padding: 4px;
+  display: inline-block;
 }
 
 
@@ -360,6 +364,8 @@ html, body {
         margin: 0px;
         font-size: .6em;
         margin-left: .5em;
+        right: 0px;
+        position: absolute;
     }
 
 

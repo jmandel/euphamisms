@@ -45,7 +45,7 @@ html, body {
   display: inline-block;
 }
 .probability-Neutral {
-  background: slategray;
+  background: steelblue;
   padding: 4px;
   display: inline-block;
 }
@@ -76,7 +76,7 @@ html, body {
 }
 
 .original-Neutral {
-  fill: slategray;
+  fill: steelblue;
 }
 
 
@@ -144,7 +144,7 @@ html, body {
 }
 
 .guessed-Neutral {
-  background: slategray;
+  background: steelblue;
 }
 
 .word-card {
@@ -156,8 +156,8 @@ html, body {
 }
 
 .word-card.team-Neutral.background {
-    background: slategray;
-    color: slategray;
+    background: steelblue;
+    color: steelblue;
 }
 
 .word-card.team-Green.background {

@@ -296,12 +296,17 @@ card viewAsPlayer isSpymaster wantHints probs word =
                 ""
         distributionHints =
             let
-                colorProbs = probs 
+                colorProbs = probs
                     |> Dict.get currentPlayerLabel
                     |> Maybe.withDefault (Dict.fromList [])
             in
                 [Html.br [] [] ] ++ [div [class "distribution-hints"] <|
                     ([Green, Neutral, Black]
+                    |> List.filter (\color ->
+                        let
+                            colorCount = Dict.get (toString color) colorProbs |> Maybe.withDefault 0
+                        in
+                            colorCount > 0)
                     |> List.map toString
                     |> List.map (\color ->
                       span [class <| "probability-"++color

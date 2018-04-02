@@ -258,6 +258,10 @@ html, body {
 
 @media (max-width: 1200px){
 
+    .flag {
+        bottom: 0px; right: 0px;
+    }
+
     .player-select {
       margin-left: 1.25em;
     }
@@ -269,8 +273,8 @@ html, body {
         width: calc(100% * 1/5 - .5em);
         margin-left: 0em;
         margin-right: 0em;
-        font-size: 2.7vmax;
-        line-height: 2.7vmax;
+        font-size: 3vmax;
+        line-height: 3vmax;
         border: 0px;
         border-bottom: 1px solid white;
         border-right: 1px solid white;
@@ -300,9 +304,10 @@ html, body {
 @media (max-width: 650px){
     .word-card {
         min-width: 7em;
+        min-height: 25px;
         //min-height: 75px;
         width: 100%;
-        font-size: 3.5vmax;
+        font-size: 1.8em;
 
     }
     .board {

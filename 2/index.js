@@ -95,7 +95,7 @@
 
 
 	// module
-	exports.push([module.id, "@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(4) + ") format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(5) + ") format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\nhtml, body {\n    margin: 0px;\n    border: 0px;\n    font-family: Passion One;\n    padding: 0px;\n    height: 100%;\n}\n\n.turns {\n  margin-left: 10px;\n  font-family: monospace;\n}\n.chip {\n  width: 10px;\n  opacity: 1.0;\n  height: 10px;\n  margin: 20px;\n  border: 1px dotted black;\n  position: absolute;\n  bottom: 0px;\n  border-radius: 100px;\n  margin: 4px;\n  background: white;\n}\n\n.background .chip {\n border: 1px dotted white;\n}\n\n.player-select {\n    background: white;\n    margin-left: 1em;\n    font-family: Passion One;\n    font-size: 2em;\n}\n\n.alice {\n  right: 0px;\n}\n.bob {\n  left: 0px;\n}\n\n.main {\n    height: calc(100%  - 10em);\n}\n\n.frame {\n  box-sizing: border-box;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: -1;\n}\n\n.frame.first-Blue {\n  border: 0.5em solid blue;\n}\n\n.frame.first-Red {\n  border: 0.5em solid red;\n}\n\n.guessed-Green {\n  background: green;\n}\n\n.guessed-Black {\n  background: black;\n}\n\n.guessed-Neutral {\n  background: slategray;\n}\n\n\n\n.word-card {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  position: relative;\n}\n\n.word-card.team-Neutral.background {\n    background: slategray;\n    color: slategray;\n}\n\n.word-card.team-Green.background {\n    background: green;\n    color: green;\n}\n\n.word-card.team-Red.background {\n    background: red;\n    color: red;\n}\n\n.word-card.team-Blue.background {\n    background: blue;\n    color: blue;\n}\n\n.word-card.team-Black.background {\n    background: black;\n    color: black;\n}\n\n.word-card.team-Neutral.background.foreground {\n    color: white;\n}\n\n.word-card.team-Green.background.foreground {\n    color: white;\n}\n\n.word-card.team-Red.background.foreground {\n    color: white;\n}\n\n.word-card.team-Blue.background.foreground {\n    color: white;\n}\n\n.word-card.team-Black.background.foreground {\n    color: white;\n}\n\n\n.word-card {\n    cursor: pointer;\n    display: inline-block;\n    border: 1px solid black;\n    color: black;\n    padding: .2em;\n    width: calc(100% * 1/5 - 1em );\n    margin-left: 0.25em;\n    margin-right: 0.25em;\n    margin-bottom: 0.25em;\n    margin-top: 0.25em;\n    min-width: 4em;\n    flex-grow: 1;\n    font-size: 2.7em;\n    display: flex;\n    text-align: center;\n    align-items: center;\n    justify-content: center;\n    transition: background-color .1s ease-in;\n}\n\n.board {\n    margin-left: 4em;\n    margin-right: 3.5em;\n    display: flex;\n    flex-wrap: wrap;\n    height: 100%;\n    padding-left: 0px;\n    padding-right: 0px;\n    padding-top: 5em;\n    padding-bottom: 5em;\n    align-items: stretch;\n}\n\n.fa {\n    font-size: 2em;\n}\n\n\n.viewas-active {\n  font-weight: bold;\n}\n\n.reveal-board span {\n  margin-right: .2em;\n}\n\n.reveal-board {\n    cursor: pointer;\n    position: fixed;\n    top: 0px;\n    padding: 0.5em;\n}\n\n.choose-player {\n  margin-top: 1em;\n  margin-left: 5em;\n}\n\n.prev-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    left: 0px;\n    padding: 0.5em;\n}\n\n.next-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    right: 0px;\n    padding: 0.5em;\n}\n\n.which-game {\n    font-family: monospace;\n    padding-bottom: 0em;\n    position: absolute;\n    right: 0px;\n    top: 0px;\n    padding-top: 1em;\n    text-align: center;\n    padding-right: 2em;\n}\n\n@media (max-width: 1100px){\n    .word-card {\n        min-height: 1em;\n        padding: 0px;\n        margin: 0px;\n        min-width: 1em;\n        width: calc(100% * 1/5 - .5em);\n        margin-left: 0em;\n        margin-right: 0em;\n        font-size: 1.5em;\n        line-height: .7em;\n        border: 0px;\n    }\n    .board {\n        padding-top: 3em;\n        padding-bottom: 1.8em;\n        padding-left: 1em;\n        padding-right: 1em;\n        height: 100%;\n    }\n    .main {\n        height: calc(100% - 3.6em);\n    }\n    .chip {\n      border: 1px solid black;\n      width: 5px;\n      height: 5px;\n      margin: 20px;\n      margin-bottom: 16px;\n    }\n\n\n    .reveal-board {position: relative;}\n}\n\n@media (max-width: 600px){\n    .word-card {\n        min-width: 7em;\n        //min-height: 75px;\n        width: 100%;\n    }\n    .board {\n        padding-top: 0em;\n        padding-bottom: 0em;\n    }\n\n    .chip {\n      border: 1px solid black;\n      width: 5px;\n      height: 5px;\n      margin: 20px;\n      margin-bottom: 10px;\n    }\n\n    .reveal-board {position: relative;}\n\n}\n", ""]);
+	exports.push([module.id, "@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(4) + ") format('woff2');\n  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;\n}\n@font-face {\n  font-family: 'Passion One';\n  font-style: normal;\n  font-weight: 400;\n  src: local('Passion One'), local('PassionOne-Regular'), url(" + __webpack_require__(5) + ") format('woff2');\n  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;\n}\n\nhtml, body {\n    margin: 0px;\n    border: 0px;\n    font-family: Passion One;\n    padding: 0px;\n    height: 100%;\n}\n\n.flag {\n  position: absolute;\n  bottom: 0; right: 0;\n  margin-bottom: -.2em;\n}\n\n.original-Black {\n  fill: black;\n}\n\n.original-Green {\n  fill: green;\n}\n\n.original-Neutral {\n  fill: slategray;\n}\n\n\n.turns {\n  margin-left: 10px;\n  font-family: monospace;\n}\n.chip {\n  width: 10px;\n  opacity: 1.0;\n  height: 10px;\n  margin: 20px;\n  border: 1px dotted black;\n  position: absolute;\n  bottom: 0px;\n  border-radius: 100px;\n  margin: 4px;\n  background: white;\n}\n\n.background .chip {\n border: 1px dotted white;\n}\n\n.player-select {\n    background: white;\n    margin-left: 1em;\n    font-family: Passion One;\n    font-size: 2em;\n}\n\n.alice {\n  right: 0px;\n}\n.bob {\n  left: 0px;\n}\n\n.main {\n    height: calc(100%  - 10em);\n}\n\n.frame {\n  box-sizing: border-box;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  z-index: -1;\n}\n\n.frame.first-Blue {\n  border: 0.5em solid blue;\n}\n\n.frame.first-Red {\n  border: 0.5em solid red;\n}\n\n.guessed-Green {\n  background: green;\n}\n\n.guessed-Black {\n  background: black;\n}\n\n.guessed-Neutral {\n  background: slategray;\n}\n\n\n\n.word-card {\n  -webkit-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n  position: relative;\n}\n\n.word-card.team-Neutral.background {\n    background: slategray;\n    color: slategray;\n}\n\n.word-card.team-Green.background {\n    background: green;\n    color: green;\n}\n\n.word-card.team-Red.background {\n    background: red;\n    color: red;\n}\n\n.word-card.team-Blue.background {\n    background: blue;\n    color: blue;\n}\n\n.word-card.team-Black.background {\n    background: black;\n    color: black;\n}\n\n.word-card.team-Neutral.background.foreground {\n    color: white;\n}\n\n.word-card.team-Green.background.foreground {\n    color: white;\n}\n\n.word-card.team-Red.background.foreground {\n    color: white;\n}\n\n.word-card.team-Blue.background.foreground {\n    color: white;\n}\n\n.word-card.team-Black.background.foreground {\n    color: white;\n}\n\n\n.word-card {\n    cursor: pointer;\n    display: inline-block;\n    border: 1px solid black;\n    color: black;\n    padding: .2em;\n    width: calc(100% * 1/5 - 1em );\n    margin-left: 0.25em;\n    margin-right: 0.25em;\n    margin-bottom: 0.25em;\n    margin-top: 0.25em;\n    min-width: 4em;\n    flex-grow: 1;\n    font-size: 2.7em;\n    display: flex;\n    text-align: center;\n    align-items: center;\n    justify-content: center;\n    transition: background-color .1s ease-in;\n}\n\n.board {\n    margin-left: 4em;\n    margin-right: 3.5em;\n    display: flex;\n    flex-wrap: wrap;\n    height: 100%;\n    padding-left: 0px;\n    padding-right: 0px;\n    padding-top: 5em;\n    padding-bottom: 5em;\n    align-items: stretch;\n}\n\n.fa {\n    font-size: 2em;\n}\n\n\n.viewas-active {\n  font-weight: bold;\n}\n\n.reveal-board span {\n  margin-right: .2em;\n}\n\n.reveal-board {\n    cursor: pointer;\n    position: fixed;\n    top: 0px;\n    padding: 0.5em;\n}\n\n.choose-player {\n  margin-top: 1em;\n  margin-left: 5em;\n}\n\n.prev-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    left: 0px;\n    padding: 0.5em;\n}\n\n.next-game {\n    cursor: pointer;\n    position: fixed;\n    bottom: 0px;\n    right: 0px;\n    padding: 0.5em;\n}\n\n.which-game {\n    font-family: monospace;\n    padding-bottom: 0em;\n    position: absolute;\n    right: 0px;\n    top: 0px;\n    padding-top: 1em;\n    text-align: center;\n    padding-right: 2em;\n}\n\n@media (max-width: 1100px){\n    .word-card {\n        min-height: 1em;\n        padding: 0px;\n        margin: 0px;\n        min-width: 1em;\n        width: calc(100% * 1/5 - .5em);\n        margin-left: 0em;\n        margin-right: 0em;\n        font-size: 1.5em;\n        line-height: .7em;\n        border: 0px;\n    }\n    .board {\n        padding-top: 3em;\n        padding-bottom: 1.8em;\n        padding-left: 1em;\n        padding-right: 1em;\n        height: 100%;\n    }\n    .main {\n        height: calc(100% - 3.6em);\n    }\n    .chip {\n      border: 1px solid black;\n      width: 5px;\n      height: 5px;\n      margin: 20px;\n      margin-bottom: 16px;\n    }\n\n\n    .reveal-board {position: relative;}\n}\n\n@media (max-width: 600px){\n    .word-card {\n        min-width: 7em;\n        //min-height: 75px;\n        width: 100%;\n    }\n    .board {\n        padding-top: 0em;\n        padding-bottom: 0em;\n    }\n\n    .chip {\n      border: 1px solid black;\n      width: 5px;\n      height: 5px;\n      margin: 20px;\n      margin-bottom: 10px;\n    }\n\n    .reveal-board {position: relative;}\n\n}\n", ""]);
 
 	// exports
 
@@ -9549,15 +9549,416 @@
 			return {stopPropagation: a, preventDefault: b};
 		});
 
+	var _elm_lang$svg$Svg$map = _elm_lang$virtual_dom$VirtualDom$map;
+	var _elm_lang$svg$Svg$text = _elm_lang$virtual_dom$VirtualDom$text;
+	var _elm_lang$svg$Svg$svgNamespace = A2(
+		_elm_lang$virtual_dom$VirtualDom$property,
+		'namespace',
+		_elm_lang$core$Json_Encode$string('http://www.w3.org/2000/svg'));
+	var _elm_lang$svg$Svg$node = F3(
+		function (name, attributes, children) {
+			return A3(
+				_elm_lang$virtual_dom$VirtualDom$node,
+				name,
+				{ctor: '::', _0: _elm_lang$svg$Svg$svgNamespace, _1: attributes},
+				children);
+		});
+	var _elm_lang$svg$Svg$svg = _elm_lang$svg$Svg$node('svg');
+	var _elm_lang$svg$Svg$foreignObject = _elm_lang$svg$Svg$node('foreignObject');
+	var _elm_lang$svg$Svg$animate = _elm_lang$svg$Svg$node('animate');
+	var _elm_lang$svg$Svg$animateColor = _elm_lang$svg$Svg$node('animateColor');
+	var _elm_lang$svg$Svg$animateMotion = _elm_lang$svg$Svg$node('animateMotion');
+	var _elm_lang$svg$Svg$animateTransform = _elm_lang$svg$Svg$node('animateTransform');
+	var _elm_lang$svg$Svg$mpath = _elm_lang$svg$Svg$node('mpath');
+	var _elm_lang$svg$Svg$set = _elm_lang$svg$Svg$node('set');
+	var _elm_lang$svg$Svg$a = _elm_lang$svg$Svg$node('a');
+	var _elm_lang$svg$Svg$defs = _elm_lang$svg$Svg$node('defs');
+	var _elm_lang$svg$Svg$g = _elm_lang$svg$Svg$node('g');
+	var _elm_lang$svg$Svg$marker = _elm_lang$svg$Svg$node('marker');
+	var _elm_lang$svg$Svg$mask = _elm_lang$svg$Svg$node('mask');
+	var _elm_lang$svg$Svg$pattern = _elm_lang$svg$Svg$node('pattern');
+	var _elm_lang$svg$Svg$switch = _elm_lang$svg$Svg$node('switch');
+	var _elm_lang$svg$Svg$symbol = _elm_lang$svg$Svg$node('symbol');
+	var _elm_lang$svg$Svg$desc = _elm_lang$svg$Svg$node('desc');
+	var _elm_lang$svg$Svg$metadata = _elm_lang$svg$Svg$node('metadata');
+	var _elm_lang$svg$Svg$title = _elm_lang$svg$Svg$node('title');
+	var _elm_lang$svg$Svg$feBlend = _elm_lang$svg$Svg$node('feBlend');
+	var _elm_lang$svg$Svg$feColorMatrix = _elm_lang$svg$Svg$node('feColorMatrix');
+	var _elm_lang$svg$Svg$feComponentTransfer = _elm_lang$svg$Svg$node('feComponentTransfer');
+	var _elm_lang$svg$Svg$feComposite = _elm_lang$svg$Svg$node('feComposite');
+	var _elm_lang$svg$Svg$feConvolveMatrix = _elm_lang$svg$Svg$node('feConvolveMatrix');
+	var _elm_lang$svg$Svg$feDiffuseLighting = _elm_lang$svg$Svg$node('feDiffuseLighting');
+	var _elm_lang$svg$Svg$feDisplacementMap = _elm_lang$svg$Svg$node('feDisplacementMap');
+	var _elm_lang$svg$Svg$feFlood = _elm_lang$svg$Svg$node('feFlood');
+	var _elm_lang$svg$Svg$feFuncA = _elm_lang$svg$Svg$node('feFuncA');
+	var _elm_lang$svg$Svg$feFuncB = _elm_lang$svg$Svg$node('feFuncB');
+	var _elm_lang$svg$Svg$feFuncG = _elm_lang$svg$Svg$node('feFuncG');
+	var _elm_lang$svg$Svg$feFuncR = _elm_lang$svg$Svg$node('feFuncR');
+	var _elm_lang$svg$Svg$feGaussianBlur = _elm_lang$svg$Svg$node('feGaussianBlur');
+	var _elm_lang$svg$Svg$feImage = _elm_lang$svg$Svg$node('feImage');
+	var _elm_lang$svg$Svg$feMerge = _elm_lang$svg$Svg$node('feMerge');
+	var _elm_lang$svg$Svg$feMergeNode = _elm_lang$svg$Svg$node('feMergeNode');
+	var _elm_lang$svg$Svg$feMorphology = _elm_lang$svg$Svg$node('feMorphology');
+	var _elm_lang$svg$Svg$feOffset = _elm_lang$svg$Svg$node('feOffset');
+	var _elm_lang$svg$Svg$feSpecularLighting = _elm_lang$svg$Svg$node('feSpecularLighting');
+	var _elm_lang$svg$Svg$feTile = _elm_lang$svg$Svg$node('feTile');
+	var _elm_lang$svg$Svg$feTurbulence = _elm_lang$svg$Svg$node('feTurbulence');
+	var _elm_lang$svg$Svg$font = _elm_lang$svg$Svg$node('font');
+	var _elm_lang$svg$Svg$linearGradient = _elm_lang$svg$Svg$node('linearGradient');
+	var _elm_lang$svg$Svg$radialGradient = _elm_lang$svg$Svg$node('radialGradient');
+	var _elm_lang$svg$Svg$stop = _elm_lang$svg$Svg$node('stop');
+	var _elm_lang$svg$Svg$circle = _elm_lang$svg$Svg$node('circle');
+	var _elm_lang$svg$Svg$ellipse = _elm_lang$svg$Svg$node('ellipse');
+	var _elm_lang$svg$Svg$image = _elm_lang$svg$Svg$node('image');
+	var _elm_lang$svg$Svg$line = _elm_lang$svg$Svg$node('line');
+	var _elm_lang$svg$Svg$path = _elm_lang$svg$Svg$node('path');
+	var _elm_lang$svg$Svg$polygon = _elm_lang$svg$Svg$node('polygon');
+	var _elm_lang$svg$Svg$polyline = _elm_lang$svg$Svg$node('polyline');
+	var _elm_lang$svg$Svg$rect = _elm_lang$svg$Svg$node('rect');
+	var _elm_lang$svg$Svg$use = _elm_lang$svg$Svg$node('use');
+	var _elm_lang$svg$Svg$feDistantLight = _elm_lang$svg$Svg$node('feDistantLight');
+	var _elm_lang$svg$Svg$fePointLight = _elm_lang$svg$Svg$node('fePointLight');
+	var _elm_lang$svg$Svg$feSpotLight = _elm_lang$svg$Svg$node('feSpotLight');
+	var _elm_lang$svg$Svg$altGlyph = _elm_lang$svg$Svg$node('altGlyph');
+	var _elm_lang$svg$Svg$altGlyphDef = _elm_lang$svg$Svg$node('altGlyphDef');
+	var _elm_lang$svg$Svg$altGlyphItem = _elm_lang$svg$Svg$node('altGlyphItem');
+	var _elm_lang$svg$Svg$glyph = _elm_lang$svg$Svg$node('glyph');
+	var _elm_lang$svg$Svg$glyphRef = _elm_lang$svg$Svg$node('glyphRef');
+	var _elm_lang$svg$Svg$textPath = _elm_lang$svg$Svg$node('textPath');
+	var _elm_lang$svg$Svg$text_ = _elm_lang$svg$Svg$node('text');
+	var _elm_lang$svg$Svg$tref = _elm_lang$svg$Svg$node('tref');
+	var _elm_lang$svg$Svg$tspan = _elm_lang$svg$Svg$node('tspan');
+	var _elm_lang$svg$Svg$clipPath = _elm_lang$svg$Svg$node('clipPath');
+	var _elm_lang$svg$Svg$colorProfile = _elm_lang$svg$Svg$node('colorProfile');
+	var _elm_lang$svg$Svg$cursor = _elm_lang$svg$Svg$node('cursor');
+	var _elm_lang$svg$Svg$filter = _elm_lang$svg$Svg$node('filter');
+	var _elm_lang$svg$Svg$script = _elm_lang$svg$Svg$node('script');
+	var _elm_lang$svg$Svg$style = _elm_lang$svg$Svg$node('style');
+	var _elm_lang$svg$Svg$view = _elm_lang$svg$Svg$node('view');
+
+	var _elm_lang$svg$Svg_Attributes$writingMode = _elm_lang$virtual_dom$VirtualDom$attribute('writing-mode');
+	var _elm_lang$svg$Svg_Attributes$wordSpacing = _elm_lang$virtual_dom$VirtualDom$attribute('word-spacing');
+	var _elm_lang$svg$Svg_Attributes$visibility = _elm_lang$virtual_dom$VirtualDom$attribute('visibility');
+	var _elm_lang$svg$Svg_Attributes$unicodeBidi = _elm_lang$virtual_dom$VirtualDom$attribute('unicode-bidi');
+	var _elm_lang$svg$Svg_Attributes$textRendering = _elm_lang$virtual_dom$VirtualDom$attribute('text-rendering');
+	var _elm_lang$svg$Svg_Attributes$textDecoration = _elm_lang$virtual_dom$VirtualDom$attribute('text-decoration');
+	var _elm_lang$svg$Svg_Attributes$textAnchor = _elm_lang$virtual_dom$VirtualDom$attribute('text-anchor');
+	var _elm_lang$svg$Svg_Attributes$stroke = _elm_lang$virtual_dom$VirtualDom$attribute('stroke');
+	var _elm_lang$svg$Svg_Attributes$strokeWidth = _elm_lang$virtual_dom$VirtualDom$attribute('stroke-width');
+	var _elm_lang$svg$Svg_Attributes$strokeOpacity = _elm_lang$virtual_dom$VirtualDom$attribute('stroke-opacity');
+	var _elm_lang$svg$Svg_Attributes$strokeMiterlimit = _elm_lang$virtual_dom$VirtualDom$attribute('stroke-miterlimit');
+	var _elm_lang$svg$Svg_Attributes$strokeLinejoin = _elm_lang$virtual_dom$VirtualDom$attribute('stroke-linejoin');
+	var _elm_lang$svg$Svg_Attributes$strokeLinecap = _elm_lang$virtual_dom$VirtualDom$attribute('stroke-linecap');
+	var _elm_lang$svg$Svg_Attributes$strokeDashoffset = _elm_lang$virtual_dom$VirtualDom$attribute('stroke-dashoffset');
+	var _elm_lang$svg$Svg_Attributes$strokeDasharray = _elm_lang$virtual_dom$VirtualDom$attribute('stroke-dasharray');
+	var _elm_lang$svg$Svg_Attributes$stopOpacity = _elm_lang$virtual_dom$VirtualDom$attribute('stop-opacity');
+	var _elm_lang$svg$Svg_Attributes$stopColor = _elm_lang$virtual_dom$VirtualDom$attribute('stop-color');
+	var _elm_lang$svg$Svg_Attributes$shapeRendering = _elm_lang$virtual_dom$VirtualDom$attribute('shape-rendering');
+	var _elm_lang$svg$Svg_Attributes$pointerEvents = _elm_lang$virtual_dom$VirtualDom$attribute('pointer-events');
+	var _elm_lang$svg$Svg_Attributes$overflow = _elm_lang$virtual_dom$VirtualDom$attribute('overflow');
+	var _elm_lang$svg$Svg_Attributes$opacity = _elm_lang$virtual_dom$VirtualDom$attribute('opacity');
+	var _elm_lang$svg$Svg_Attributes$mask = _elm_lang$virtual_dom$VirtualDom$attribute('mask');
+	var _elm_lang$svg$Svg_Attributes$markerStart = _elm_lang$virtual_dom$VirtualDom$attribute('marker-start');
+	var _elm_lang$svg$Svg_Attributes$markerMid = _elm_lang$virtual_dom$VirtualDom$attribute('marker-mid');
+	var _elm_lang$svg$Svg_Attributes$markerEnd = _elm_lang$virtual_dom$VirtualDom$attribute('marker-end');
+	var _elm_lang$svg$Svg_Attributes$lightingColor = _elm_lang$virtual_dom$VirtualDom$attribute('lighting-color');
+	var _elm_lang$svg$Svg_Attributes$letterSpacing = _elm_lang$virtual_dom$VirtualDom$attribute('letter-spacing');
+	var _elm_lang$svg$Svg_Attributes$kerning = _elm_lang$virtual_dom$VirtualDom$attribute('kerning');
+	var _elm_lang$svg$Svg_Attributes$imageRendering = _elm_lang$virtual_dom$VirtualDom$attribute('image-rendering');
+	var _elm_lang$svg$Svg_Attributes$glyphOrientationVertical = _elm_lang$virtual_dom$VirtualDom$attribute('glyph-orientation-vertical');
+	var _elm_lang$svg$Svg_Attributes$glyphOrientationHorizontal = _elm_lang$virtual_dom$VirtualDom$attribute('glyph-orientation-horizontal');
+	var _elm_lang$svg$Svg_Attributes$fontWeight = _elm_lang$virtual_dom$VirtualDom$attribute('font-weight');
+	var _elm_lang$svg$Svg_Attributes$fontVariant = _elm_lang$virtual_dom$VirtualDom$attribute('font-variant');
+	var _elm_lang$svg$Svg_Attributes$fontStyle = _elm_lang$virtual_dom$VirtualDom$attribute('font-style');
+	var _elm_lang$svg$Svg_Attributes$fontStretch = _elm_lang$virtual_dom$VirtualDom$attribute('font-stretch');
+	var _elm_lang$svg$Svg_Attributes$fontSize = _elm_lang$virtual_dom$VirtualDom$attribute('font-size');
+	var _elm_lang$svg$Svg_Attributes$fontSizeAdjust = _elm_lang$virtual_dom$VirtualDom$attribute('font-size-adjust');
+	var _elm_lang$svg$Svg_Attributes$fontFamily = _elm_lang$virtual_dom$VirtualDom$attribute('font-family');
+	var _elm_lang$svg$Svg_Attributes$floodOpacity = _elm_lang$virtual_dom$VirtualDom$attribute('flood-opacity');
+	var _elm_lang$svg$Svg_Attributes$floodColor = _elm_lang$virtual_dom$VirtualDom$attribute('flood-color');
+	var _elm_lang$svg$Svg_Attributes$filter = _elm_lang$virtual_dom$VirtualDom$attribute('filter');
+	var _elm_lang$svg$Svg_Attributes$fill = _elm_lang$virtual_dom$VirtualDom$attribute('fill');
+	var _elm_lang$svg$Svg_Attributes$fillRule = _elm_lang$virtual_dom$VirtualDom$attribute('fill-rule');
+	var _elm_lang$svg$Svg_Attributes$fillOpacity = _elm_lang$virtual_dom$VirtualDom$attribute('fill-opacity');
+	var _elm_lang$svg$Svg_Attributes$enableBackground = _elm_lang$virtual_dom$VirtualDom$attribute('enable-background');
+	var _elm_lang$svg$Svg_Attributes$dominantBaseline = _elm_lang$virtual_dom$VirtualDom$attribute('dominant-baseline');
+	var _elm_lang$svg$Svg_Attributes$display = _elm_lang$virtual_dom$VirtualDom$attribute('display');
+	var _elm_lang$svg$Svg_Attributes$direction = _elm_lang$virtual_dom$VirtualDom$attribute('direction');
+	var _elm_lang$svg$Svg_Attributes$cursor = _elm_lang$virtual_dom$VirtualDom$attribute('cursor');
+	var _elm_lang$svg$Svg_Attributes$color = _elm_lang$virtual_dom$VirtualDom$attribute('color');
+	var _elm_lang$svg$Svg_Attributes$colorRendering = _elm_lang$virtual_dom$VirtualDom$attribute('color-rendering');
+	var _elm_lang$svg$Svg_Attributes$colorProfile = _elm_lang$virtual_dom$VirtualDom$attribute('color-profile');
+	var _elm_lang$svg$Svg_Attributes$colorInterpolation = _elm_lang$virtual_dom$VirtualDom$attribute('color-interpolation');
+	var _elm_lang$svg$Svg_Attributes$colorInterpolationFilters = _elm_lang$virtual_dom$VirtualDom$attribute('color-interpolation-filters');
+	var _elm_lang$svg$Svg_Attributes$clip = _elm_lang$virtual_dom$VirtualDom$attribute('clip');
+	var _elm_lang$svg$Svg_Attributes$clipRule = _elm_lang$virtual_dom$VirtualDom$attribute('clip-rule');
+	var _elm_lang$svg$Svg_Attributes$clipPath = _elm_lang$virtual_dom$VirtualDom$attribute('clip-path');
+	var _elm_lang$svg$Svg_Attributes$baselineShift = _elm_lang$virtual_dom$VirtualDom$attribute('baseline-shift');
+	var _elm_lang$svg$Svg_Attributes$alignmentBaseline = _elm_lang$virtual_dom$VirtualDom$attribute('alignment-baseline');
+	var _elm_lang$svg$Svg_Attributes$zoomAndPan = _elm_lang$virtual_dom$VirtualDom$attribute('zoomAndPan');
+	var _elm_lang$svg$Svg_Attributes$z = _elm_lang$virtual_dom$VirtualDom$attribute('z');
+	var _elm_lang$svg$Svg_Attributes$yChannelSelector = _elm_lang$virtual_dom$VirtualDom$attribute('yChannelSelector');
+	var _elm_lang$svg$Svg_Attributes$y2 = _elm_lang$virtual_dom$VirtualDom$attribute('y2');
+	var _elm_lang$svg$Svg_Attributes$y1 = _elm_lang$virtual_dom$VirtualDom$attribute('y1');
+	var _elm_lang$svg$Svg_Attributes$y = _elm_lang$virtual_dom$VirtualDom$attribute('y');
+	var _elm_lang$svg$Svg_Attributes$xmlSpace = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/XML/1998/namespace', 'xml:space');
+	var _elm_lang$svg$Svg_Attributes$xmlLang = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/XML/1998/namespace', 'xml:lang');
+	var _elm_lang$svg$Svg_Attributes$xmlBase = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/XML/1998/namespace', 'xml:base');
+	var _elm_lang$svg$Svg_Attributes$xlinkType = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/1999/xlink', 'xlink:type');
+	var _elm_lang$svg$Svg_Attributes$xlinkTitle = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/1999/xlink', 'xlink:title');
+	var _elm_lang$svg$Svg_Attributes$xlinkShow = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/1999/xlink', 'xlink:show');
+	var _elm_lang$svg$Svg_Attributes$xlinkRole = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/1999/xlink', 'xlink:role');
+	var _elm_lang$svg$Svg_Attributes$xlinkHref = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/1999/xlink', 'xlink:href');
+	var _elm_lang$svg$Svg_Attributes$xlinkArcrole = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/1999/xlink', 'xlink:arcrole');
+	var _elm_lang$svg$Svg_Attributes$xlinkActuate = A2(_elm_lang$virtual_dom$VirtualDom$attributeNS, 'http://www.w3.org/1999/xlink', 'xlink:actuate');
+	var _elm_lang$svg$Svg_Attributes$xChannelSelector = _elm_lang$virtual_dom$VirtualDom$attribute('xChannelSelector');
+	var _elm_lang$svg$Svg_Attributes$x2 = _elm_lang$virtual_dom$VirtualDom$attribute('x2');
+	var _elm_lang$svg$Svg_Attributes$x1 = _elm_lang$virtual_dom$VirtualDom$attribute('x1');
+	var _elm_lang$svg$Svg_Attributes$xHeight = _elm_lang$virtual_dom$VirtualDom$attribute('x-height');
+	var _elm_lang$svg$Svg_Attributes$x = _elm_lang$virtual_dom$VirtualDom$attribute('x');
+	var _elm_lang$svg$Svg_Attributes$widths = _elm_lang$virtual_dom$VirtualDom$attribute('widths');
+	var _elm_lang$svg$Svg_Attributes$width = _elm_lang$virtual_dom$VirtualDom$attribute('width');
+	var _elm_lang$svg$Svg_Attributes$viewTarget = _elm_lang$virtual_dom$VirtualDom$attribute('viewTarget');
+	var _elm_lang$svg$Svg_Attributes$viewBox = _elm_lang$virtual_dom$VirtualDom$attribute('viewBox');
+	var _elm_lang$svg$Svg_Attributes$vertOriginY = _elm_lang$virtual_dom$VirtualDom$attribute('vert-origin-y');
+	var _elm_lang$svg$Svg_Attributes$vertOriginX = _elm_lang$virtual_dom$VirtualDom$attribute('vert-origin-x');
+	var _elm_lang$svg$Svg_Attributes$vertAdvY = _elm_lang$virtual_dom$VirtualDom$attribute('vert-adv-y');
+	var _elm_lang$svg$Svg_Attributes$version = _elm_lang$virtual_dom$VirtualDom$attribute('version');
+	var _elm_lang$svg$Svg_Attributes$values = _elm_lang$virtual_dom$VirtualDom$attribute('values');
+	var _elm_lang$svg$Svg_Attributes$vMathematical = _elm_lang$virtual_dom$VirtualDom$attribute('v-mathematical');
+	var _elm_lang$svg$Svg_Attributes$vIdeographic = _elm_lang$virtual_dom$VirtualDom$attribute('v-ideographic');
+	var _elm_lang$svg$Svg_Attributes$vHanging = _elm_lang$virtual_dom$VirtualDom$attribute('v-hanging');
+	var _elm_lang$svg$Svg_Attributes$vAlphabetic = _elm_lang$virtual_dom$VirtualDom$attribute('v-alphabetic');
+	var _elm_lang$svg$Svg_Attributes$unitsPerEm = _elm_lang$virtual_dom$VirtualDom$attribute('units-per-em');
+	var _elm_lang$svg$Svg_Attributes$unicodeRange = _elm_lang$virtual_dom$VirtualDom$attribute('unicode-range');
+	var _elm_lang$svg$Svg_Attributes$unicode = _elm_lang$virtual_dom$VirtualDom$attribute('unicode');
+	var _elm_lang$svg$Svg_Attributes$underlineThickness = _elm_lang$virtual_dom$VirtualDom$attribute('underline-thickness');
+	var _elm_lang$svg$Svg_Attributes$underlinePosition = _elm_lang$virtual_dom$VirtualDom$attribute('underline-position');
+	var _elm_lang$svg$Svg_Attributes$u2 = _elm_lang$virtual_dom$VirtualDom$attribute('u2');
+	var _elm_lang$svg$Svg_Attributes$u1 = _elm_lang$virtual_dom$VirtualDom$attribute('u1');
+	var _elm_lang$svg$Svg_Attributes$type_ = _elm_lang$virtual_dom$VirtualDom$attribute('type');
+	var _elm_lang$svg$Svg_Attributes$transform = _elm_lang$virtual_dom$VirtualDom$attribute('transform');
+	var _elm_lang$svg$Svg_Attributes$to = _elm_lang$virtual_dom$VirtualDom$attribute('to');
+	var _elm_lang$svg$Svg_Attributes$title = _elm_lang$virtual_dom$VirtualDom$attribute('title');
+	var _elm_lang$svg$Svg_Attributes$textLength = _elm_lang$virtual_dom$VirtualDom$attribute('textLength');
+	var _elm_lang$svg$Svg_Attributes$targetY = _elm_lang$virtual_dom$VirtualDom$attribute('targetY');
+	var _elm_lang$svg$Svg_Attributes$targetX = _elm_lang$virtual_dom$VirtualDom$attribute('targetX');
+	var _elm_lang$svg$Svg_Attributes$target = _elm_lang$virtual_dom$VirtualDom$attribute('target');
+	var _elm_lang$svg$Svg_Attributes$tableValues = _elm_lang$virtual_dom$VirtualDom$attribute('tableValues');
+	var _elm_lang$svg$Svg_Attributes$systemLanguage = _elm_lang$virtual_dom$VirtualDom$attribute('systemLanguage');
+	var _elm_lang$svg$Svg_Attributes$surfaceScale = _elm_lang$virtual_dom$VirtualDom$attribute('surfaceScale');
+	var _elm_lang$svg$Svg_Attributes$style = _elm_lang$virtual_dom$VirtualDom$attribute('style');
+	var _elm_lang$svg$Svg_Attributes$string = _elm_lang$virtual_dom$VirtualDom$attribute('string');
+	var _elm_lang$svg$Svg_Attributes$strikethroughThickness = _elm_lang$virtual_dom$VirtualDom$attribute('strikethrough-thickness');
+	var _elm_lang$svg$Svg_Attributes$strikethroughPosition = _elm_lang$virtual_dom$VirtualDom$attribute('strikethrough-position');
+	var _elm_lang$svg$Svg_Attributes$stitchTiles = _elm_lang$virtual_dom$VirtualDom$attribute('stitchTiles');
+	var _elm_lang$svg$Svg_Attributes$stemv = _elm_lang$virtual_dom$VirtualDom$attribute('stemv');
+	var _elm_lang$svg$Svg_Attributes$stemh = _elm_lang$virtual_dom$VirtualDom$attribute('stemh');
+	var _elm_lang$svg$Svg_Attributes$stdDeviation = _elm_lang$virtual_dom$VirtualDom$attribute('stdDeviation');
+	var _elm_lang$svg$Svg_Attributes$startOffset = _elm_lang$virtual_dom$VirtualDom$attribute('startOffset');
+	var _elm_lang$svg$Svg_Attributes$spreadMethod = _elm_lang$virtual_dom$VirtualDom$attribute('spreadMethod');
+	var _elm_lang$svg$Svg_Attributes$speed = _elm_lang$virtual_dom$VirtualDom$attribute('speed');
+	var _elm_lang$svg$Svg_Attributes$specularExponent = _elm_lang$virtual_dom$VirtualDom$attribute('specularExponent');
+	var _elm_lang$svg$Svg_Attributes$specularConstant = _elm_lang$virtual_dom$VirtualDom$attribute('specularConstant');
+	var _elm_lang$svg$Svg_Attributes$spacing = _elm_lang$virtual_dom$VirtualDom$attribute('spacing');
+	var _elm_lang$svg$Svg_Attributes$slope = _elm_lang$virtual_dom$VirtualDom$attribute('slope');
+	var _elm_lang$svg$Svg_Attributes$seed = _elm_lang$virtual_dom$VirtualDom$attribute('seed');
+	var _elm_lang$svg$Svg_Attributes$scale = _elm_lang$virtual_dom$VirtualDom$attribute('scale');
+	var _elm_lang$svg$Svg_Attributes$ry = _elm_lang$virtual_dom$VirtualDom$attribute('ry');
+	var _elm_lang$svg$Svg_Attributes$rx = _elm_lang$virtual_dom$VirtualDom$attribute('rx');
+	var _elm_lang$svg$Svg_Attributes$rotate = _elm_lang$virtual_dom$VirtualDom$attribute('rotate');
+	var _elm_lang$svg$Svg_Attributes$result = _elm_lang$virtual_dom$VirtualDom$attribute('result');
+	var _elm_lang$svg$Svg_Attributes$restart = _elm_lang$virtual_dom$VirtualDom$attribute('restart');
+	var _elm_lang$svg$Svg_Attributes$requiredFeatures = _elm_lang$virtual_dom$VirtualDom$attribute('requiredFeatures');
+	var _elm_lang$svg$Svg_Attributes$requiredExtensions = _elm_lang$virtual_dom$VirtualDom$attribute('requiredExtensions');
+	var _elm_lang$svg$Svg_Attributes$repeatDur = _elm_lang$virtual_dom$VirtualDom$attribute('repeatDur');
+	var _elm_lang$svg$Svg_Attributes$repeatCount = _elm_lang$virtual_dom$VirtualDom$attribute('repeatCount');
+	var _elm_lang$svg$Svg_Attributes$renderingIntent = _elm_lang$virtual_dom$VirtualDom$attribute('rendering-intent');
+	var _elm_lang$svg$Svg_Attributes$refY = _elm_lang$virtual_dom$VirtualDom$attribute('refY');
+	var _elm_lang$svg$Svg_Attributes$refX = _elm_lang$virtual_dom$VirtualDom$attribute('refX');
+	var _elm_lang$svg$Svg_Attributes$radius = _elm_lang$virtual_dom$VirtualDom$attribute('radius');
+	var _elm_lang$svg$Svg_Attributes$r = _elm_lang$virtual_dom$VirtualDom$attribute('r');
+	var _elm_lang$svg$Svg_Attributes$primitiveUnits = _elm_lang$virtual_dom$VirtualDom$attribute('primitiveUnits');
+	var _elm_lang$svg$Svg_Attributes$preserveAspectRatio = _elm_lang$virtual_dom$VirtualDom$attribute('preserveAspectRatio');
+	var _elm_lang$svg$Svg_Attributes$preserveAlpha = _elm_lang$virtual_dom$VirtualDom$attribute('preserveAlpha');
+	var _elm_lang$svg$Svg_Attributes$pointsAtZ = _elm_lang$virtual_dom$VirtualDom$attribute('pointsAtZ');
+	var _elm_lang$svg$Svg_Attributes$pointsAtY = _elm_lang$virtual_dom$VirtualDom$attribute('pointsAtY');
+	var _elm_lang$svg$Svg_Attributes$pointsAtX = _elm_lang$virtual_dom$VirtualDom$attribute('pointsAtX');
+	var _elm_lang$svg$Svg_Attributes$points = _elm_lang$virtual_dom$VirtualDom$attribute('points');
+	var _elm_lang$svg$Svg_Attributes$pointOrder = _elm_lang$virtual_dom$VirtualDom$attribute('point-order');
+	var _elm_lang$svg$Svg_Attributes$patternUnits = _elm_lang$virtual_dom$VirtualDom$attribute('patternUnits');
+	var _elm_lang$svg$Svg_Attributes$patternTransform = _elm_lang$virtual_dom$VirtualDom$attribute('patternTransform');
+	var _elm_lang$svg$Svg_Attributes$patternContentUnits = _elm_lang$virtual_dom$VirtualDom$attribute('patternContentUnits');
+	var _elm_lang$svg$Svg_Attributes$pathLength = _elm_lang$virtual_dom$VirtualDom$attribute('pathLength');
+	var _elm_lang$svg$Svg_Attributes$path = _elm_lang$virtual_dom$VirtualDom$attribute('path');
+	var _elm_lang$svg$Svg_Attributes$panose1 = _elm_lang$virtual_dom$VirtualDom$attribute('panose-1');
+	var _elm_lang$svg$Svg_Attributes$overlineThickness = _elm_lang$virtual_dom$VirtualDom$attribute('overline-thickness');
+	var _elm_lang$svg$Svg_Attributes$overlinePosition = _elm_lang$virtual_dom$VirtualDom$attribute('overline-position');
+	var _elm_lang$svg$Svg_Attributes$origin = _elm_lang$virtual_dom$VirtualDom$attribute('origin');
+	var _elm_lang$svg$Svg_Attributes$orientation = _elm_lang$virtual_dom$VirtualDom$attribute('orientation');
+	var _elm_lang$svg$Svg_Attributes$orient = _elm_lang$virtual_dom$VirtualDom$attribute('orient');
+	var _elm_lang$svg$Svg_Attributes$order = _elm_lang$virtual_dom$VirtualDom$attribute('order');
+	var _elm_lang$svg$Svg_Attributes$operator = _elm_lang$virtual_dom$VirtualDom$attribute('operator');
+	var _elm_lang$svg$Svg_Attributes$offset = _elm_lang$virtual_dom$VirtualDom$attribute('offset');
+	var _elm_lang$svg$Svg_Attributes$numOctaves = _elm_lang$virtual_dom$VirtualDom$attribute('numOctaves');
+	var _elm_lang$svg$Svg_Attributes$name = _elm_lang$virtual_dom$VirtualDom$attribute('name');
+	var _elm_lang$svg$Svg_Attributes$mode = _elm_lang$virtual_dom$VirtualDom$attribute('mode');
+	var _elm_lang$svg$Svg_Attributes$min = _elm_lang$virtual_dom$VirtualDom$attribute('min');
+	var _elm_lang$svg$Svg_Attributes$method = _elm_lang$virtual_dom$VirtualDom$attribute('method');
+	var _elm_lang$svg$Svg_Attributes$media = _elm_lang$virtual_dom$VirtualDom$attribute('media');
+	var _elm_lang$svg$Svg_Attributes$max = _elm_lang$virtual_dom$VirtualDom$attribute('max');
+	var _elm_lang$svg$Svg_Attributes$mathematical = _elm_lang$virtual_dom$VirtualDom$attribute('mathematical');
+	var _elm_lang$svg$Svg_Attributes$maskUnits = _elm_lang$virtual_dom$VirtualDom$attribute('maskUnits');
+	var _elm_lang$svg$Svg_Attributes$maskContentUnits = _elm_lang$virtual_dom$VirtualDom$attribute('maskContentUnits');
+	var _elm_lang$svg$Svg_Attributes$markerWidth = _elm_lang$virtual_dom$VirtualDom$attribute('markerWidth');
+	var _elm_lang$svg$Svg_Attributes$markerUnits = _elm_lang$virtual_dom$VirtualDom$attribute('markerUnits');
+	var _elm_lang$svg$Svg_Attributes$markerHeight = _elm_lang$virtual_dom$VirtualDom$attribute('markerHeight');
+	var _elm_lang$svg$Svg_Attributes$local = _elm_lang$virtual_dom$VirtualDom$attribute('local');
+	var _elm_lang$svg$Svg_Attributes$limitingConeAngle = _elm_lang$virtual_dom$VirtualDom$attribute('limitingConeAngle');
+	var _elm_lang$svg$Svg_Attributes$lengthAdjust = _elm_lang$virtual_dom$VirtualDom$attribute('lengthAdjust');
+	var _elm_lang$svg$Svg_Attributes$lang = _elm_lang$virtual_dom$VirtualDom$attribute('lang');
+	var _elm_lang$svg$Svg_Attributes$keyTimes = _elm_lang$virtual_dom$VirtualDom$attribute('keyTimes');
+	var _elm_lang$svg$Svg_Attributes$keySplines = _elm_lang$virtual_dom$VirtualDom$attribute('keySplines');
+	var _elm_lang$svg$Svg_Attributes$keyPoints = _elm_lang$virtual_dom$VirtualDom$attribute('keyPoints');
+	var _elm_lang$svg$Svg_Attributes$kernelUnitLength = _elm_lang$virtual_dom$VirtualDom$attribute('kernelUnitLength');
+	var _elm_lang$svg$Svg_Attributes$kernelMatrix = _elm_lang$virtual_dom$VirtualDom$attribute('kernelMatrix');
+	var _elm_lang$svg$Svg_Attributes$k4 = _elm_lang$virtual_dom$VirtualDom$attribute('k4');
+	var _elm_lang$svg$Svg_Attributes$k3 = _elm_lang$virtual_dom$VirtualDom$attribute('k3');
+	var _elm_lang$svg$Svg_Attributes$k2 = _elm_lang$virtual_dom$VirtualDom$attribute('k2');
+	var _elm_lang$svg$Svg_Attributes$k1 = _elm_lang$virtual_dom$VirtualDom$attribute('k1');
+	var _elm_lang$svg$Svg_Attributes$k = _elm_lang$virtual_dom$VirtualDom$attribute('k');
+	var _elm_lang$svg$Svg_Attributes$intercept = _elm_lang$virtual_dom$VirtualDom$attribute('intercept');
+	var _elm_lang$svg$Svg_Attributes$in2 = _elm_lang$virtual_dom$VirtualDom$attribute('in2');
+	var _elm_lang$svg$Svg_Attributes$in_ = _elm_lang$virtual_dom$VirtualDom$attribute('in');
+	var _elm_lang$svg$Svg_Attributes$ideographic = _elm_lang$virtual_dom$VirtualDom$attribute('ideographic');
+	var _elm_lang$svg$Svg_Attributes$id = _elm_lang$virtual_dom$VirtualDom$attribute('id');
+	var _elm_lang$svg$Svg_Attributes$horizOriginY = _elm_lang$virtual_dom$VirtualDom$attribute('horiz-origin-y');
+	var _elm_lang$svg$Svg_Attributes$horizOriginX = _elm_lang$virtual_dom$VirtualDom$attribute('horiz-origin-x');
+	var _elm_lang$svg$Svg_Attributes$horizAdvX = _elm_lang$virtual_dom$VirtualDom$attribute('horiz-adv-x');
+	var _elm_lang$svg$Svg_Attributes$height = _elm_lang$virtual_dom$VirtualDom$attribute('height');
+	var _elm_lang$svg$Svg_Attributes$hanging = _elm_lang$virtual_dom$VirtualDom$attribute('hanging');
+	var _elm_lang$svg$Svg_Attributes$gradientUnits = _elm_lang$virtual_dom$VirtualDom$attribute('gradientUnits');
+	var _elm_lang$svg$Svg_Attributes$gradientTransform = _elm_lang$virtual_dom$VirtualDom$attribute('gradientTransform');
+	var _elm_lang$svg$Svg_Attributes$glyphRef = _elm_lang$virtual_dom$VirtualDom$attribute('glyphRef');
+	var _elm_lang$svg$Svg_Attributes$glyphName = _elm_lang$virtual_dom$VirtualDom$attribute('glyph-name');
+	var _elm_lang$svg$Svg_Attributes$g2 = _elm_lang$virtual_dom$VirtualDom$attribute('g2');
+	var _elm_lang$svg$Svg_Attributes$g1 = _elm_lang$virtual_dom$VirtualDom$attribute('g1');
+	var _elm_lang$svg$Svg_Attributes$fy = _elm_lang$virtual_dom$VirtualDom$attribute('fy');
+	var _elm_lang$svg$Svg_Attributes$fx = _elm_lang$virtual_dom$VirtualDom$attribute('fx');
+	var _elm_lang$svg$Svg_Attributes$from = _elm_lang$virtual_dom$VirtualDom$attribute('from');
+	var _elm_lang$svg$Svg_Attributes$format = _elm_lang$virtual_dom$VirtualDom$attribute('format');
+	var _elm_lang$svg$Svg_Attributes$filterUnits = _elm_lang$virtual_dom$VirtualDom$attribute('filterUnits');
+	var _elm_lang$svg$Svg_Attributes$filterRes = _elm_lang$virtual_dom$VirtualDom$attribute('filterRes');
+	var _elm_lang$svg$Svg_Attributes$externalResourcesRequired = _elm_lang$virtual_dom$VirtualDom$attribute('externalResourcesRequired');
+	var _elm_lang$svg$Svg_Attributes$exponent = _elm_lang$virtual_dom$VirtualDom$attribute('exponent');
+	var _elm_lang$svg$Svg_Attributes$end = _elm_lang$virtual_dom$VirtualDom$attribute('end');
+	var _elm_lang$svg$Svg_Attributes$elevation = _elm_lang$virtual_dom$VirtualDom$attribute('elevation');
+	var _elm_lang$svg$Svg_Attributes$edgeMode = _elm_lang$virtual_dom$VirtualDom$attribute('edgeMode');
+	var _elm_lang$svg$Svg_Attributes$dy = _elm_lang$virtual_dom$VirtualDom$attribute('dy');
+	var _elm_lang$svg$Svg_Attributes$dx = _elm_lang$virtual_dom$VirtualDom$attribute('dx');
+	var _elm_lang$svg$Svg_Attributes$dur = _elm_lang$virtual_dom$VirtualDom$attribute('dur');
+	var _elm_lang$svg$Svg_Attributes$divisor = _elm_lang$virtual_dom$VirtualDom$attribute('divisor');
+	var _elm_lang$svg$Svg_Attributes$diffuseConstant = _elm_lang$virtual_dom$VirtualDom$attribute('diffuseConstant');
+	var _elm_lang$svg$Svg_Attributes$descent = _elm_lang$virtual_dom$VirtualDom$attribute('descent');
+	var _elm_lang$svg$Svg_Attributes$decelerate = _elm_lang$virtual_dom$VirtualDom$attribute('decelerate');
+	var _elm_lang$svg$Svg_Attributes$d = _elm_lang$virtual_dom$VirtualDom$attribute('d');
+	var _elm_lang$svg$Svg_Attributes$cy = _elm_lang$virtual_dom$VirtualDom$attribute('cy');
+	var _elm_lang$svg$Svg_Attributes$cx = _elm_lang$virtual_dom$VirtualDom$attribute('cx');
+	var _elm_lang$svg$Svg_Attributes$contentStyleType = _elm_lang$virtual_dom$VirtualDom$attribute('contentStyleType');
+	var _elm_lang$svg$Svg_Attributes$contentScriptType = _elm_lang$virtual_dom$VirtualDom$attribute('contentScriptType');
+	var _elm_lang$svg$Svg_Attributes$clipPathUnits = _elm_lang$virtual_dom$VirtualDom$attribute('clipPathUnits');
+	var _elm_lang$svg$Svg_Attributes$class = _elm_lang$virtual_dom$VirtualDom$attribute('class');
+	var _elm_lang$svg$Svg_Attributes$capHeight = _elm_lang$virtual_dom$VirtualDom$attribute('cap-height');
+	var _elm_lang$svg$Svg_Attributes$calcMode = _elm_lang$virtual_dom$VirtualDom$attribute('calcMode');
+	var _elm_lang$svg$Svg_Attributes$by = _elm_lang$virtual_dom$VirtualDom$attribute('by');
+	var _elm_lang$svg$Svg_Attributes$bias = _elm_lang$virtual_dom$VirtualDom$attribute('bias');
+	var _elm_lang$svg$Svg_Attributes$begin = _elm_lang$virtual_dom$VirtualDom$attribute('begin');
+	var _elm_lang$svg$Svg_Attributes$bbox = _elm_lang$virtual_dom$VirtualDom$attribute('bbox');
+	var _elm_lang$svg$Svg_Attributes$baseProfile = _elm_lang$virtual_dom$VirtualDom$attribute('baseProfile');
+	var _elm_lang$svg$Svg_Attributes$baseFrequency = _elm_lang$virtual_dom$VirtualDom$attribute('baseFrequency');
+	var _elm_lang$svg$Svg_Attributes$azimuth = _elm_lang$virtual_dom$VirtualDom$attribute('azimuth');
+	var _elm_lang$svg$Svg_Attributes$autoReverse = _elm_lang$virtual_dom$VirtualDom$attribute('autoReverse');
+	var _elm_lang$svg$Svg_Attributes$attributeType = _elm_lang$virtual_dom$VirtualDom$attribute('attributeType');
+	var _elm_lang$svg$Svg_Attributes$attributeName = _elm_lang$virtual_dom$VirtualDom$attribute('attributeName');
+	var _elm_lang$svg$Svg_Attributes$ascent = _elm_lang$virtual_dom$VirtualDom$attribute('ascent');
+	var _elm_lang$svg$Svg_Attributes$arabicForm = _elm_lang$virtual_dom$VirtualDom$attribute('arabic-form');
+	var _elm_lang$svg$Svg_Attributes$amplitude = _elm_lang$virtual_dom$VirtualDom$attribute('amplitude');
+	var _elm_lang$svg$Svg_Attributes$allowReorder = _elm_lang$virtual_dom$VirtualDom$attribute('allowReorder');
+	var _elm_lang$svg$Svg_Attributes$alphabetic = _elm_lang$virtual_dom$VirtualDom$attribute('alphabetic');
+	var _elm_lang$svg$Svg_Attributes$additive = _elm_lang$virtual_dom$VirtualDom$attribute('additive');
+	var _elm_lang$svg$Svg_Attributes$accumulate = _elm_lang$virtual_dom$VirtualDom$attribute('accumulate');
+	var _elm_lang$svg$Svg_Attributes$accelerate = _elm_lang$virtual_dom$VirtualDom$attribute('accelerate');
+	var _elm_lang$svg$Svg_Attributes$accentHeight = _elm_lang$virtual_dom$VirtualDom$attribute('accent-height');
+
 	var _user$project$Words$all = _elm_lang$core$String$lines('DRUM\nBRIDE\nWAGON\nUNIVERITY\nHIT\nASH\nBASS\nASTRONAUT\nDOLL\nNERVE\nCOACH\nBEAM\nSPOON\nCOUNTRY\nNOSE\nKING ARTHUR\nSTAMP\nCAMP\nBRAIN\nLEAF\nTUTU\nCOAST\nLUNCH\nTHUNDER\nPOTATO\nDESK\nONION\nELEPHANT\nANCHOR\nCOWBOY\nFLOOD\nMOHAWK\nSANTA\nPITCHER\nBARBECUE\nLEATHER\nSKATES\nMUSKETEER\nSNAP\nSADDLE\nGENIE\nMARK\nSHOULDER\nGOVERNOR\nMANICURE\nANTHEM\nHALLOWEEN\nNEWTON\nBALLOON\nFIDDLE\nCRAFT\nGLACIER\nCAKE\nRAT\nTANK\nBLIND\nSPIRIT\nCABLE\nSWAMP\nEINSTEIN\nHIDE\nCRYSTAL\nGEAR\nKISS\nPEW\nPOWDER\nTURTLE\nBACON\nSHERLOCK\nSQUASH\nBOOK\nRAZOR\nDRESSING\nBRICK\nBRAZIL\nTEAR\nSTABLE\nBIKINI\nPEN\nROLL\nCHRISTMAS\nRUBBER\nBAY\nMOTHER\nKICK\nFOG\nRADIO\nCRAB\nCONE\nSKULL\nWHEELCHAIR\nEGG\nBUTTER\nWEREWOLF\nCHERRY\nPATIENT\nDRYER\nDRAWING\nBOSS\nFEVER\nBANANA\nPOLISH\nKNOT\nPAINT\nSTORM\nGOLDILOCKS\nPILLOW\nCHAIN\nMOSES\nSAW\nBROTHER\nRAIL\nROPE\nSTREET\nPAD\nCAPTAIN\nWISH\nAXE\nSHORTS\nPOPCORN\nCASTLE\nSECOND\nTEAM\nOASIS\nMESS\nMISS\nAVALANCHE\nTEXAS\nSUN\nLETTER\nRUST\nWING\nSTEEL\nEAR\nSCROLL\nBUNK\nCANE\nVENUS\nLADDER\nPURSE\nSHEET\nNAPOLEON\nSUGAR\nDIRECTOR\nACE\nSCRATCH\nBUCKET\nCAESAR\nDISK\nBEARD\nBULB\nBENCH\nSCARECROW\nIGLOO\nTUXEDO\nEARTH\nRAM\nSISTER\nBREAD\nRECORD\nDASH\nGREENHOUSE\nDRONE\nSTEAM\nBISCUIT\nRIP\nNOTRE DAME\nLIP\nSHAMPOO\nCHEESE\nSACK\nMOUNTIE\nSUMO\nSAHARA\nWALRUS\nDUST\nHAMMER\nCLOUD\nSPRAY\nST.PATRICK\nKILT\nMONKEY\nFROG\nDENTIST\nRAINBOW\nWHISTLE\nREINDEER\nKITCHEN\nLEMONADE\nSLIPPER\nFLOOR\nVALENTINE\nPEPPER\nROAD\nSHED\nBOWLER\nMILK\nWHEEL\nMAGAZINE\nBRASS\nTEA\nHELMET\nFLAG\nTROLL\nJAIL\nSTICKER\nPUPPET\nCHALK\nBONSAI\nSWEAT\nGANGSTER\nBUTTERFLY\nSTORY\nSALAD\nARMOR\nSMOKE\nCAVE\nQUACK\nBREAK\nSNAKE\nMILL\nGYMNAST\nWONDERLAND\nDRIVER\nSPURS\nZOMBIE\nPIG\nCLEOPATRA\nTOAST\nPENNY\nANT\nVOLUME\nLACE\nBATTLESHIP\nMARACAS\nMETER\nSLING\nDELTA\nSTEP\nJOAN OF ARC\nCOMET\nBATH\nPOLO\nGUM\nVAMPIRE\nSKI\nPOCKET\nBATTLE\nFOAM\nRODEO\nSQUIRREL\nSALT\nMUMMY\nBLACKSMITH\nCHIP\nGOAT\nLAUNDRY\nBEE\nTATTOO\nRUSSIA\nTIN\nMAP\nYELLOWSTONE\nSILK\nHOSE\nSLOTH\nKUNG FU\nCLOCK\nBEAN\nLIGHTNING\nBOWL\nGUITAR\nRANCH\nPEARL\nFLAT\nVIRUS\nICE AGE\nCOFFEE\nMARATHON\nATTIC\nWEDDING\nCOLUMBUS\nPOP\nSHERWOOD\nTRICK\nNYLON\nLOCUST\nPACIFIC\nCUCKOO\nTORNADO\nMEMORY\nJOCKEY\nMINOTAUR\nBIG BANG\nPAGE\nSPHINX\nCRUSADER\nVOLCANO\nRIFLE\nBOIL\nHAIR\nBICYCLE\nJUMPER\nSMOOTHIE\nSLEEP\nPENTAGON\nGROOM\nRIVER\nFARM\nJUDGE\nVIKING\nEASTER\nMUD\nPARROT\nCOMB\nSALSA\nEDEN\nARMY\nPADDLE\nSALOON\nMONA LISA\nMILE\nBLIZZARD\nQUARTER\nJEWELER\nHAMBURGER\nGLASSES\nSAIL\nBOXER\nRICE\nMIRROR\nINK\nBEER\nTIPI\nMAKEUP\nMICROWAVE\nHERCULES\nSIGN\nPIZZA\nWOOL\nHOMER\nMINUTE\nSWORD\nSOUP\nALASKA\nBABY\nPOTTER\nSHOWER\nBLADE\nNOAH\nSOAP\nTUNNEL\nPEACH\nDOLLAR\nTIP\nLOVE\nJELLYFISH\nSTETHOSCOPE\nTASTE\nFUEL\nMOSQUITO\nWIZARD\nBIG BEN\nGARDEN\nWAITRESS\nSHOOT\nSHELL\nLUMBERJACK\nMEDIC\nDREAM\nBLUES\nEARTHQUAKE\nPEA\nPARADE\nSLED\nSMELL\nCOMPUTER\nCOW\nPEANUT\nWINDOW\nMUSTARD\nSAND\nGOLF\nCROW\nICELAND\nAPRON\nVIOLET\nDOOR\nTIGER\nJOKER\nHOUSE\nCOLLAR\nHAWAII\nDWARF\nPINE\nMAGICIAN\nFROST\nCURRY\nBUBBLE\nWOOD');
 
+	var _user$project$Main$flag = function (color) {
+		return A2(
+			_elm_lang$html$Html$div,
+			{
+				ctor: '::',
+				_0: _elm_lang$html$Html_Attributes$class(
+					A2(_elm_lang$core$Basics_ops['++'], 'flag ', color)),
+				_1: {ctor: '[]'}
+			},
+			{
+				ctor: '::',
+				_0: A2(
+					_elm_lang$svg$Svg$svg,
+					{
+						ctor: '::',
+						_0: _elm_lang$svg$Svg_Attributes$width('25'),
+						_1: {
+							ctor: '::',
+							_0: _elm_lang$svg$Svg_Attributes$height('25'),
+							_1: {ctor: '[]'}
+						}
+					},
+					{
+						ctor: '::',
+						_0: A2(
+							_elm_lang$svg$Svg$polygon,
+							{
+								ctor: '::',
+								_0: _elm_lang$svg$Svg_Attributes$points('25,0 0,25 25,25'),
+								_1: {ctor: '[]'}
+							},
+							{ctor: '[]'}),
+						_1: {ctor: '[]'}
+					}),
+				_1: {ctor: '[]'}
+			});
+	};
+	var _user$project$Main$decrementProbability = F2(
+		function (k, probs) {
+			return A2(
+				_elm_lang$core$List$map,
+				function (_p0) {
+					var _p1 = _p0;
+					var _p4 = _p1._0._1;
+					var _p3 = _p1._1;
+					var _p2 = _p1._0._0;
+					return _elm_lang$core$Native_Utils.eq(
+						{ctor: '_Tuple2', _0: _p2, _1: _p4},
+						k) ? {
+						ctor: '_Tuple2',
+						_0: {ctor: '_Tuple2', _0: _p2, _1: _p4},
+						_1: _p3 - 1
+					} : {
+						ctor: '_Tuple2',
+						_0: {ctor: '_Tuple2', _0: _p2, _1: _p4},
+						_1: _p3
+					};
+				},
+				probs);
+		});
 	var _user$project$Main$asGameTime = function (h) {
 		var t = _elm_lang$core$Date$fromTime(
 			((_elm_lang$core$Basics$toFloat(h) * 60) * 60) * 1000);
 		var hour = _elm_lang$core$Date$hour(t);
-		var _p0 = _elm_lang$core$Native_Utils.eq(hour, 12) ? {ctor: '_Tuple2', _0: 12, _1: 'pm'} : ((_elm_lang$core$Native_Utils.cmp(hour, 12) < 0) ? {ctor: '_Tuple2', _0: hour, _1: 'am'} : {ctor: '_Tuple2', _0: hour - 12, _1: 'pm'});
-		var fh = _p0._0;
-		var fampm = _p0._1;
+		var _p5 = _elm_lang$core$Native_Utils.eq(hour, 12) ? {ctor: '_Tuple2', _0: 12, _1: 'pm'} : ((_elm_lang$core$Native_Utils.cmp(hour, 12) < 0) ? {ctor: '_Tuple2', _0: hour, _1: 'am'} : {ctor: '_Tuple2', _0: hour - 12, _1: 'pm'});
+		var fh = _p5._0;
+		var fampm = _p5._1;
 		var day = _elm_lang$core$Date$dayOfWeek(t);
 		return A2(
 			_elm_lang$core$Basics_ops['++'],
@@ -9576,8 +9977,8 @@
 	};
 	var _user$project$Main$gameSeed = function (hour) {
 		var seed = _elm_lang$core$Random$initialSeed(hour);
-		var _p1 = A2(_elm_lang$core$Random$step, _elm_lang$core$Random$bool, seed);
-		var seed_ = _p1._1;
+		var _p6 = A2(_elm_lang$core$Random$step, _elm_lang$core$Random$bool, seed);
+		var seed_ = _p6._1;
 		return seed_;
 	};
 	var _user$project$Main$hoursPerSession = 12;
@@ -9586,8 +9987,8 @@
 	};
 	var _user$project$Main$sessionSeed = function (hour) {
 		var seed = _elm_lang$core$Random$initialSeed((hour / _user$project$Main$hoursPerSession) | 0);
-		var _p2 = A2(_elm_lang$core$Random$step, _elm_lang$core$Random$bool, seed);
-		var seed_ = _p2._1;
+		var _p7 = A2(_elm_lang$core$Random$step, _elm_lang$core$Random$bool, seed);
+		var seed_ = _p7._1;
 		return seed_;
 	};
 	var _user$project$Main$bobGuess = F2(
@@ -9605,39 +10006,39 @@
 	var _user$project$Main$shuffle = F2(
 		function (seed, pile) {
 			var swap = F2(
-				function (_p3, aa) {
-					var _p4 = _p3;
-					var _p6 = _p4._1;
-					var _p5 = _p4._0;
+				function (_p8, aa) {
+					var _p9 = _p8;
+					var _p11 = _p9._1;
+					var _p10 = _p9._0;
 					return A3(
 						_elm_lang$core$Array$set,
-						_p6,
+						_p11,
 						A2(
 							_elm_lang$core$Maybe$withDefault,
 							_elm_lang$core$Maybe$Nothing,
-							A2(_elm_lang$core$Array$get, _p5, aa)),
+							A2(_elm_lang$core$Array$get, _p10, aa)),
 						A3(
 							_elm_lang$core$Array$set,
-							_p5,
+							_p10,
 							A2(
 								_elm_lang$core$Maybe$withDefault,
 								_elm_lang$core$Maybe$Nothing,
-								A2(_elm_lang$core$Array$get, _p6, aa)),
+								A2(_elm_lang$core$Array$get, _p11, aa)),
 							aa));
 				});
 			var randomValsInRange = F2(
-				function (_p8, _p7) {
-					var _p9 = _p8;
-					var _p10 = _p7;
-					var _p11 = A2(
+				function (_p13, _p12) {
+					var _p14 = _p13;
+					var _p15 = _p12;
+					var _p16 = A2(
 						_elm_lang$core$Random$step,
-						A2(_elm_lang$core$Random$int, 0, _p9._1),
-						_p10._1);
-					var nextval = _p11._0;
-					var nextseed = _p11._1;
+						A2(_elm_lang$core$Random$int, 0, _p14._1),
+						_p15._1);
+					var nextval = _p16._0;
+					var nextseed = _p16._1;
 					return {
 						ctor: '_Tuple2',
-						_0: {ctor: '::', _0: nextval, _1: _p10._0},
+						_0: {ctor: '::', _0: nextval, _1: _p15._0},
 						_1: nextseed
 					};
 				});
@@ -9697,6 +10098,79 @@
 	var _user$project$Main$Black = {ctor: 'Black'};
 	var _user$project$Main$Neutral = {ctor: 'Neutral'};
 	var _user$project$Main$Green = {ctor: 'Green'};
+	var _user$project$Main$baseProbabilities = {
+		ctor: '::',
+		_0: {
+			ctor: '_Tuple2',
+			_0: {ctor: '_Tuple2', _0: _user$project$Main$Green, _1: _user$project$Main$Green},
+			_1: 3
+		},
+		_1: {
+			ctor: '::',
+			_0: {
+				ctor: '_Tuple2',
+				_0: {ctor: '_Tuple2', _0: _user$project$Main$Green, _1: _user$project$Main$Black},
+				_1: 1
+			},
+			_1: {
+				ctor: '::',
+				_0: {
+					ctor: '_Tuple2',
+					_0: {ctor: '_Tuple2', _0: _user$project$Main$Green, _1: _user$project$Main$Neutral},
+					_1: 5
+				},
+				_1: {
+					ctor: '::',
+					_0: {
+						ctor: '_Tuple2',
+						_0: {ctor: '_Tuple2', _0: _user$project$Main$Black, _1: _user$project$Main$Green},
+						_1: 1
+					},
+					_1: {
+						ctor: '::',
+						_0: {
+							ctor: '_Tuple2',
+							_0: {ctor: '_Tuple2', _0: _user$project$Main$Black, _1: _user$project$Main$Black},
+							_1: 1
+						},
+						_1: {
+							ctor: '::',
+							_0: {
+								ctor: '_Tuple2',
+								_0: {ctor: '_Tuple2', _0: _user$project$Main$Black, _1: _user$project$Main$Neutral},
+								_1: 1
+							},
+							_1: {
+								ctor: '::',
+								_0: {
+									ctor: '_Tuple2',
+									_0: {ctor: '_Tuple2', _0: _user$project$Main$Neutral, _1: _user$project$Main$Green},
+									_1: 5
+								},
+								_1: {
+									ctor: '::',
+									_0: {
+										ctor: '_Tuple2',
+										_0: {ctor: '_Tuple2', _0: _user$project$Main$Neutral, _1: _user$project$Main$Black},
+										_1: 1
+									},
+									_1: {
+										ctor: '::',
+										_0: {
+											ctor: '_Tuple2',
+											_0: {ctor: '_Tuple2', _0: _user$project$Main$Neutral, _1: _user$project$Main$Neutral},
+											_1: 7
+										},
+										_1: {ctor: '[]'}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	};
 	var _user$project$Main$labelKey = function () {
 		var blackCount = 3;
 		var greenCount = 9;
@@ -9731,14 +10205,14 @@
 					_user$project$Main$gameSeed(hour),
 					A2(
 						_elm_lang$core$List$filter,
-						function (_p12) {
+						function (_p17) {
 							return A2(
 								F2(
 									function (x, y) {
 										return _elm_lang$core$Native_Utils.eq(x, y);
 									}),
 								_user$project$Main$Green,
-								_elm_lang$core$Tuple$second(_p12));
+								_elm_lang$core$Tuple$second(_p17));
 						},
 						A2(
 							_elm_lang$core$List$indexedMap,
@@ -9755,14 +10229,14 @@
 					_user$project$Main$gameSeed(hour),
 					A2(
 						_elm_lang$core$List$filter,
-						function (_p13) {
+						function (_p18) {
 							return A2(
 								F2(
 									function (x, y) {
 										return _elm_lang$core$Native_Utils.eq(x, y);
 									}),
 								_user$project$Main$Black,
-								_elm_lang$core$Tuple$second(_p13));
+								_elm_lang$core$Tuple$second(_p18));
 						},
 						A2(
 							_elm_lang$core$List$indexedMap,
@@ -9779,14 +10253,14 @@
 					_user$project$Main$gameSeed(hour),
 					A2(
 						_elm_lang$core$List$filter,
-						function (_p14) {
+						function (_p19) {
 							return A2(
 								F2(
 									function (x, y) {
 										return _elm_lang$core$Native_Utils.eq(x, y);
 									}),
 								_user$project$Main$Neutral,
-								_elm_lang$core$Tuple$second(_p14));
+								_elm_lang$core$Tuple$second(_p19));
 						},
 						A2(
 							_elm_lang$core$List$indexedMap,
@@ -9843,8 +10317,8 @@
 		});
 	var _user$project$Main$update = F2(
 		function (msg, model) {
-			var _p15 = msg;
-			switch (_p15.ctor) {
+			var _p20 = msg;
+			switch (_p20.ctor) {
 				case 'ToggleSpymaster':
 					return {
 						ctor: '_Tuple2',
@@ -9861,7 +10335,7 @@
 							{
 								cards: A2(
 									_elm_lang$core$List$map,
-									_user$project$Main$aliceGuess(_p15._0),
+									_user$project$Main$aliceGuess(_p20._0),
 									model.cards),
 								history: {ctor: '::', _0: _user$project$Main$Alice, _1: model.history}
 							}),
@@ -9875,7 +10349,7 @@
 							{
 								cards: A2(
 									_elm_lang$core$List$map,
-									_user$project$Main$bobGuess(_p15._0),
+									_user$project$Main$bobGuess(_p20._0),
 									model.cards),
 								history: {ctor: '::', _0: _user$project$Main$Bob, _1: model.history}
 							}),
@@ -9886,22 +10360,22 @@
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
-							{viewAs: _p15._0, isSpymaster: false}),
+							{viewAs: _p20._0, isSpymaster: false}),
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
 				default:
-					var _p16 = _p15._0;
+					var _p21 = _p20._0;
 					return {
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
 							{
-								hour: _p16,
+								hour: _p21,
 								cards: A3(
 									_user$project$Main$dealCards,
-									_user$project$Main$sessionSeed(_p16),
-									_user$project$Main$gameSeed(_p16),
-									_p16),
+									_user$project$Main$sessionSeed(_p21),
+									_user$project$Main$gameSeed(_p21),
+									_p21),
 								history: {ctor: '[]'}
 							}),
 						_1: _elm_lang$core$Platform_Cmd$none
@@ -9917,6 +10391,7 @@
 	};
 	var _user$project$Main$card = F3(
 		function (viewAsPlayer, isSpymaster, word) {
+			var originalColor = (isSpymaster && (_elm_lang$core$Native_Utils.eq(viewAsPlayer, _user$project$Main$Bob) && word.bobGuessed)) ? _elm_lang$core$Basics$toString(word.bobLabel) : ((isSpymaster && (_elm_lang$core$Native_Utils.eq(viewAsPlayer, _user$project$Main$Alice) && word.aliceGuessed)) ? _elm_lang$core$Basics$toString(word.aliceLabel) : '');
 			var playerGuessed = (_elm_lang$core$Native_Utils.eq(viewAsPlayer, _user$project$Main$Alice) && word.aliceGuessed) || (_elm_lang$core$Native_Utils.eq(viewAsPlayer, _user$project$Main$Bob) && word.bobGuessed);
 			var guessedBlack = (_elm_lang$core$Native_Utils.eq(word.aliceLabel, _user$project$Main$Black) && word.bobGuessed) || (_elm_lang$core$Native_Utils.eq(word.bobLabel, _user$project$Main$Black) && word.aliceGuessed);
 			var guessedGreen = (_elm_lang$core$Native_Utils.eq(word.aliceLabel, _user$project$Main$Green) && word.bobGuessed) || (_elm_lang$core$Native_Utils.eq(word.bobLabel, _user$project$Main$Green) && word.aliceGuessed);
@@ -9962,11 +10437,23 @@
 						_1: {ctor: '[]'}
 					}
 				},
-				{
-					ctor: '::',
-					_0: _elm_lang$html$Html$text(word.word),
-					_1: {ctor: '[]'}
-				});
+				A2(
+					_elm_lang$core$Basics_ops['++'],
+					{
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(word.word),
+						_1: {ctor: '[]'}
+					},
+					(!_elm_lang$core$Native_Utils.eq(originalColor, '')) ? {
+						ctor: '::',
+						_0: _user$project$Main$flag(
+							A2(_elm_lang$core$Basics_ops['++'], 'original-', originalColor)),
+						_1: {ctor: '[]'}
+					} : {
+						ctor: '::',
+						_0: _elm_lang$html$Html$text(''),
+						_1: {ctor: '[]'}
+					}));
 		});
 	var _user$project$Main$NewHour = function (a) {
 		return {ctor: 'NewHour', _0: a};
@@ -9997,15 +10484,36 @@
 		return {ctor: 'ViewAs', _0: a};
 	};
 	var _user$project$Main$view = function (model) {
+		var myProbabilities = _elm_lang$core$Native_Utils.eq(model.viewAs, _user$project$Main$Alice) ? function (w) {
+			return {ctor: '_Tuple2', _0: w.aliceLabel, _1: w.bobLabel};
+		} : function (w) {
+			return {ctor: '_Tuple2', _0: w.bobLabel, _1: w.aliceLabel};
+		};
+		var iGuessed = _elm_lang$core$Native_Utils.eq(model.viewAs, _user$project$Main$Alice) ? function (w) {
+			return w.aliceGuessed;
+		} : function (w) {
+			return w.bobGuessed;
+		};
+		var probabilities = A3(
+			_elm_lang$core$List$foldl,
+			F2(
+				function (k, probs) {
+					return A2(_user$project$Main$decrementProbability, k, probs);
+				}),
+			_user$project$Main$baseProbabilities,
+			A2(
+				_elm_lang$core$List$map,
+				myProbabilities,
+				A2(_elm_lang$core$List$filter, iGuessed, model.cards)));
 		var turns = _elm_lang$core$Tuple$first(
 			A3(
 				_elm_lang$core$List$foldl,
 				F2(
-					function (player, _p17) {
-						var _p18 = _p17;
-						var _p20 = _p18._0;
-						var _p19 = _p18._1;
-						return _elm_lang$core$Native_Utils.eq(player, _p19) ? {ctor: '_Tuple2', _0: _p20, _1: _p19} : {ctor: '_Tuple2', _0: _p20 + 1, _1: player};
+					function (player, _p22) {
+						var _p23 = _p22;
+						var _p25 = _p23._0;
+						var _p24 = _p23._1;
+						return _elm_lang$core$Native_Utils.eq(player, _p24) ? {ctor: '_Tuple2', _0: _p25, _1: _p24} : {ctor: '_Tuple2', _0: _p25 + 1, _1: player};
 					}),
 				{ctor: '_Tuple2', _0: 0, _1: _user$project$Main$Observer},
 				model.history));

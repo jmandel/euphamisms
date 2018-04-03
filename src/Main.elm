@@ -342,6 +342,7 @@ card viewAsPlayer isSpymaster wantHints probs word =
             [ class <|
                 "word-card "
                     ++ team
+                    ++ (if wantHints then " hinted " else "")
                     ++ (if showBackground then
                             " background "
                         else
@@ -441,7 +442,14 @@ view model =
         [ span [ class "controls" ]
             [ span [
                 class "which-game"
-                , onClick ToggleHints] [ (text <| asGameTime model.hour) ]
+                , onClick ToggleHints] [ (text <| asGameTime model.hour) 
+                , Html.a 
+                    [ class "fa fa-question-circle"
+                    , href "https://github.com/jmandel/euphemisms"
+                    , target "_blank"
+                    ]
+                    []
+                ]
             , span [ class "reveal-board" ]
                 [ i
                     [ class "fa fa-eye"

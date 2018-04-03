@@ -104,9 +104,14 @@ html, body {
 .player-select {
     background: white;
     margin-left: 1em;
-    font-family: Passion One;
+    font-family: monospace;
     font-size: 2em;
+    border: none;
+    text-decoration: underline;
+    direction: rtl;
+    text-align-last: left;
 }
+
 
 .alice {
   right: 0px;
@@ -287,6 +292,12 @@ html, body {
     padding-right: 2em;
 }
 
+.which-game a {
+    padding-left: .2em;
+    text-decoration: none;
+    color: black;
+
+}
 @media (max-width: 1200px){
 
     .distribution-hints {
@@ -338,13 +349,15 @@ html, body {
 }
 
 @media (max-width: 950px){
+    .word-card.hinted {
+        justify-content: left;
+    }
     .word-card {
         min-width: 7em;
         min-height: 25px;
         //min-height: 75px;
         width: 100%;
         font-size: 1.8em;
-        justify-content: left;
 
     }
     .board {

@@ -12298,7 +12298,7 @@
 											_0: _elm_lang$html$Html_Attributes$class('fa fa-question-circle'),
 											_1: {
 												ctor: '::',
-												_0: _elm_lang$html$Html_Attributes$href('https://github.com/jmandel/euphemisms'),
+												_0: _elm_lang$html$Html_Attributes$href('https://github.com/jmandel/euphemisms/blob/twophemisms/README.md'),
 												_1: {
 													ctor: '::',
 													_0: _elm_lang$html$Html_Attributes$target('_blank'),

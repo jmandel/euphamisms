@@ -12282,7 +12282,11 @@
 							{
 								ctor: '::',
 								_0: _elm_lang$html$Html_Attributes$class('which-game'),
-								_1: {ctor: '[]'}
+								_1: {
+									ctor: '::',
+									_0: A2(_elm_lang$html$Html_Attributes$attribute, 'role', 'button'),
+									_1: {ctor: '[]'}
+								}
 							},
 							{
 								ctor: '::',
@@ -12413,7 +12417,11 @@
 												{
 													ctor: '::',
 													_0: _elm_lang$html$Html_Attributes$class('turns'),
-													_1: {ctor: '[]'}
+													_1: {
+														ctor: '::',
+														_0: A2(_elm_lang$html$Html_Attributes$attribute, 'role', 'button'),
+														_1: {ctor: '[]'}
+													}
 												},
 												{
 													ctor: '::',

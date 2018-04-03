@@ -11887,6 +11887,8 @@
 		function (msg, model) {
 			var _p20 = msg;
 			switch (_p20.ctor) {
+				case 'Noop':
+					return {ctor: '_Tuple2', _0: model, _1: _elm_lang$core$Platform_Cmd$none};
 				case 'ToggleHints':
 					return {
 						ctor: '_Tuple2',
@@ -11958,6 +11960,7 @@
 					};
 			}
 		});
+	var _user$project$Main$Noop = {ctor: 'Noop'};
 	var _user$project$Main$ToggleHints = {ctor: 'ToggleHints'};
 	var _user$project$Main$ToggleSpymaster = {ctor: 'ToggleSpymaster'};
 	var _user$project$Main$BobGuess = function (a) {
@@ -12279,16 +12282,23 @@
 							{
 								ctor: '::',
 								_0: _elm_lang$html$Html_Attributes$class('which-game'),
-								_1: {
-									ctor: '::',
-									_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$ToggleHints),
-									_1: {ctor: '[]'}
-								}
+								_1: {ctor: '[]'}
 							},
 							{
 								ctor: '::',
-								_0: _elm_lang$html$Html$text(
-									_user$project$Main$asGameTime(model.hour)),
+								_0: A2(
+									_elm_lang$html$Html$span,
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$ToggleHints),
+										_1: {ctor: '[]'}
+									},
+									{
+										ctor: '::',
+										_0: _elm_lang$html$Html$text(
+											_user$project$Main$asGameTime(model.hour)),
+										_1: {ctor: '[]'}
+									}),
 								_1: {
 									ctor: '::',
 									_0: A2(
@@ -12302,7 +12312,11 @@
 												_1: {
 													ctor: '::',
 													_0: _elm_lang$html$Html_Attributes$target('_blank'),
-													_1: {ctor: '[]'}
+													_1: {
+														ctor: '::',
+														_0: _elm_lang$html$Html_Events$onClick(_user$project$Main$Noop),
+														_1: {ctor: '[]'}
+													}
 												}
 											}
 										},

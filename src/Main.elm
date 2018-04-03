@@ -247,7 +247,7 @@ update msg model =
             ( { model | cards = List.map (bobGuess word) model.cards, history = Bob :: model.history  }, Cmd.none )
 
         ViewAs player ->
-            ( { model | viewAs = player, isSpymaster = False }, Cmd.none )
+            ( { model | viewAs = player, isSpymaster = False, wantHints = False }, Cmd.none )
 
         NewHour hour ->
             ( { model | hour = hour, cards = dealCards (sessionSeed hour) (gameSeed hour) hour, history = [] }, Cmd.none )

@@ -186,6 +186,7 @@ type Msg
     | BobGuess Card
     | ToggleSpymaster
     | ToggleHints
+    | Noop
 
 
 aliceGuess word w =
@@ -232,6 +233,7 @@ gameSeed hour =
 
 update msg model =
     case msg of
+        Noop -> (model, Cmd.none)
         ToggleHints ->
             ( { model | wantHints = not model.wantHints }, Cmd.none )
 
@@ -440,13 +442,13 @@ view model =
     in
     div [ class "main" ]
         [ span [ class "controls" ]
-            [ span [
-                class "which-game"
-                , onClick ToggleHints] [ (text <| asGameTime model.hour) 
-                , Html.a 
+            [ span [ class "which-game" ] [
+                    span [onClick ToggleHints] [(text <| asGameTime model.hour)]
+                , Html.a
                     [ class "fa fa-question-circle"
                     , href "https://github.com/jmandel/euphemisms/blob/twophemisms/README.md"
                     , target "_blank"
+                    , onClick Noop
                     ]
                     []
                 ]

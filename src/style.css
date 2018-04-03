@@ -47,7 +47,7 @@ html, body {
   display: inline-block;
 }
 .probability-Neutral {
-  background: steelblue;
+  background: #6D95B6;
   padding: 4px;
   display: inline-block;
 }
@@ -78,7 +78,7 @@ html, body {
 }
 
 .original-Neutral {
-  fill: steelblue;
+  fill: #6D95B6;
 }
 
 
@@ -135,7 +135,7 @@ html, body {
 }
 
 .guessed-Neutral {
-  background: steelblue;
+  background: #6D95B6;
 }
 
 .word-card {
@@ -147,8 +147,8 @@ html, body {
 }
 
 .word-card.team-Neutral.background {
-    background: steelblue;
-    color: steelblue;
+    background: #6D95B6;
+    color: #6D95B6;
 }
 
 .word-card.team-Green.background {
@@ -286,7 +286,8 @@ html, body {
     color: black;
 
 }
-@media (max-width: 1200px){
+
+@media (max-width: 1200px), (max-height: 600px) {
 
     .distribution-hints {
       top: inherit;
@@ -333,49 +334,48 @@ html, body {
 
 
     .reveal-board {position: relative;}
+
+    @media (max-width: 680px), (min-width: 800px) and (max-height: 500px) {
+        .word-card.hinted {
+            justify-content: left;
+        }
+        .word-card {
+            min-width: 7em;
+            min-height: 25px;
+            //min-height: 75px;
+            width: 100%;
+            font-size: 1.8em;
+
+        }
+        .board {
+            padding-top: 0em;
+            padding-bottom: 0em;
+            margin-bottom: -0em;
+            margin-left: 2em;
+            margin-right: 2em;
+        }
+
+        .chip {
+        border: 1px solid black;
+        width: 5px;
+        height: 5px;
+        margin: 20px;
+        margin-bottom: 10px;
+        }
+
+        .distribution-hints {
+            position: relative;
+            margin: 0px;
+            font-size: .6em;
+            margin-left: .5em;
+            right: 0px;
+            position: absolute;
+        }
+
+        .reveal-board {position: relative;}
+        .next-game {position: relative; float: right;}
+        .prev-game {position: relative;}
+    }
+
 }
 
-@media (max-width: 680px){
-    .word-card.hinted {
-        justify-content: left;
-    }
-    .word-card {
-        min-width: 7em;
-        min-height: 25px;
-        //min-height: 75px;
-        width: 100%;
-        font-size: 1.8em;
-
-    }
-    .board {
-        padding-top: 0em;
-        padding-bottom: 0em;
-        margin-bottom: -0em;
-        margin-left: 2em;
-        margin-right: 2em;
-    }
-
-    .chip {
-      border: 1px solid black;
-      width: 5px;
-      height: 5px;
-      margin: 20px;
-      margin-bottom: 10px;
-    }
-
-    .distribution-hints {
-        position: relative;
-        margin: 0px;
-        font-size: .6em;
-        margin-left: .5em;
-        right: 0px;
-        position: absolute;
-    }
-
-
-    .reveal-board {position: relative;}
-    .next-game {position: relative; float: right;}
-    .prev-game {position: relative;}
-
-
-}

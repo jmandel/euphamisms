@@ -444,13 +444,15 @@ view model =
         [ span [ class "controls" ]
             [ span [ class "which-game" ] [
                     span [onClick ToggleHints] [(text <| asGameTime model.hour)]
+                , text " ("
                 , Html.a
-                    [ class "fa fa-question-circle"
-                    , href "https://github.com/jmandel/euphemisms/blob/twophemisms/README.md"
+                    [
+                     href "https://github.com/jmandel/euphemisms/blob/twophemisms/README.md"
                     , target "_blank"
                     , onClick Noop
                     ]
-                    []
+                    [text "?!"]
+                , text ")"
                 ]
             , span [ class "reveal-board" ]
                 [ i

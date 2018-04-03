@@ -294,7 +294,7 @@ html, body {
 
 .which-game a {
     padding-left: .2em;
-    text-decoration: none;
+    text-decoration: underline;
     color: black;
 
 }
@@ -348,7 +348,7 @@ html, body {
     .reveal-board {position: relative;}
 }
 
-@media (max-width: 950px){
+@media (max-width: 680px){
     .word-card.hinted {
         justify-content: left;
     }

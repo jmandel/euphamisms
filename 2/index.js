@@ -11938,7 +11938,7 @@
 						ctor: '_Tuple2',
 						_0: _elm_lang$core$Native_Utils.update(
 							model,
-							{viewAs: _p20._0, isSpymaster: false}),
+							{viewAs: _p20._0, isSpymaster: false, wantHints: false}),
 						_1: _elm_lang$core$Platform_Cmd$none
 					};
 				default:

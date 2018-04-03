@@ -475,7 +475,10 @@ view model =
                     ]
                 , span [class "turns"] [text <| if turns > 0 then "Turn " ++ toString turns else ""]
                 ]
-            , i
+            ]
+        , div [ class "board" ]
+            (List.map (card model.viewAs model.isSpymaster model.wantHints probabilities) model.cards)
+        , i
                 [ class "fa fa-eye fa-arrow-circle-o-left prev-game"
                 , attribute "aria-label" "true"
                 , onClick <| NewHour (model.hour - 1)
@@ -487,7 +490,5 @@ view model =
                 , onClick <| NewHour (model.hour + 1)
                 ]
                 []
-            ]
-        , div [ class "board" ]
-            (List.map (card model.viewAs model.isSpymaster model.wantHints probabilities) model.cards)
+
         ]

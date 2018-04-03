@@ -31,6 +31,8 @@ html, body {
   top: 0px;
   margin-top:.5em;
   opacity: 0.3;
+  white-space: nowrap;
+
 }
 
 .probability-Green {
@@ -83,22 +85,6 @@ html, body {
 .turns {
   margin-left: 10px;
   font-family: monospace;
-}
-.chip {
-  width: 10px;
-  opacity: 1.0;
-  height: 10px;
-  margin: 20px;
-  border: 1px dotted black;
-  position: absolute;
-  bottom: 0px;
-  border-radius: 100px;
-  margin: 4px;
-  background: white;
-}
-
-.background .chip {
- border: 1px dotted white;
 }
 
 .player-select {
@@ -228,11 +214,11 @@ html, body {
 }
 
 .board {
-    margin-left: 4em;
-    margin-right: 3.5em;
+    margin-left: 1em;
+    margin-right: 1em;
     display: flex;
     flex-wrap: wrap;
-    height: 100%;
+    min-height: 100%;
     padding-left: 0px;
     padding-right: 0px;
     padding-top: 5em;
@@ -271,6 +257,7 @@ html, body {
     bottom: 0px;
     left: 0px;
     padding: 0.5em;
+    z-index: 100;
 }
 
 .next-game {
@@ -279,6 +266,7 @@ html, body {
     bottom: 0px;
     right: 0px;
     padding: 0.5em;
+    z-index: 100;
 }
 
 .which-game {
@@ -331,7 +319,6 @@ html, body {
         padding-bottom: 0em;
         padding-left: 1em;
         padding-right: 1em;
-        height: 100%;
     }
     .main {
         height: calc(100% - 3.6em);
@@ -363,6 +350,9 @@ html, body {
     .board {
         padding-top: 0em;
         padding-bottom: 0em;
+        margin-bottom: -0em;
+        margin-left: 2em;
+        margin-right: 2em;
     }
 
     .chip {
@@ -384,5 +374,8 @@ html, body {
 
 
     .reveal-board {position: relative;}
+    .next-game {position: relative; float: right;}
+    .prev-game {position: relative;}
+
 
 }

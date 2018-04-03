@@ -442,7 +442,7 @@ view model =
     in
     div [ class "main" ]
         [ span [ class "controls" ]
-            [ span [ class "which-game" ] [
+            [ span [ class "which-game", attribute "role" "button" ] [
                     span [onClick ToggleHints] [(text <| asGameTime model.hour)]
                 , text " ("
                 , Html.a
@@ -473,7 +473,7 @@ view model =
                     [ option [ value "Alice" ] [ text ("Alice"  ) ]
                     , option [ value "Bob" ] [ text "Bob" ]
                     ]
-                , span [class "turns"] [text <| if turns > 0 then "Turn " ++ toString turns else ""]
+                , span [class "turns", attribute "role" "button"] [text <| if turns > 0 then "Turn " ++ toString turns else ""]
                 ]
             ]
         , div [ class "board" ]

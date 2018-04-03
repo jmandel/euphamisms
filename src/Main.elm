@@ -445,7 +445,7 @@ view model =
                 , onClick ToggleHints] [ (text <| asGameTime model.hour) 
                 , Html.a 
                     [ class "fa fa-question-circle"
-                    , href "https://github.com/jmandel/euphemisms"
+                    , href "https://github.com/jmandel/euphemisms/blob/twophemisms/README.md"
                     , target "_blank"
                     ]
                     []

@@ -1,6 +1,4 @@
-# Elm Euphemisms
-
-# Two-player Game
+# Euphemisms: two-player game
 
 One player picks Alice, the other picks Bob. Toggle between your "clueing
 view" and your "guessing view" by clicking the eye icon at the top left.

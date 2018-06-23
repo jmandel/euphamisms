@@ -8,7 +8,7 @@ all =
     String.lines """DRUM
 BRIDE
 WAGON
-UNIVERITY
+UNIVERSITY
 HIT
 ASH
 BASS
